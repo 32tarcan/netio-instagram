@@ -16,7 +16,7 @@ Sunucu gerekmez; her şey ücretsiz **GitHub Actions** üzerinde çalışır.
 
 * Pazar günleri o günün video slotunda soru videosu yerine `assets/ads/` içindeki marka reklamı paylaşılır.
 * Her hikâyenin üstünde bir önceki hikâyedeki sorunun cevabı yazar; cevap merak ettirir, takipçi geri döner.
-* **Kaydırmalı post (9 slayt):** kapak → 5 bilgi slaytı → "Kendini dene" sorusu → cevap ve açıklama → Netio tanıtımı.
+* **Kaydırmalı post (8 slayt, doğal defter görünümü):** masadaki bir ders defterine el yazısıyla alınmış notlar. Kapak → 2 not sayfası → **4. sayfada masadaki telefonda Netio açık ve o konunun sorusu ekranda** (doğal reklam) → 3 not sayfası → son sayfada kırmızı kalemle çözüm.
 * **Soru videosu (20 sn):** "Bu soruyu 10 saniyede çözebilir misin?" → geri sayım → cevap → Netio tanıtımı.
   Her videonun müziği ve efekt sesleri farklıdır (içeriğe göre değişen tohumla üretilir).
 
@@ -109,4 +109,4 @@ state/state.json         ne paylaşıldı, sıradaki içerik
 
 Yerelde deneme: `pip install -r requirements.txt` (ffmpeg gerekir) → `python -m netio.main preview --date 2026-10-16`
 
-Fontlar: Poppins ve Inter (SIL Open Font License), DejaVu Sans (serbest lisans).
+Fontlar: Poppins, Inter, Kalam, Patrick Hand, Caveat (SIL Open Font License), DejaVu Sans (serbest lisans).

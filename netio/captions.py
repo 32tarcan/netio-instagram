@@ -21,8 +21,9 @@ def _cta() -> str:
     return f"{b['cta']} 👉 @{b['instagram_handle']}"
 
 def carousel(item: dict) -> str:
-    hooks = ["Kaydır, son slaytta seni bir soru bekliyor 👉", "Kaydır ve sonunda kendini dene 👉",
-             "Kaydır, son slayttaki soruyu çözebilecek misin? 👉"]
+    hooks = ["Notları kaydır, 4. sayfadaki soruyu çözebilecek misin? 👉 Cevap son sayfada.",
+             "Konuyu 1 dakikada tekrar et 👉 4. sayfada bir soru var, cevabı son sayfada!",
+             "Kaydır ve kendini dene 👉 Soru 4. sayfada, çözüm son sayfada."]
     h = random.Random(item["id"]).choice(hooks)
     return (f"📌 {item['title']}\n\n{item.get('hook', '')}\n\n{h}\n"
             f"Cevabını yorumlara yaz, kaydetmeyi unutma! 🔖\n\n{_cta()}\n.\n.\n"

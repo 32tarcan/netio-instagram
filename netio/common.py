@@ -72,6 +72,11 @@ FONT_FILES = {
     "bold": ASSETS / "fonts" / "Inter-Bold.otf",
     "black": ASSETS / "fonts" / "Inter-ExtraBold.otf",
     "fallback": ASSETS / "fonts" / "DejaVuSans-Bold.ttf",
+    # handwriting (Google Fonts, SIL OFL)
+    "hand_title": ASSETS / "fonts" / "Kalam_700Bold.ttf",
+    "hand_med": ASSETS / "fonts" / "Kalam_400Regular.ttf",
+    "hand": ASSETS / "fonts" / "PatrickHand_400Regular.ttf",
+    "note": ASSETS / "fonts" / "Caveat_700Bold.ttf",
 }
 
 @lru_cache(maxsize=None)
