@@ -7,15 +7,15 @@ Sunucu gerekmez; her şey ücretsiz **GitHub Actions** üzerinde çalışır.
 
 | Saat  | Çift günler          | Tek günler           |
 |-------|----------------------|----------------------|
-| 10:00 | Hikâye (soru 1/4)    | Hikâye (soru 1/4)    |
+| 10:00 | Hikâye (soru 1/4 + cevap) | Hikâye (soru 1/4 + cevap) |
 | 12:00 | **Kaydırmalı post**  | **Soru videosu (Reels)** |
-| 14:00 | Hikâye (soru 2/4)    | Hikâye (soru 2/4)    |
+| 14:00 | Hikâye (soru 2/4 + cevap) | Hikâye (soru 2/4 + cevap) |
 | 16:00 | **Soru videosu (Reels)** | **Kaydırmalı post** |
-| 19:00 | Hikâye (soru 3/4)    | Hikâye (soru 3/4)    |
-| 21:30 | Hikâye (soru 4/4)    | Hikâye (soru 4/4)    |
+| 19:00 | Hikâye (soru 3/4 + cevap) | Hikâye (soru 3/4 + cevap) |
+| 21:30 | Hikâye (soru 4/4 + cevap) | Hikâye (soru 4/4 + cevap) |
 
 * Pazar günleri o günün video slotunda soru videosu yerine `assets/ads/` içindeki marka reklamı paylaşılır.
-* Her hikâyenin üstünde bir önceki hikâyedeki sorunun cevabı yazar; cevap merak ettirir, takipçi geri döner.
+* Her hikâye saatinde iki kare paylaşılır: A–E şıklı soru ("Cevap için dokun →") ve hemen ardından cevap karesi. Takipçi dokunarak cevabı görür.
 * **Kaydırmalı post (8 slayt, doğal defter görünümü):** masadaki bir ders defterine el yazısıyla alınmış notlar. Kapak → 2 not sayfası → **4. sayfada masadaki telefonda Netio açık ve o konunun sorusu ekranda** (doğal reklam) → 3 not sayfası → son sayfada kırmızı kalemle çözüm.
 * **Soru videosu (20 sn):** "Bu soruyu 10 saniyede çözebilir misin?" → geri sayım → cevap → Netio tanıtımı.
   Her videonun müziği ve efekt sesleri farklıdır (içeriğe göre değişen tohumla üretilir).
@@ -91,10 +91,10 @@ Bir paylaşım hata verirse GitHub sana e-posta gönderir.
 ## Bilinen sınırlar
 
 * **Etkileşimli anket/test çıkartmaları** (story poll/quiz sticker) Instagram API ile eklenemez.
-  Bu yüzden hikâyeler A/B/C/D şıklı görsel soru olarak paylaşılır ve cevap bir sonraki hikâyede açıklanır.
-  İstersen bazı hikâyelere telefondan elle anket çıkartması ekleyebilirsin.
+  Bu yüzden hikâyeler A–E şıklı görsel soru + dokununca açılan cevap karesi olarak paylaşılır.
+  (Instagram'ın kendi test çıkartması zaten en fazla 4 şık alır.)
 * GitHub zamanlanmış görevleri yoğunlukta birkaç dakika gecikebilir. Görevler 20 dk erken başlayıp tam saati beklediği için bu genelde fark edilmez.
-* Instagram API ile 24 saatte en fazla 100 paylaşım yapılabilir; bu pipeline günde 6 paylaşım yapar.
+* Instagram API ile 24 saatte en fazla 100 paylaşım yapılabilir; bu pipeline günde 10 paylaşım yapar (8 hikâye karesi + 2 gönderi).
 
 ## Klasör yapısı
 

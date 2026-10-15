@@ -57,7 +57,7 @@ def _valid(it, kind):
             q = it["quiz"]
             return (it["exam"] in ("TYT", "AYT") and 4 <= len(it["slides"]) <= 6 and len(q["options"]) == 5
                     and 0 <= q["answer"] < 5 and all(s.get("h") for s in it["slides"]) and it["title"])
-        n = 5 if kind == "video" else 4
+        n = 5
         return it["exam"] in ("TYT", "AYT") and len(it["options"]) == n and 0 <= it["answer"] < n and it["q"]
     except (KeyError, TypeError):
         return False
@@ -78,7 +78,7 @@ def generate(kind: str, count: int):
     example = json.dumps(bank[0], ensure_ascii=False) if bank else ""
     what = {"carousel": "kaydırmalı Instagram postu (konu özeti: 5 bilgi slaytı + 5 şıklı bir soru)",
             "video": "10 saniyelik soru videosu için 5 şıklı soru",
-            "story": "Instagram hikâyesi için 4 şıklı kısa soru (soru en fazla ~90 karakter)"}[kind]
+            "story": "Instagram hikâyesi için 5 şıklı (A–E) kısa soru (soru en fazla ~90 karakter)"}[kind]
     prompt = (f"{count} adet {what} üret. Dersleri dengeli dağıt (TYT: {', '.join(SUBJECTS_TYT)}; "
               f"AYT: {', '.join(SUBJECTS_AYT)}). Şu konulardan/sorulardan farklı olsun:\n"
               f"{json.dumps(_existing_questions(), ensure_ascii=False)}\n\nŞema örneği:\n{example}\n\n{RULES}")

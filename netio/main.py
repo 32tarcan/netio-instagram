@@ -112,8 +112,9 @@ def prepare(slot: str, date: dt.date, out_root: Path, state=None) -> dict:
     else:
         n = int(slot[-1])
         it = pick("story", state)
-        p = story.render(it, folder / f"{it['id']}.jpg", n, prev=state.get("last_story"), today=date)
-        m.update(item_id=it["id"], files=[p.name], story_item=it)
+        q = story.render_question(it, folder / f"{it['id']}_1_soru.jpg", n, today=date)
+        a = story.render_answer(it, folder / f"{it['id']}_2_cevap.jpg", n)
+        m.update(item_id=it["id"], files=[q.name, a.name], story_item=it)
     save_json(folder / "manifest.json", m)
     return m
 
@@ -150,7 +151,12 @@ def publish(slot: str, date: dt.date, base_url: str, dry_run=False, wait_until=T
     ig = Instagram(dry_run=dry_run)
     if m["kind"] == "carousel": mid = ig.post_carousel(urls, m["caption"])
     elif m["kind"] in ("video", "ad"): mid = ig.post_reel(urls[0], m["caption"], m.get("thumb_offset_ms", 9000))
-    else: mid = ig.post_story_image(urls[0])
+    else:
+        ids = []
+        for k, u in enumerate(urls):          # question first, answer right after (tap to reveal)
+            ids.append(ig.post_story_image(u))
+            if k < len(urls) - 1 and not dry_run: time.sleep(8)
+        mid = ",".join(ids)
     print(f"Paylaşıldı: {m['kind']} {m['item_id']} -> {mid}")
     if dry_run: return
     # advance state

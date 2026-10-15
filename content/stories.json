@@ -1,58 +1,842 @@
 [
-  {"id": "s001", "exam": "TYT", "subject": "Matematik", "q": "2³ + 2³ işleminin sonucu kaçtır?", "options": ["12", "64", "16", "8"], "answer": 2, "explain": "8 + 8 = 16"},
-  {"id": "s002", "exam": "TYT", "subject": "Biyoloji", "q": "Kanda oksijen taşıyan protein hangisidir?", "options": ["İnsülin", "Hemoglobin", "Keratin", "Pepsin"], "answer": 1, "explain": "Hemoglobin alyuvarlarda oksijen taşır."},
-  {"id": "s003", "exam": "TYT", "subject": "Türkçe", "q": "Hangisi bir bağlaçtır?", "options": ["güzel", "koşmak", "ve", "hızlıca"], "answer": 2, "explain": "\"ve\" sözcükleri ve cümleleri bağlar."},
-  {"id": "s004", "exam": "TYT", "subject": "Tarih", "q": "Cumhuriyet hangi yıl ilan edildi?", "options": ["1920", "1922", "1924", "1923"], "answer": 3, "explain": "29 Ekim 1923"},
-  {"id": "s005", "exam": "TYT", "subject": "Fizik", "q": "Hızın SI birimi hangisidir?", "options": ["m/s²", "N", "km/sa", "m/s"], "answer": 3, "explain": "Hız: metre bölü saniye (m/s)"},
-  {"id": "s006", "exam": "TYT", "subject": "Kimya", "q": "En elektronegatif element hangisidir?", "options": ["Oksijen", "Klor", "Flor", "Azot"], "answer": 2, "explain": "Flor (F) en elektronegatif elementtir."},
-  {"id": "s007", "exam": "TYT", "subject": "Coğrafya", "q": "Tamamı Türkiye'de olan en uzun akarsu hangisidir?", "options": ["Fırat", "Sakarya", "Kızılırmak", "Dicle"], "answer": 2, "explain": "Kızılırmak Türkiye'de doğup Türkiye'de denize dökülür."},
-  {"id": "s008", "exam": "AYT", "subject": "Edebiyat", "q": "\"Safahat\" kimin eseridir?", "options": ["Mehmet Âkif Ersoy", "Tevfik Fikret", "Yahya Kemal", "Namık Kemal"], "answer": 0, "explain": "Safahat, Mehmet Âkif Ersoy'un şiirlerini topladığı eserdir."},
-  {"id": "s009", "exam": "TYT", "subject": "Matematik", "q": "%20'si 30 olan sayı kaçtır?", "options": ["120", "150", "60", "180"], "answer": 1, "explain": "30 ÷ 0,2 = 150"},
-  {"id": "s010", "exam": "TYT", "subject": "Geometri", "q": "Bir kenarı 5 birim olan karenin alanı kaçtır?", "options": ["20", "10", "25", "15"], "answer": 2, "explain": "5 · 5 = 25 birimkare"},
-  {"id": "s011", "exam": "TYT", "subject": "Biyoloji", "q": "Protein sentezi hangi organelde yapılır?", "options": ["Ribozom", "Lizozom", "Golgi", "Koful"], "answer": 0, "explain": "Ribozomlar protein sentezler."},
-  {"id": "s012", "exam": "TYT", "subject": "Felsefe", "q": "\"Tabula rasa\" hangi düşünürle özdeşleşir?", "options": ["Platon", "John Locke", "Kant", "Descartes"], "answer": 1, "explain": "Locke: zihin doğuşta boş bir levhadır."},
-  {"id": "s013", "exam": "TYT", "subject": "Fizik", "q": "Dünya'da yerçekimi ivmesi yaklaşık kaç m/s²'dir?", "options": ["9,8", "1,6", "3,7", "24,8"], "answer": 0, "explain": "Yaklaşık 9,8 m/s² (sorularda çoğu zaman 10 alınır)."},
-  {"id": "s014", "exam": "TYT", "subject": "Kimya", "q": "NaCl'nin günlük hayattaki adı nedir?", "options": ["Kireç", "Sofra tuzu", "Çamaşır sodası", "Karbonat"], "answer": 1, "explain": "NaCl: sodyum klorür, yani sofra tuzu."},
-  {"id": "s015", "exam": "TYT", "subject": "Tarih", "q": "Malazgirt Savaşı hangi yıl yapıldı?", "options": ["1071", "1176", "1243", "1453"], "answer": 0, "explain": "1071, Anadolu'nun kapıları Türklere açıldı."},
-  {"id": "s016", "exam": "TYT", "subject": "Türkçe", "q": "Hangisinde yazım yanlışı vardır?", "options": ["Herkes geldi.", "Birşey söyle.", "Hiçbir şey olmadı.", "Her şey yolunda."], "answer": 1, "explain": "Doğrusu ayrı yazılır: \"bir şey\""},
-  {"id": "s017", "exam": "TYT", "subject": "Matematik", "q": "Hangisi asal sayı değildir?", "options": ["2", "13", "21", "17"], "answer": 2, "explain": "21 = 3 · 7"},
-  {"id": "s018", "exam": "TYT", "subject": "Coğrafya", "q": "Türkiye'nin en büyük gölü hangisidir?", "options": ["Tuz Gölü", "Van Gölü", "Beyşehir Gölü", "Eğirdir Gölü"], "answer": 1, "explain": "Van Gölü Türkiye'nin en büyük gölüdür."},
-  {"id": "s019", "exam": "TYT", "subject": "Biyoloji", "q": "Hangi baz DNA'da bulunmaz?", "options": ["Adenin", "Guanin", "Urasil", "Timin"], "answer": 2, "explain": "Urasil RNA'da bulunur, DNA'da bulunmaz."},
-  {"id": "s020", "exam": "AYT", "subject": "Edebiyat", "q": "İlk yerli tiyatro eseri hangisidir?", "options": ["Vatan yahut Silistre", "Şair Evlenmek", "Zavallı Çocuk", "Akif Bey"], "answer": 1, "explain": "Şinasi'nin Şair Evlenmek'i (1860)."},
-  {"id": "s021", "exam": "TYT", "subject": "Fizik", "q": "\"kWh\" hangi büyüklüğün birimidir?", "options": ["Güç", "Kuvvet", "Akım", "Enerji"], "answer": 3, "explain": "kWh, güç × zaman yani enerji birimidir."},
-  {"id": "s022", "exam": "TYT", "subject": "Matematik", "q": "x + 3 = 2x − 5 ise x kaçtır?", "options": ["8", "2", "−2", "5"], "answer": 0, "explain": "3 + 5 = 2x − x → x = 8"},
-  {"id": "s023", "exam": "TYT", "subject": "Kimya", "q": "25 °C'de pH değeri 7'den büyük olan çözelti nasıldır?", "options": ["Asidik", "Nötr", "Bazik", "Tuzlu"], "answer": 2, "explain": "pH > 7 → bazik"},
-  {"id": "s024", "exam": "TYT", "subject": "Felsefe", "q": "\"Bildiğim tek şey, hiçbir şey bilmediğimdir.\" sözü kime atfedilir?", "options": ["Sokrates", "Aristoteles", "Thales", "Herakleitos"], "answer": 0, "explain": "Sokrates'e atfedilir."},
-  {"id": "s025", "exam": "TYT", "subject": "Tarih", "q": "TBMM hangi tarihte açıldı?", "options": ["29 Ekim 1923", "19 Mayıs 1919", "23 Nisan 1920", "30 Ağustos 1922"], "answer": 2, "explain": "23 Nisan 1920"},
-  {"id": "s026", "exam": "TYT", "subject": "Geometri", "q": "Bir üçgenin dış açıları toplamı kaç derecedir?", "options": ["360°", "180°", "270°", "540°"], "answer": 0, "explain": "Her çokgende dış açılar toplamı 360°'dir."},
-  {"id": "s027", "exam": "TYT", "subject": "Biyoloji", "q": "Fotosentez hangi organelde gerçekleşir?", "options": ["Mitokondri", "Kloroplast", "Ribozom", "Sentrozom"], "answer": 1, "explain": "Kloroplast"},
-  {"id": "s028", "exam": "TYT", "subject": "Türkçe", "q": "\"Kitaplık\" sözcüğündeki \"-lık\" ne tür bir ektir?", "options": ["Çekim eki", "Yapım eki", "Hâl eki", "İyelik eki"], "answer": 1, "explain": "Yeni bir sözcük türettiği için yapım ekidir."},
-  {"id": "s029", "exam": "TYT", "subject": "Matematik", "q": "|−7| + |3| kaçtır?", "options": ["−4", "4", "10", "−10"], "answer": 2, "explain": "7 + 3 = 10"},
-  {"id": "s030", "exam": "TYT", "subject": "Coğrafya", "q": "Maki bitki örtüsü hangi iklime aittir?", "options": ["Karadeniz", "Akdeniz", "Karasal", "Çöl"], "answer": 1, "explain": "Maki, Akdeniz ikliminin bitki örtüsüdür."},
-  {"id": "s031", "exam": "TYT", "subject": "Fizik", "q": "Işığın boşluktaki hızı yaklaşık kaçtır?", "options": ["300.000 km/s", "3.000 km/s", "340 m/s", "30.000 km/s"], "answer": 0, "explain": "Yaklaşık 300.000 km/s"},
-  {"id": "s032", "exam": "AYT", "subject": "Edebiyat", "q": "\"Kuyucaklı Yusuf\" romanının yazarı kimdir?", "options": ["Orhan Kemal", "Sabahattin Ali", "Yaşar Kemal", "Peyami Safa"], "answer": 1, "explain": "Sabahattin Ali"},
-  {"id": "s033", "exam": "TYT", "subject": "Kimya", "q": "Atom numarası neyi gösterir?", "options": ["Kütle numarasını", "Nötron sayısını", "Katman sayısını", "Proton sayısını"], "answer": 3, "explain": "Atom numarası = proton sayısı"},
-  {"id": "s034", "exam": "TYT", "subject": "Tarih", "q": "İstanbul hangi yıl fethedildi?", "options": ["1071", "1299", "1453", "1517"], "answer": 2, "explain": "1453, Fatih Sultan Mehmet"},
-  {"id": "s035", "exam": "TYT", "subject": "Matematik", "q": "Bir sayının 3 katının 4 fazlası 19'dur. Sayı kaçtır?", "options": ["5", "6", "4", "7"], "answer": 0, "explain": "3x + 4 = 19 → x = 5"},
-  {"id": "s036", "exam": "TYT", "subject": "Biyoloji", "q": "İnsanın vücut hücrelerinde kaç kromozom bulunur?", "options": ["23", "44", "46", "48"], "answer": 2, "explain": "2n = 46"},
-  {"id": "s037", "exam": "TYT", "subject": "Türkçe", "q": "Hangisi bir zamirdir?", "options": ["güzel", "koşu", "biz", "hızla"], "answer": 2, "explain": "\"biz\" kişi zamiridir."},
-  {"id": "s038", "exam": "TYT", "subject": "Felsefe", "q": "Kritisizm (eleştirel felsefe) akımının kurucusu kimdir?", "options": ["Hume", "Kant", "Locke", "Comte"], "answer": 1, "explain": "Immanuel Kant"},
-  {"id": "s039", "exam": "TYT", "subject": "Geometri", "q": "Eşkenar üçgenin bir iç açısı kaç derecedir?", "options": ["45°", "90°", "120°", "60°"], "answer": 3, "explain": "180 ÷ 3 = 60°"},
-  {"id": "s040", "exam": "TYT", "subject": "Fizik", "q": "Ses havada yaklaşık kaç m/s hızla yayılır?", "options": ["34", "340", "3400", "34.000"], "answer": 1, "explain": "Yaklaşık 340 m/s"},
-  {"id": "s041", "exam": "TYT", "subject": "Coğrafya", "q": "Türkiye'de en çok yağış alan bölge hangisidir?", "options": ["İç Anadolu", "Güneydoğu Anadolu", "Karadeniz", "Ege"], "answer": 2, "explain": "Karadeniz Bölgesi"},
-  {"id": "s042", "exam": "TYT", "subject": "Kimya", "q": "Hangisi bir soygazdır?", "options": ["Azot", "Neon", "Oksijen", "Klor"], "answer": 1, "explain": "Neon 8A grubundadır."},
-  {"id": "s043", "exam": "TYT", "subject": "Matematik", "q": "0,25 sayısının kesir karşılığı hangisidir?", "options": ["1/5", "1/2", "2/5", "1/4"], "answer": 3, "explain": "25/100 = 1/4"},
-  {"id": "s044", "exam": "TYT", "subject": "Tarih", "q": "Lozan Antlaşması hangi yıl imzalandı?", "options": ["1920", "1921", "1923", "1919"], "answer": 2, "explain": "24 Temmuz 1923"},
-  {"id": "s045", "exam": "TYT", "subject": "Biyoloji", "q": "İnsan kalbinde kaç odacık vardır?", "options": ["4", "2", "3", "5"], "answer": 0, "explain": "2 kulakçık + 2 karıncık"},
-  {"id": "s046", "exam": "AYT", "subject": "Edebiyat", "q": "\"Sinekli Bakkal\" romanının yazarı kimdir?", "options": ["Refik Halit Karay", "Halide Edib Adıvar", "Reşat Nuri Güntekin", "Ahmet Hamdi Tanpınar"], "answer": 1, "explain": "Halide Edib Adıvar"},
-  {"id": "s047", "exam": "TYT", "subject": "Fizik", "q": "Kuvvetin birimi hangisidir?", "options": ["Joule", "Watt", "Newton", "Pascal"], "answer": 2, "explain": "Newton (N)"},
-  {"id": "s048", "exam": "TYT", "subject": "Türkçe", "q": "Hangisi bir sıfat tamlamasıdır?", "options": ["okulun bahçesi", "ev ödevi", "kırmızı elma", "hızlı koştu"], "answer": 2, "explain": "\"kırmızı\" sıfat, \"elma\" isim"},
-  {"id": "s049", "exam": "TYT", "subject": "Matematik", "q": "Saat tam 3:00'te akrep ile yelkovan arasındaki dar açı kaç derecedir?", "options": ["60°", "90°", "120°", "45°"], "answer": 1, "explain": "Her saat aralığı 30° → 3 · 30 = 90°"},
-  {"id": "s050", "exam": "TYT", "subject": "Coğrafya", "q": "Ekvatora yaklaştıkça ortalama sıcaklık genel olarak nasıl değişir?", "options": ["Azalır", "Değişmez", "Artar", "Önce artar sonra azalır"], "answer": 2, "explain": "Güneş ışınları daha dik açıyla gelir."},
-  {"id": "s051", "exam": "TYT", "subject": "Kimya", "q": "Bir su molekülünde toplam kaç atom vardır?", "options": ["2", "3", "4", "1"], "answer": 1, "explain": "2 hidrojen + 1 oksijen"},
-  {"id": "s052", "exam": "TYT", "subject": "Felsefe", "q": "\"En yüksek iyi mutluluktur\" diyen ahlak görüşü hangisidir?", "options": ["Hedonizm", "Faydacılık", "Egoizm", "Eudaimonizm"], "answer": 3, "explain": "Eudaimonizm (mutluluk ahlakı), Aristoteles"},
-  {"id": "s053", "exam": "TYT", "subject": "Tarih", "q": "Saltanat hangi yıl kaldırıldı?", "options": ["1920", "1922", "1923", "1924"], "answer": 1, "explain": "1 Kasım 1922"},
-  {"id": "s054", "exam": "TYT", "subject": "Biyoloji", "q": "Kanın pıhtılaşmasında görev alan kan hücresi hangisidir?", "options": ["Alyuvar", "Akyuvar", "Trombosit", "Plazma"], "answer": 2, "explain": "Trombositler (kan pulcukları)"},
-  {"id": "s055", "exam": "TYT", "subject": "Matematik", "q": "5! kaçtır?", "options": ["120", "24", "60", "720"], "answer": 0, "explain": "5 · 4 · 3 · 2 · 1 = 120"},
-  {"id": "s056", "exam": "TYT", "subject": "Geometri", "q": "Yarıçapı 3 birim olan çemberin çevresi kaçtır? (π = 3)", "options": ["9", "18", "27", "12"], "answer": 1, "explain": "2 · π · r = 2 · 3 · 3 = 18"}
+ {
+  "id": "s001",
+  "exam": "TYT",
+  "subject": "Matematik",
+  "q": "2³ + 2³ işleminin sonucu kaçtır?",
+  "options": [
+   "12",
+   "64",
+   "16",
+   "8",
+   "32"
+  ],
+  "answer": 2,
+  "explain": "8 + 8 = 16"
+ },
+ {
+  "id": "s002",
+  "exam": "TYT",
+  "subject": "Biyoloji",
+  "q": "Kanda oksijen taşıyan protein hangisidir?",
+  "options": [
+   "İnsülin",
+   "Hemoglobin",
+   "Keratin",
+   "Pepsin",
+   "Kolajen"
+  ],
+  "answer": 1,
+  "explain": "Hemoglobin alyuvarlarda oksijen taşır."
+ },
+ {
+  "id": "s003",
+  "exam": "TYT",
+  "subject": "Türkçe",
+  "q": "Hangisi bir bağlaçtır?",
+  "options": [
+   "güzel",
+   "koşmak",
+   "ve",
+   "hızlıca",
+   "kitap"
+  ],
+  "answer": 2,
+  "explain": "\"ve\" sözcükleri ve cümleleri bağlar."
+ },
+ {
+  "id": "s004",
+  "exam": "TYT",
+  "subject": "Tarih",
+  "q": "Cumhuriyet hangi yıl ilan edildi?",
+  "options": [
+   "1920",
+   "1922",
+   "1924",
+   "1923",
+   "1921"
+  ],
+  "answer": 3,
+  "explain": "29 Ekim 1923"
+ },
+ {
+  "id": "s005",
+  "exam": "TYT",
+  "subject": "Fizik",
+  "q": "Hızın SI birimi hangisidir?",
+  "options": [
+   "m/s²",
+   "N",
+   "km/sa",
+   "m/s",
+   "J"
+  ],
+  "answer": 3,
+  "explain": "Hız: metre bölü saniye (m/s)"
+ },
+ {
+  "id": "s006",
+  "exam": "TYT",
+  "subject": "Kimya",
+  "q": "En elektronegatif element hangisidir?",
+  "options": [
+   "Oksijen",
+   "Klor",
+   "Flor",
+   "Azot",
+   "Sodyum"
+  ],
+  "answer": 2,
+  "explain": "Flor (F) en elektronegatif elementtir."
+ },
+ {
+  "id": "s007",
+  "exam": "TYT",
+  "subject": "Coğrafya",
+  "q": "Tamamı Türkiye'de olan en uzun akarsu hangisidir?",
+  "options": [
+   "Fırat",
+   "Sakarya",
+   "Kızılırmak",
+   "Dicle",
+   "Yeşilırmak"
+  ],
+  "answer": 2,
+  "explain": "Kızılırmak Türkiye'de doğup Türkiye'de denize dökülür."
+ },
+ {
+  "id": "s008",
+  "exam": "AYT",
+  "subject": "Edebiyat",
+  "q": "\"Safahat\" kimin eseridir?",
+  "options": [
+   "Mehmet Âkif Ersoy",
+   "Tevfik Fikret",
+   "Yahya Kemal",
+   "Namık Kemal",
+   "Ziya Paşa"
+  ],
+  "answer": 0,
+  "explain": "Safahat, Mehmet Âkif Ersoy'un şiirlerini topladığı eserdir."
+ },
+ {
+  "id": "s009",
+  "exam": "TYT",
+  "subject": "Matematik",
+  "q": "%20'si 30 olan sayı kaçtır?",
+  "options": [
+   "120",
+   "150",
+   "60",
+   "180",
+   "200"
+  ],
+  "answer": 1,
+  "explain": "30 ÷ 0,2 = 150"
+ },
+ {
+  "id": "s010",
+  "exam": "TYT",
+  "subject": "Geometri",
+  "q": "Bir kenarı 5 birim olan karenin alanı kaçtır?",
+  "options": [
+   "20",
+   "10",
+   "25",
+   "15",
+   "30"
+  ],
+  "answer": 2,
+  "explain": "5 · 5 = 25 birimkare"
+ },
+ {
+  "id": "s011",
+  "exam": "TYT",
+  "subject": "Biyoloji",
+  "q": "Protein sentezi hangi organelde yapılır?",
+  "options": [
+   "Ribozom",
+   "Lizozom",
+   "Golgi",
+   "Koful",
+   "Sentrozom"
+  ],
+  "answer": 0,
+  "explain": "Ribozomlar protein sentezler."
+ },
+ {
+  "id": "s012",
+  "exam": "TYT",
+  "subject": "Felsefe",
+  "q": "\"Tabula rasa\" hangi düşünürle özdeşleşir?",
+  "options": [
+   "Platon",
+   "John Locke",
+   "Kant",
+   "Descartes",
+   "Hegel"
+  ],
+  "answer": 1,
+  "explain": "Locke: zihin doğuşta boş bir levhadır."
+ },
+ {
+  "id": "s013",
+  "exam": "TYT",
+  "subject": "Fizik",
+  "q": "Dünya'da yerçekimi ivmesi yaklaşık kaç m/s²'dir?",
+  "options": [
+   "9,8",
+   "1,6",
+   "3,7",
+   "24,8",
+   "5,5"
+  ],
+  "answer": 0,
+  "explain": "Yaklaşık 9,8 m/s² (sorularda çoğu zaman 10 alınır)."
+ },
+ {
+  "id": "s014",
+  "exam": "TYT",
+  "subject": "Kimya",
+  "q": "NaCl'nin günlük hayattaki adı nedir?",
+  "options": [
+   "Kireç",
+   "Sofra tuzu",
+   "Çamaşır sodası",
+   "Karbonat",
+   "Çamaşır suyu"
+  ],
+  "answer": 1,
+  "explain": "NaCl: sodyum klorür, yani sofra tuzu."
+ },
+ {
+  "id": "s015",
+  "exam": "TYT",
+  "subject": "Tarih",
+  "q": "Malazgirt Savaşı hangi yıl yapıldı?",
+  "options": [
+   "1071",
+   "1176",
+   "1243",
+   "1453",
+   "1040"
+  ],
+  "answer": 0,
+  "explain": "1071, Anadolu'nun kapıları Türklere açıldı."
+ },
+ {
+  "id": "s016",
+  "exam": "TYT",
+  "subject": "Türkçe",
+  "q": "Hangisinde yazım yanlışı vardır?",
+  "options": [
+   "Herkes geldi.",
+   "Birşey söyle.",
+   "Hiçbir şey olmadı.",
+   "Her şey yolunda.",
+   "Hiç kimse aramadı."
+  ],
+  "answer": 1,
+  "explain": "Doğrusu ayrı yazılır: \"bir şey\""
+ },
+ {
+  "id": "s017",
+  "exam": "TYT",
+  "subject": "Matematik",
+  "q": "Hangisi asal sayı değildir?",
+  "options": [
+   "2",
+   "13",
+   "21",
+   "17",
+   "11"
+  ],
+  "answer": 2,
+  "explain": "21 = 3 · 7"
+ },
+ {
+  "id": "s018",
+  "exam": "TYT",
+  "subject": "Coğrafya",
+  "q": "Türkiye'nin en büyük gölü hangisidir?",
+  "options": [
+   "Tuz Gölü",
+   "Van Gölü",
+   "Beyşehir Gölü",
+   "Eğirdir Gölü",
+   "İznik Gölü"
+  ],
+  "answer": 1,
+  "explain": "Van Gölü Türkiye'nin en büyük gölüdür."
+ },
+ {
+  "id": "s019",
+  "exam": "TYT",
+  "subject": "Biyoloji",
+  "q": "Hangi baz DNA'da bulunmaz?",
+  "options": [
+   "Adenin",
+   "Guanin",
+   "Urasil",
+   "Timin",
+   "Sitozin"
+  ],
+  "answer": 2,
+  "explain": "Urasil RNA'da bulunur, DNA'da bulunmaz."
+ },
+ {
+  "id": "s020",
+  "exam": "AYT",
+  "subject": "Edebiyat",
+  "q": "İlk yerli tiyatro eseri hangisidir?",
+  "options": [
+   "Vatan yahut Silistre",
+   "Şair Evlenmek",
+   "Zavallı Çocuk",
+   "Akif Bey",
+   "Zoraki Tabip"
+  ],
+  "answer": 1,
+  "explain": "Şinasi'nin Şair Evlenmek'i (1860)."
+ },
+ {
+  "id": "s021",
+  "exam": "TYT",
+  "subject": "Fizik",
+  "q": "\"kWh\" hangi büyüklüğün birimidir?",
+  "options": [
+   "Güç",
+   "Kuvvet",
+   "Akım",
+   "Enerji",
+   "Gerilim"
+  ],
+  "answer": 3,
+  "explain": "kWh, güç × zaman yani enerji birimidir."
+ },
+ {
+  "id": "s022",
+  "exam": "TYT",
+  "subject": "Matematik",
+  "q": "x + 3 = 2x − 5 ise x kaçtır?",
+  "options": [
+   "8",
+   "2",
+   "−2",
+   "5",
+   "−8"
+  ],
+  "answer": 0,
+  "explain": "3 + 5 = 2x − x → x = 8"
+ },
+ {
+  "id": "s023",
+  "exam": "TYT",
+  "subject": "Kimya",
+  "q": "25 °C'de pH değeri 7'den büyük olan çözelti nasıldır?",
+  "options": [
+   "Asidik",
+   "Nötr",
+   "Bazik",
+   "Tuzlu",
+   "Kuvvetli asidik"
+  ],
+  "answer": 2,
+  "explain": "pH > 7 → bazik"
+ },
+ {
+  "id": "s024",
+  "exam": "TYT",
+  "subject": "Felsefe",
+  "q": "\"Bildiğim tek şey, hiçbir şey bilmediğimdir.\" sözü kime atfedilir?",
+  "options": [
+   "Sokrates",
+   "Aristoteles",
+   "Thales",
+   "Herakleitos",
+   "Pisagor"
+  ],
+  "answer": 0,
+  "explain": "Sokrates'e atfedilir."
+ },
+ {
+  "id": "s025",
+  "exam": "TYT",
+  "subject": "Tarih",
+  "q": "TBMM hangi tarihte açıldı?",
+  "options": [
+   "29 Ekim 1923",
+   "19 Mayıs 1919",
+   "23 Nisan 1920",
+   "30 Ağustos 1922",
+   "24 Temmuz 1923"
+  ],
+  "answer": 2,
+  "explain": "23 Nisan 1920"
+ },
+ {
+  "id": "s026",
+  "exam": "TYT",
+  "subject": "Geometri",
+  "q": "Bir üçgenin dış açıları toplamı kaç derecedir?",
+  "options": [
+   "360°",
+   "180°",
+   "270°",
+   "540°",
+   "720°"
+  ],
+  "answer": 0,
+  "explain": "Her çokgende dış açılar toplamı 360°'dir."
+ },
+ {
+  "id": "s027",
+  "exam": "TYT",
+  "subject": "Biyoloji",
+  "q": "Fotosentez hangi organelde gerçekleşir?",
+  "options": [
+   "Mitokondri",
+   "Kloroplast",
+   "Ribozom",
+   "Sentrozom",
+   "Golgi"
+  ],
+  "answer": 1,
+  "explain": "Kloroplast"
+ },
+ {
+  "id": "s028",
+  "exam": "TYT",
+  "subject": "Türkçe",
+  "q": "\"Kitaplık\" sözcüğündeki \"-lık\" ne tür bir ektir?",
+  "options": [
+   "Çekim eki",
+   "Yapım eki",
+   "Hâl eki",
+   "İyelik eki",
+   "Bağlaç"
+  ],
+  "answer": 1,
+  "explain": "Yeni bir sözcük türettiği için yapım ekidir."
+ },
+ {
+  "id": "s029",
+  "exam": "TYT",
+  "subject": "Matematik",
+  "q": "|−7| + |3| kaçtır?",
+  "options": [
+   "−4",
+   "4",
+   "10",
+   "−10",
+   "21"
+  ],
+  "answer": 2,
+  "explain": "7 + 3 = 10"
+ },
+ {
+  "id": "s030",
+  "exam": "TYT",
+  "subject": "Coğrafya",
+  "q": "Maki bitki örtüsü hangi iklime aittir?",
+  "options": [
+   "Karadeniz",
+   "Akdeniz",
+   "Karasal",
+   "Çöl",
+   "Muson"
+  ],
+  "answer": 1,
+  "explain": "Maki, Akdeniz ikliminin bitki örtüsüdür."
+ },
+ {
+  "id": "s031",
+  "exam": "TYT",
+  "subject": "Fizik",
+  "q": "Işığın boşluktaki hızı yaklaşık kaçtır?",
+  "options": [
+   "300.000 km/s",
+   "3.000 km/s",
+   "340 m/s",
+   "30.000 km/s",
+   "150.000 km/s"
+  ],
+  "answer": 0,
+  "explain": "Yaklaşık 300.000 km/s"
+ },
+ {
+  "id": "s032",
+  "exam": "AYT",
+  "subject": "Edebiyat",
+  "q": "\"Kuyucaklı Yusuf\" romanının yazarı kimdir?",
+  "options": [
+   "Orhan Kemal",
+   "Sabahattin Ali",
+   "Yaşar Kemal",
+   "Peyami Safa",
+   "Ahmet Hamdi Tanpınar"
+  ],
+  "answer": 1,
+  "explain": "Sabahattin Ali"
+ },
+ {
+  "id": "s033",
+  "exam": "TYT",
+  "subject": "Kimya",
+  "q": "Atom numarası neyi gösterir?",
+  "options": [
+   "Kütle numarasını",
+   "Nötron sayısını",
+   "Katman sayısını",
+   "Proton sayısını",
+   "Elektron ilgisini"
+  ],
+  "answer": 3,
+  "explain": "Atom numarası = proton sayısı"
+ },
+ {
+  "id": "s034",
+  "exam": "TYT",
+  "subject": "Tarih",
+  "q": "İstanbul hangi yıl fethedildi?",
+  "options": [
+   "1071",
+   "1299",
+   "1453",
+   "1517",
+   "1402"
+  ],
+  "answer": 2,
+  "explain": "1453, Fatih Sultan Mehmet"
+ },
+ {
+  "id": "s035",
+  "exam": "TYT",
+  "subject": "Matematik",
+  "q": "Bir sayının 3 katının 4 fazlası 19'dur. Sayı kaçtır?",
+  "options": [
+   "5",
+   "6",
+   "4",
+   "7",
+   "3"
+  ],
+  "answer": 0,
+  "explain": "3x + 4 = 19 → x = 5"
+ },
+ {
+  "id": "s036",
+  "exam": "TYT",
+  "subject": "Biyoloji",
+  "q": "İnsanın vücut hücrelerinde kaç kromozom bulunur?",
+  "options": [
+   "23",
+   "44",
+   "46",
+   "48",
+   "92"
+  ],
+  "answer": 2,
+  "explain": "2n = 46"
+ },
+ {
+  "id": "s037",
+  "exam": "TYT",
+  "subject": "Türkçe",
+  "q": "Hangisi bir zamirdir?",
+  "options": [
+   "güzel",
+   "koşu",
+   "biz",
+   "hızla",
+   "ve"
+  ],
+  "answer": 2,
+  "explain": "\"biz\" kişi zamiridir."
+ },
+ {
+  "id": "s038",
+  "exam": "TYT",
+  "subject": "Felsefe",
+  "q": "Kritisizm (eleştirel felsefe) akımının kurucusu kimdir?",
+  "options": [
+   "Hume",
+   "Kant",
+   "Locke",
+   "Comte",
+   "Descartes"
+  ],
+  "answer": 1,
+  "explain": "Immanuel Kant"
+ },
+ {
+  "id": "s039",
+  "exam": "TYT",
+  "subject": "Geometri",
+  "q": "Eşkenar üçgenin bir iç açısı kaç derecedir?",
+  "options": [
+   "45°",
+   "90°",
+   "120°",
+   "60°",
+   "30°"
+  ],
+  "answer": 3,
+  "explain": "180 ÷ 3 = 60°"
+ },
+ {
+  "id": "s040",
+  "exam": "TYT",
+  "subject": "Fizik",
+  "q": "Ses havada yaklaşık kaç m/s hızla yayılır?",
+  "options": [
+   "34",
+   "340",
+   "3400",
+   "34.000",
+   "1500"
+  ],
+  "answer": 1,
+  "explain": "Yaklaşık 340 m/s"
+ },
+ {
+  "id": "s041",
+  "exam": "TYT",
+  "subject": "Coğrafya",
+  "q": "Türkiye'de en çok yağış alan bölge hangisidir?",
+  "options": [
+   "İç Anadolu",
+   "Güneydoğu Anadolu",
+   "Karadeniz",
+   "Ege",
+   "Akdeniz"
+  ],
+  "answer": 2,
+  "explain": "Karadeniz Bölgesi"
+ },
+ {
+  "id": "s042",
+  "exam": "TYT",
+  "subject": "Kimya",
+  "q": "Hangisi bir soygazdır?",
+  "options": [
+   "Azot",
+   "Neon",
+   "Oksijen",
+   "Klor",
+   "Hidrojen"
+  ],
+  "answer": 1,
+  "explain": "Neon 8A grubundadır."
+ },
+ {
+  "id": "s043",
+  "exam": "TYT",
+  "subject": "Matematik",
+  "q": "0,25 sayısının kesir karşılığı hangisidir?",
+  "options": [
+   "1/5",
+   "1/2",
+   "2/5",
+   "1/4",
+   "3/4"
+  ],
+  "answer": 3,
+  "explain": "25/100 = 1/4"
+ },
+ {
+  "id": "s044",
+  "exam": "TYT",
+  "subject": "Tarih",
+  "q": "Lozan Antlaşması hangi yıl imzalandı?",
+  "options": [
+   "1920",
+   "1921",
+   "1923",
+   "1919",
+   "1922"
+  ],
+  "answer": 2,
+  "explain": "24 Temmuz 1923"
+ },
+ {
+  "id": "s045",
+  "exam": "TYT",
+  "subject": "Biyoloji",
+  "q": "İnsan kalbinde kaç odacık vardır?",
+  "options": [
+   "4",
+   "2",
+   "3",
+   "5",
+   "6"
+  ],
+  "answer": 0,
+  "explain": "2 kulakçık + 2 karıncık"
+ },
+ {
+  "id": "s046",
+  "exam": "AYT",
+  "subject": "Edebiyat",
+  "q": "\"Sinekli Bakkal\" romanının yazarı kimdir?",
+  "options": [
+   "Refik Halit Karay",
+   "Halide Edib Adıvar",
+   "Reşat Nuri Güntekin",
+   "Ahmet Hamdi Tanpınar",
+   "Peyami Safa"
+  ],
+  "answer": 1,
+  "explain": "Halide Edib Adıvar"
+ },
+ {
+  "id": "s047",
+  "exam": "TYT",
+  "subject": "Fizik",
+  "q": "Kuvvetin birimi hangisidir?",
+  "options": [
+   "Joule",
+   "Watt",
+   "Newton",
+   "Pascal",
+   "Volt"
+  ],
+  "answer": 2,
+  "explain": "Newton (N)"
+ },
+ {
+  "id": "s048",
+  "exam": "TYT",
+  "subject": "Türkçe",
+  "q": "Hangisi bir sıfat tamlamasıdır?",
+  "options": [
+   "okulun bahçesi",
+   "ev ödevi",
+   "kırmızı elma",
+   "hızlı koştu",
+   "kitabın kapağı"
+  ],
+  "answer": 2,
+  "explain": "\"kırmızı\" sıfat, \"elma\" isim"
+ },
+ {
+  "id": "s049",
+  "exam": "TYT",
+  "subject": "Matematik",
+  "q": "Saat tam 3:00'te akrep ile yelkovan arasındaki dar açı kaç derecedir?",
+  "options": [
+   "60°",
+   "90°",
+   "120°",
+   "45°",
+   "180°"
+  ],
+  "answer": 1,
+  "explain": "Her saat aralığı 30° → 3 · 30 = 90°"
+ },
+ {
+  "id": "s050",
+  "exam": "TYT",
+  "subject": "Coğrafya",
+  "q": "Ekvatora yaklaştıkça ortalama sıcaklık genel olarak nasıl değişir?",
+  "options": [
+   "Azalır",
+   "Değişmez",
+   "Artar",
+   "Önce artar sonra azalır",
+   "Önce azalır sonra artar"
+  ],
+  "answer": 2,
+  "explain": "Güneş ışınları daha dik açıyla gelir."
+ },
+ {
+  "id": "s051",
+  "exam": "TYT",
+  "subject": "Kimya",
+  "q": "Bir su molekülünde toplam kaç atom vardır?",
+  "options": [
+   "2",
+   "3",
+   "4",
+   "1",
+   "5"
+  ],
+  "answer": 1,
+  "explain": "2 hidrojen + 1 oksijen"
+ },
+ {
+  "id": "s052",
+  "exam": "TYT",
+  "subject": "Felsefe",
+  "q": "\"En yüksek iyi mutluluktur\" diyen ahlak görüşü hangisidir?",
+  "options": [
+   "Hedonizm",
+   "Faydacılık",
+   "Egoizm",
+   "Eudaimonizm",
+   "Pozitivizm"
+  ],
+  "answer": 3,
+  "explain": "Eudaimonizm (mutluluk ahlakı), Aristoteles"
+ },
+ {
+  "id": "s053",
+  "exam": "TYT",
+  "subject": "Tarih",
+  "q": "Saltanat hangi yıl kaldırıldı?",
+  "options": [
+   "1920",
+   "1922",
+   "1923",
+   "1924",
+   "1921"
+  ],
+  "answer": 1,
+  "explain": "1 Kasım 1922"
+ },
+ {
+  "id": "s054",
+  "exam": "TYT",
+  "subject": "Biyoloji",
+  "q": "Kanın pıhtılaşmasında görev alan kan hücresi hangisidir?",
+  "options": [
+   "Alyuvar",
+   "Akyuvar",
+   "Trombosit",
+   "Plazma",
+   "Lenf"
+  ],
+  "answer": 2,
+  "explain": "Trombositler (kan pulcukları)"
+ },
+ {
+  "id": "s055",
+  "exam": "TYT",
+  "subject": "Matematik",
+  "q": "5! kaçtır?",
+  "options": [
+   "120",
+   "24",
+   "60",
+   "720",
+   "100"
+  ],
+  "answer": 0,
+  "explain": "5 · 4 · 3 · 2 · 1 = 120"
+ },
+ {
+  "id": "s056",
+  "exam": "TYT",
+  "subject": "Geometri",
+  "q": "Yarıçapı 3 birim olan çemberin çevresi kaçtır? (π = 3)",
+  "options": [
+   "9",
+   "18",
+   "27",
+   "12",
+   "6"
+  ],
+  "answer": 1,
+  "explain": "2 · π · r = 2 · 3 · 3 = 18"
+ }
 ]

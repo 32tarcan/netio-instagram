@@ -218,14 +218,27 @@ def check_mark(d, x, y, s, col, w=10):
     d.line([(x, y + s * .5), (x + s * .38, y + s * .85), (x + s, y + s * .1)], fill=col, width=w, joint="curve")
 
 # ---------------------------------------------------------------- options shuffling
-_NUM = re.compile(r"^[−\-]?\d+([.,/]\d+)?\s*°?$")
+_NUM = re.compile(r"^[−\-]?\d+([.,/]\d+)*\s*(°|km/s)?$")
+
+def _numval(o: str):
+    t = o.strip().replace("−", "-").replace("°", "").replace("km/s", "").strip()
+    if "/" in t:
+        a, b = t.split("/"); return float(a) / float(b)
+    if t.count(".") >= 1 and "," not in t and len(t.split(".")[-1]) == 3:
+        t = t.replace(".", "")            # 300.000 -> 300000
+    return float(t.replace(",", "."))
+
 def prepared_options(item: dict, key_q: dict | None = None):
-    """Return (options, answer_index). Non-numeric option lists are shuffled with a
-    deterministic seed (content id) so correct answers are spread across A–E."""
+    """Return (options, answer_index). Numeric options are sorted ascending (ÖSYM style);
+    other option lists are shuffled with a deterministic seed so answers spread across A–E."""
     q = key_q or item
     opts, ans = list(q["options"]), q["answer"]
     if all(_NUM.match(o.strip()) for o in opts):
-        return opts, ans
+        try:
+            order = sorted(range(len(opts)), key=lambda i: _numval(opts[i]))
+            return [opts[i] for i in order], order.index(ans)
+        except ValueError:
+            return opts, ans
     rnd = random.Random(item["id"])
     order = list(range(len(opts))); rnd.shuffle(order)
     return [opts[i] for i in order], order.index(ans)
