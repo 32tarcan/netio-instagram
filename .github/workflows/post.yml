@@ -1,0 +1,102 @@
+name: Instagram paylaşımı
+
+# Cron'lar UTC'dir. Her iş, paylaşım saatinden ~20 dk önce başlar; medyayı üretir,
+# GitHub Pages'e yükler ve TR saatiyle tam zamanında Instagram'a gönderir.
+#   Hikâye 1 10:00 TR | Öğle 12:00 TR | Hikâye 2 14:00 TR
+#   İkindi 16:00 TR   | Hikâye 3 19:00 TR | Hikâye 4 21:30 TR
+on:
+  schedule:
+    - cron: "40 6 * * *"    # story1
+    - cron: "40 8 * * *"    # noon
+    - cron: "40 10 * * *"   # story2
+    - cron: "40 12 * * *"   # afternoon
+    - cron: "40 15 * * *"   # story3
+    - cron: "10 18 * * *"   # story4
+  workflow_dispatch:
+    inputs:
+      slot:
+        description: "Slot"
+        type: choice
+        options: [story1, noon, story2, afternoon, story3, story4]
+        default: noon
+      dry_run:
+        description: "Sadece dene (Instagram'a gönderme)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: netio-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Slotu belirle
+        id: slot
+        run: |
+          case "${{ github.event.schedule }}" in
+            "40 6 * * *")  S=story1 ;;
+            "40 8 * * *")  S=noon ;;
+            "40 10 * * *") S=story2 ;;
+            "40 12 * * *") S=afternoon ;;
+            "40 15 * * *") S=story3 ;;
+            "10 18 * * *") S=story4 ;;
+            *) S="${{ inputs.slot }}" ;;
+          esac
+          echo "slot=$S" >> "$GITHUB_OUTPUT"
+          echo "Slot: $S"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Bağımlılıklar
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -r requirements.txt
+
+      - name: Medyayı üret
+        run: python -m netio.main prepare --slot "${{ steps.slot.outputs.slot }}"
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - name: GitHub Pages'e yükle
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Instagram'a paylaş
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          PAGES_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          DRY=""
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then DRY="--dry-run --no-wait"; fi
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -z "$DRY" ]; then DRY="--no-wait"; fi
+          python -m netio.main publish --slot "${{ steps.slot.outputs.slot }}" $DRY
+
+      - name: Durumu kaydet
+        if: success()
+        run: |
+          git config user.name "netio-bot"
+          git config user.email "netio-bot@users.noreply.github.com"
+          git add state/state.json || true
+          if ! git diff --cached --quiet; then
+            git commit -m "state: ${{ steps.slot.outputs.slot }} $(date -u +%F)"
+            for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
+          fi

@@ -1,0 +1,27 @@
+name: Instagram token yenile
+
+# Instagram Login token'ları 60 gün geçerlidir. Her pazartesi yenilenir ve
+# IG_ACCESS_TOKEN secret'ı otomatik güncellenir (GH_PAT secret'ı gerekir).
+on:
+  schedule:
+    - cron: "15 3 * * 1"
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Yenile ve kaydet
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+          NEW_TOKEN_FILE: ${{ runner.temp }}/tok
+        run: |
+          python -m netio.main refresh-token
+          gh secret set IG_ACCESS_TOKEN --repo "$GITHUB_REPOSITORY" < "$NEW_TOKEN_FILE"
+          rm -f "$NEW_TOKEN_FILE"

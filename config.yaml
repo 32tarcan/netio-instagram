@@ -1,0 +1,68 @@
+# ---------------------------------------------------------------
+#  Netio Instagram otomatik içerik pipeline'ı — ayarlar
+#  Saatler Türkiye saatidir (Europe/Istanbul, UTC+3).
+#  GitHub Actions cron'ları UTC çalışır; .github/workflows/post.yml
+#  içindeki saatler bu tabloyla eşleşir (TR saati - 3).
+# ---------------------------------------------------------------
+
+brand:
+  app_name: "Netio"
+  # Instagram kullanıcı adın (başında @ olmadan). Kurulumda doldurulacak.
+  instagram_handle: "netio.app"
+  # Gönderilerdeki çağrı cümlesi. Uygulama yayınlanınca değiştir:
+  #   ör. "Netio şimdi App Store'da! Linki profilde."
+  cta: "Erken erişim için takip et!"
+  cta_short: "Takip et"
+
+# Gün aşırı düzen (gün sırasına göre):
+#   Çift günler: 12:00 kaydırmalı post, 16:00 video
+#   Tek günler : 12:00 video,          16:00 kaydırmalı post
+schedule:
+  timezone: "Europe/Istanbul"
+  slots:
+    noon: "12:00"
+    afternoon: "16:00"
+  stories: ["10:00", "14:00", "19:00", "21:30"]
+  # Her pazar 16:00'daki video yerine marka reklamı (assets/ads) paylaşılır.
+  weekly_ad_weekday: 6        # 0=Pazartesi ... 6=Pazar
+  start_date: "2026-10-16"    # içerik bankasının 1. günü
+
+# YKS tarihi açıklanınca doldur (YYYY-AA-GG). Doluysa hikâyelerde geri sayım çıkar.
+exam_date: null
+
+hashtags:
+  base: ["#yks", "#tyt", "#ayt", "#yks2027", "#netio", "#sınav", "#üniversite", "#dersçalış"]
+  per_subject:
+    Matematik: ["#tytmatematik", "#matematik"]
+    Geometri: ["#geometri", "#tytgeometri"]
+    Fizik: ["#fizik", "#aytfizik"]
+    Kimya: ["#kimya", "#tytkimya"]
+    Biyoloji: ["#biyoloji", "#tytbiyoloji"]
+    Türkçe: ["#tytturkce", "#paragraf"]
+    Edebiyat: ["#edebiyat", "#aytedebiyat"]
+    Tarih: ["#tarih", "#tyttarih"]
+    Coğrafya: ["#coğrafya", "#tytcoğrafya"]
+    Felsefe: ["#felsefe", "#tytfelsefe"]
+
+instagram:
+  # "instagram"  -> Instagram Login (graph.instagram.com)  [önerilen, en basit kurulum]
+  # "facebook"   -> Facebook Login for Business (graph.facebook.com)
+  login_type: "instagram"
+  api_version: "v25.0"
+
+storage:
+  # Medya dosyaları GitHub Pages'te yayınlanır (Instagram herkese açık URL ister).
+  provider: "github_pages"
+  # Örn: https://kullaniciadi.github.io/netio-pipeline  — kurulumda otomatik bulunur,
+  # gerekirse elle yaz.
+  public_base_url: null
+
+content:
+  # İçerik bankası azaldığında Claude API ile yeni içerik üretilsin mi?
+  # ANTHROPIC_API_KEY secret'ı tanımlıysa ve true ise haftalık çalışır.
+  auto_generate: true
+  min_days_left: 7            # bu kadar günden az içerik kalınca üret
+  generate_days: 14           # her seferde kaç günlük üretilsin
+  model: "claude-sonnet-5-5"
+  # Banka biterse ve üretim kapalıysa eski içerikler sırayla yeniden kullanılır.
+  recycle_when_empty: true

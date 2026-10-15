@@ -1,0 +1,198 @@
+[
+  {
+    "id": "c001", "exam": "TYT", "subject": "Matematik",
+    "title": "Üslü Sayılarda 5 Altın Kural",
+    "hook": "Bu 5 kuralı bilen üslü sayı sorusunu kaçırmaz.",
+    "slides": [
+      {"h": "Çarpma: üsler toplanır", "formula": "aᵐ · aⁿ = aᵐ⁺ⁿ", "body": ["Tabanlar aynıysa üsleri topla.", "Örnek: 2³ · 2⁴ = 2⁷"]},
+      {"h": "Bölme: üsler çıkarılır", "formula": "aᵐ ÷ aⁿ = aᵐ⁻ⁿ", "body": ["a ≠ 0 olmak şartıyla.", "Örnek: 5⁶ ÷ 5² = 5⁴"]},
+      {"h": "Üssün üssü: çarpılır", "formula": "(aᵐ)ⁿ = aᵐ·ⁿ", "body": ["Örnek: (3²)³ = 3⁶"]},
+      {"h": "Sıfır ve negatif üs", "formula": "a⁰ = 1   ·   a⁻ⁿ = 1 / aⁿ", "body": ["a ≠ 0 için geçerli.", "Örnek: 2⁻³ = 1/8"]},
+      {"h": "Negatif tabana dikkat!", "body": ["Çift üs → sonuç pozitif: (−2)⁴ = 16", "Tek üs → sonuç negatif: (−2)³ = −8", "−2² = −4 ama (−2)² = 4"]}
+    ],
+    "quiz": {"q": "2⁵ · 4² ÷ 8² işleminin sonucu kaçtır?", "options": ["4", "8", "16", "32", "64"], "answer": 1,
+             "explain": "Hepsini 2 tabanına çevir: 2⁵ · 2⁴ ÷ 2⁶ = 2³ = 8"}
+  },
+  {
+    "id": "c002", "exam": "TYT", "subject": "Türkçe",
+    "title": "Paragrafta Ana Düşünceyi 30 Saniyede Bul",
+    "hook": "Paragraf sorularında zaman kaybetmeyi bırak.",
+    "slides": [
+      {"h": "Ana düşünce nedir?", "body": ["Yazarın okura asıl vermek istediği mesajdır.", "Paragrafın tamamını kapsar, tek bir cümleyi değil."]},
+      {"h": "Önce soru kökünü oku", "body": ["Ne arandığını bilerek okursan paragrafı iki kez okumazsın."]},
+      {"h": "Giriş ve sonuç cümlelerine bak", "body": ["Ana düşünce çoğu zaman ilk ya da son cümlede saklıdır."]},
+      {"h": "\"Ama, fakat, ancak\" sinyali", "body": ["Karşıtlık bağlacından sonra genellikle yazarın asıl görüşü gelir."]},
+      {"h": "Yardımcı düşünce tuzağı", "body": ["Sadece bir örneği ya da ayrıntıyı anlatan seçenek ana düşünce değildir.", "Paragrafın bütününü özetleyen seçeneği seç."]}
+    ],
+    "quiz": {"q": "Paragrafta yazarın asıl görüşünü çoğunlukla hangi sözcük haber verir?", "options": ["Örneğin", "Ancak", "Mesela", "Ayrıca", "Bir de"], "answer": 1,
+             "explain": "\"Ancak\" karşıtlık bildirir; ondan sonra genellikle yazarın asıl düşüncesi gelir."}
+  },
+  {
+    "id": "c003", "exam": "TYT", "subject": "Biyoloji",
+    "title": "Hücre Organelleri: Tek Sayfada Özet",
+    "hook": "Organelleri karıştırıyorsan bu post tam sana göre.",
+    "slides": [
+      {"h": "Mitokondri", "body": ["Oksijenli solunumla ATP üretir.", "Kendi DNA'sı ve ribozomu vardır."]},
+      {"h": "Ribozom", "body": ["Protein sentezinin yapıldığı yerdir.", "Zarsızdır; prokaryot dahil tüm hücrelerde bulunur."]},
+      {"h": "Kloroplast", "body": ["Fotosentezin gerçekleştiği organeldir.", "Bitkilerde ve bazı protistlerde bulunur; kendi DNA'sı vardır."]},
+      {"h": "Golgi ve Endoplazmik Retikulum", "body": ["Golgi: salgıları paketler ve depolar.", "ER: hücre içi madde taşınmasını sağlar; granüllü ER ribozom taşır."]},
+      {"h": "Lizozom ve Sentrozom", "body": ["Lizozom: hücre içi sindirim, özellikle hayvan hücrelerinde.", "Sentrozom: hücre bölünmesinde iğ ipliklerini oluşturur; zarsızdır."]}
+    ],
+    "quiz": {"q": "Hem bitki hem hayvan hücresinde bulunan ve kendi DNA'sına sahip organel hangisidir?", "options": ["Kloroplast", "Mitokondri", "Sentrozom", "Lizozom", "Hücre duvarı"], "answer": 1,
+             "explain": "Mitokondri her iki hücrede de bulunur ve kendi DNA'sına sahiptir."}
+  },
+  {
+    "id": "c004", "exam": "TYT", "subject": "Fizik",
+    "title": "Newton'un 3 Hareket Yasası",
+    "hook": "Dinamik sorularının temeli bu 3 yasa.",
+    "slides": [
+      {"h": "1. Eylemsizlik yasası", "body": ["Net kuvvet sıfırsa cisim ya durur ya da sabit hızla gitmeye devam eder."]},
+      {"h": "2. Dinamiğin temel prensibi", "formula": "F(net) = m · a", "body": ["Net kuvvet büyüdükçe ivme artar, kütle büyüdükçe azalır."]},
+      {"h": "3. Etki–tepki yasası", "body": ["Kuvvetler eşit büyüklükte ve zıt yönlüdür.", "Farklı cisimlere etki ettikleri için birbirini dengelemezler."]},
+      {"h": "Birimler", "formula": "1 N = 1 kg · m/s²", "body": ["Kuvvet Newton (N), kütle kg, ivme m/s²."]},
+      {"h": "Sık yapılan hata", "body": ["\"Etki ve tepki birbirini sıfırlar\" yanlıştır.", "Denge için kuvvetlerin aynı cisme etki etmesi gerekir."]}
+    ],
+    "quiz": {"q": "4 kg kütleli cisme 20 N net kuvvet uygulanıyor. Cismin ivmesi kaç m/s²'dir?", "options": ["2", "4", "5", "8", "80"], "answer": 2,
+             "explain": "a = F ÷ m = 20 ÷ 4 = 5 m/s²"}
+  },
+  {
+    "id": "c005", "exam": "TYT", "subject": "Tarih",
+    "title": "Kongreler ve Genelgeler: Kim, Ne Zaman, Ne Yaptı?",
+    "hook": "Kurtuluş Savaşı hazırlık dönemini 5 slaytta bitir.",
+    "slides": [
+      {"h": "Amasya Genelgesi (22 Haziran 1919)", "body": ["\"Milletin bağımsızlığını yine milletin azim ve kararı kurtaracaktır.\"", "Millî egemenlik vurgusu yapıldı, Sivas'ta kongre kararı alındı."]},
+      {"h": "Erzurum Kongresi (Temmuz–Ağustos 1919)", "body": ["Toplanış bakımından bölgesel, kararları bakımından ulusaldır.", "Manda ve himaye ilk kez reddedildi."]},
+      {"h": "Sivas Kongresi (Eylül 1919)", "body": ["Toplanış ve kararlar bakımından ulusaldır.", "Cemiyetler \"Anadolu ve Rumeli Müdafaa-i Hukuk Cemiyeti\" adıyla birleşti."]},
+      {"h": "Temsil Heyeti", "body": ["Sivas Kongresi'nden sonra tüm yurdu temsil eden yürütme gücü oldu."]},
+      {"h": "Amasya Görüşmeleri (Ekim 1919)", "body": ["İstanbul Hükümeti Temsil Heyeti'ni resmen muhatap aldı."]}
+    ],
+    "quiz": {"q": "Cemiyetlerin tek çatı altında birleştirildiği kongre hangisidir?", "options": ["Erzurum Kongresi", "Sivas Kongresi", "Balıkesir Kongresi", "Alaşehir Kongresi", "Amasya Görüşmeleri"], "answer": 1,
+             "explain": "Sivas Kongresi'nde cemiyetler Anadolu ve Rumeli Müdafaa-i Hukuk Cemiyeti adıyla birleştirildi."}
+  },
+  {
+    "id": "c006", "exam": "TYT", "subject": "Kimya",
+    "title": "Periyodik Tabloda Özellikler Nasıl Değişir?",
+    "hook": "Ok yönlerini ezberle, soruyu 10 saniyede çöz.",
+    "slides": [
+      {"h": "Periyotta soldan sağa →", "body": ["Atom yarıçapı azalır.", "İyonlaşma enerjisi ve elektronegatiflik genel olarak artar.", "Metalik özellik azalır."]},
+      {"h": "Grupta yukarıdan aşağıya ↓", "body": ["Atom yarıçapı artar.", "İyonlaşma enerjisi ve elektronegatiflik azalır.", "Metalik özellik artar."]},
+      {"h": "En elektronegatif element", "body": ["Flor (F). Tablonun sağ üst köşesine yakındır."]},
+      {"h": "Soygazlar (8A)", "body": ["Kararlıdırlar.", "İyonlaşma enerjileri kendi periyotlarında en yüksektir."]},
+      {"h": "İstisnaları unutma", "body": ["İyonlaşma enerjisinde 2A > 3A ve 5A > 6A'dır."]}
+    ],
+    "quiz": {"q": "Aynı periyotta soldan sağa gidildikçe hangisi azalır?", "options": ["Elektronegatiflik", "İyonlaşma enerjisi", "Atom yarıçapı", "Ametalik özellik", "Proton sayısı"], "answer": 2,
+             "explain": "Proton sayısı artınca çekim artar, atom yarıçapı küçülür."}
+  },
+  {
+    "id": "c007", "exam": "AYT", "subject": "Matematik",
+    "title": "Türev Kuralları Cep Kartı",
+    "hook": "AYT'de türev sorusunu kaçırma.",
+    "slides": [
+      {"h": "Temel kurallar", "formula": "(c)′ = 0   ·   (xⁿ)′ = n · xⁿ⁻¹", "body": ["Sabitin türevi sıfırdır."]},
+      {"h": "Toplam ve fark", "formula": "(f ± g)′ = f′ ± g′", "body": ["Her terimin türevini ayrı ayrı al."]},
+      {"h": "Çarpım kuralı", "formula": "(f · g)′ = f′g + fg′", "body": ["\"Birincinin türevi çarpı ikinci, artı birinci çarpı ikincinin türevi\""]},
+      {"h": "Bölüm kuralı", "formula": "(f / g)′ = (f′g − fg′) / g²", "body": ["Paydaki sıraya dikkat: önce f′g."]},
+      {"h": "Zincir kuralı", "formula": "[f(g(x))]′ = f′(g(x)) · g′(x)", "body": ["Dıştakinin türevi çarpı içtekinin türevi."]}
+    ],
+    "quiz": {"q": "f(x) = (2x + 1)³ ise f′(0) kaçtır?", "options": ["2", "3", "6", "9", "12"], "answer": 2,
+             "explain": "f′(x) = 3(2x + 1)² · 2 → f′(0) = 3 · 1 · 2 = 6"}
+  },
+  {
+    "id": "c008", "exam": "TYT", "subject": "Coğrafya",
+    "title": "Türkiye'nin İklim Tipleri",
+    "hook": "Bitki örtüsünü görünce iklimi tanı.",
+    "slides": [
+      {"h": "Akdeniz iklimi", "body": ["Yazlar sıcak ve kurak, kışlar ılık ve yağışlı.", "Bitki örtüsü: maki. En çok yağış kışın düşer."]},
+      {"h": "Karadeniz iklimi", "body": ["Her mevsim yağışlıdır; en çok yağış sonbaharda düşer.", "Bitki örtüsü: orman."]},
+      {"h": "Karasal iklim", "body": ["Yazlar sıcak ve kurak, kışlar soğuk ve kar yağışlı.", "Bitki örtüsü: bozkır (step). İç Anadolu'da en çok yağış ilkbaharda düşer."]},
+      {"h": "Marmara (geçiş) iklimi", "body": ["Akdeniz, Karadeniz ve karasal iklim arasında geçiş özelliği taşır.", "Maki, orman ve bozkır bir arada görülür."]},
+      {"h": "Kısa yol", "body": ["Maki → Akdeniz", "Orman → Karadeniz", "Bozkır → Karasal"]}
+    ],
+    "quiz": {"q": "Her mevsim yağışlı olan iklim tipi hangisidir?", "options": ["Akdeniz", "Karasal", "Karadeniz", "Marmara", "Çöl"], "answer": 2,
+             "explain": "Karadeniz iklimi her mevsim yağış alır; en çok yağış sonbahardadır."}
+  },
+  {
+    "id": "c009", "exam": "TYT", "subject": "Geometri",
+    "title": "Üçgende Açı: 5 Temel Kural",
+    "hook": "Geometriye buradan başla.",
+    "slides": [
+      {"h": "İç açılar toplamı", "formula": "a + b + c = 180°", "body": []},
+      {"h": "Dış açılar toplamı", "formula": "360°", "body": ["Her köşeden birer dış açı alınır."]},
+      {"h": "Dış açı kuralı", "body": ["Bir dış açı, kendisine komşu olmayan iki iç açının toplamına eşittir."]},
+      {"h": "Kenar–açı ilişkisi", "body": ["Büyük kenarın karşısında büyük açı bulunur."]},
+      {"h": "Özel üçgenler", "body": ["İkizkenar: eşit kenarların karşısındaki açılar eşittir.", "Eşkenar: her açı 60°'dir."]}
+    ],
+    "quiz": {"q": "Bir üçgenin iki iç açısı 50° ve 70°'dir. Üçüncü açının dış açısı kaç derecedir?", "options": ["60", "110", "120", "130", "150"], "answer": 2,
+             "explain": "Dış açı, komşu olmayan iki iç açının toplamıdır: 50 + 70 = 120°"}
+  },
+  {
+    "id": "c010", "exam": "AYT", "subject": "Edebiyat",
+    "title": "Tanzimat 1. Dönem: Kim Neyi İlk Yaptı?",
+    "hook": "\"İlk\"leri karıştırana son!",
+    "slides": [
+      {"h": "Şinasi", "body": ["Şair Evlenmek: ilk yerli tiyatro eseri.", "Tercüman-ı Ahval (Agâh Efendi ile): ilk özel gazete."]},
+      {"h": "Namık Kemal", "body": ["İntibah: ilk edebî roman.", "Cezmi: ilk tarihî roman.", "Vatan yahut Silistre: tiyatro."]},
+      {"h": "Ziya Paşa", "body": ["Terkib-i Bend ve Terci-i Bend.", "Harabat: divan şiiri antolojisi."]},
+      {"h": "Ahmet Mithat Efendi", "body": ["Letaif-i Rivayat: ilk hikâye denemeleri.", "Felatun Bey ile Rakım Efendi."]},
+      {"h": "Şemsettin Sami", "body": ["Taaşşuk-ı Talat ve Fitnat: ilk yerli roman."]}
+    ],
+    "quiz": {"q": "Türk edebiyatında ilk edebî roman kabul edilen eser hangisidir?", "options": ["Taaşşuk-ı Talat ve Fitnat", "İntibah", "Cezmi", "Şair Evlenmek", "Felatun Bey ile Rakım Efendi"], "answer": 1,
+             "explain": "Namık Kemal'in İntibah'ı ilk edebî romandır. İlk yerli roman ise Taaşşuk-ı Talat ve Fitnat'tır."}
+  },
+  {
+    "id": "c011", "exam": "TYT", "subject": "Felsefe",
+    "title": "Bilgi Felsefesi Akımları",
+    "hook": "Akım–filozof eşleştirmesi en sık sorulanlardan.",
+    "slides": [
+      {"h": "Rasyonalizm (akılcılık)", "body": ["Doğru bilginin kaynağı akıldır.", "Descartes, Platon, Leibniz, Spinoza."]},
+      {"h": "Empirizm (deneycilik)", "body": ["Bilginin kaynağı deneydir; zihin doğuşta boş bir levhadır (tabula rasa).", "John Locke, David Hume."]},
+      {"h": "Kritisizm (eleştirel felsefe)", "body": ["Bilgi, akıl ve deneyin birlikte çalışmasıyla oluşur.", "Immanuel Kant."]},
+      {"h": "Septisizm (şüphecilik)", "body": ["Kesin bilgiye ulaşmak mümkün değildir.", "Pyrrhon, Gorgias."]},
+      {"h": "Pozitivizm ve sezgicilik", "body": ["Pozitivizm: olgulara dayanan bilimsel bilgi (Auguste Comte).", "Sezgicilik: kesin bilgi sezgiyle elde edilir (Bergson, Gazali)."]}
+    ],
+    "quiz": {"q": "\"Tabula rasa\" kavramı hangi filozof ve akımla eşleşir?", "options": ["Descartes – Rasyonalizm", "Locke – Empirizm", "Kant – Kritisizm", "Bergson – Sezgicilik", "Comte – Pozitivizm"], "answer": 1,
+             "explain": "Locke'a göre zihin doğuşta boş bir levhadır; bilgi deneyle yazılır."}
+  },
+  {
+    "id": "c012", "exam": "TYT", "subject": "Türkçe",
+    "title": "\"de\", \"ki\", \"mi\" Nasıl Yazılır?",
+    "hook": "Yazım sorularının en sevdiği 3 tuzak.",
+    "slides": [
+      {"h": "Bağlaç \"de/da\" ayrı yazılır", "body": ["\"Ben de geleceğim.\"", "Çıkarınca cümle bozulmaz, sadece anlam daralır."]},
+      {"h": "Bulunma eki \"-de/-da\" bitişik", "body": ["\"Evde kaldım.\" \"Okulda gördüm.\"", "Bağlaç olan \"de\" asla \"te/ta\" olmaz."]},
+      {"h": "Bağlaç \"ki\" ayrı, sıfat yapan \"-ki\" bitişik", "body": ["\"Duydum ki gitmişsin.\" → ayrı", "\"evdeki\", \"yarınki\" → bitişik"]},
+      {"h": "Kalıplaşmış bitişik \"ki\"ler", "body": ["belki, sanki, oysaki, hâlbuki, mademki, çünkü"]},
+      {"h": "Soru eki \"mi\" her zaman ayrı", "body": ["\"Geldin mi?\" \"Gelecek misin?\"", "Kendinden sonraki ekler \"mi\"ye bitişir."]}
+    ],
+    "quiz": {"q": "Hangisinde yazım yanlışı vardır?", "options": ["Sen de bizimle gel.", "Okuldaki öğretmen geldi.", "Bu kitabı okudunmu?", "Belki yarın gelirim.", "Duydum ki sınav ertelenmiş."], "answer": 2,
+             "explain": "Soru eki ayrı yazılır: \"okudun mu?\""}
+  },
+  {
+    "id": "c013", "exam": "TYT", "subject": "Matematik",
+    "title": "Yaş Problemlerinin Püf Noktaları",
+    "hook": "Yaş problemleri artık bedava puan.",
+    "slides": [
+      {"h": "Yaş farkı hiç değişmez", "body": ["Anne ile kızı arasındaki fark bugün ne ise 20 yıl sonra da odur."]},
+      {"h": "n yıl sonra", "body": ["Her kişinin yaşı n artar.", "k kişinin yaşları toplamı k · n artar."]},
+      {"h": "n yıl önce", "body": ["Her kişinin yaşından n çıkar.", "Toplamdan (kişi sayısı × n) çıkar."]},
+      {"h": "Değişkeni bugüne ver", "body": ["Kat ilişkisi varsa: anne = 3x, kız = x gibi.", "Sonra geçmiş ve gelecek yaşlarını yaz."]},
+      {"h": "Mutlaka kontrol et", "body": ["Bulduğun yaşları soruya geri koy; mantıksız bir sonuç çıkıyorsa denklemi tekrar kur."]}
+    ],
+    "quiz": {"q": "Annenin yaşı kızının yaşının 3 katıdır. 10 yıl sonra annenin yaşı kızının yaşının 2 katı olacaktır. Kızın bugünkü yaşı kaçtır?", "options": ["5", "8", "10", "12", "15"], "answer": 2,
+             "explain": "3x + 10 = 2(x + 10) → x = 10"}
+  },
+  {
+    "id": "c014", "exam": "AYT", "subject": "Biyoloji",
+    "title": "Mendel Genetiği: Temel Kavramlar",
+    "hook": "Kalıtım sorularının alfabesi.",
+    "slides": [
+      {"h": "Gen ve alel", "body": ["Gen: bir karakteri belirleyen DNA parçası.", "Alel: aynı karakterin farklı formları (A ve a)."]},
+      {"h": "Homozigot ve heterozigot", "body": ["Homozigot: aynı aleller (AA ya da aa).", "Heterozigot: farklı aleller (Aa)."]},
+      {"h": "Baskın ve çekinik", "body": ["Baskın alel çekinik alelin etkisini örter.", "Aa bireyin fenotipi baskın özelliği gösterir."]},
+      {"h": "Aa × Aa çaprazlaması", "body": ["Genotip oranı → 1 AA : 2 Aa : 1 aa", "Fenotip oranı → 3 baskın : 1 çekinik"]},
+      {"h": "Test çaprazlaması", "body": ["Fenotipi baskın bireyin genotipini bulmak için homozigot çekinik (aa) bireyle çaprazlanır."]}
+    ],
+    "quiz": {"q": "Aa × aa çaprazlamasında çekinik fenotipli birey oluşma olasılığı kaçtır?", "options": ["0", "1/4", "1/2", "3/4", "1"], "answer": 2,
+             "explain": "Yavruların yarısı Aa, yarısı aa olur; aa bireyler çekinik fenotiplidir: 1/2"}
+  }
+]

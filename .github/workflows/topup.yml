@@ -1,0 +1,38 @@
+name: İçerik bankasını doldur
+
+# İçerik 7 günden azsa Claude API ile 14 günlük yeni içerik üretir ve doğrular.
+# ANTHROPIC_API_KEY secret'ı yoksa hiçbir şey yapmaz.
+on:
+  schedule:
+    - cron: "0 2 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: netio-post
+  cancel-in-progress: false
+
+jobs:
+  topup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Üret
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m netio.main topup
+      - name: Kaydet
+        run: |
+          git config user.name "netio-bot"
+          git config user.email "netio-bot@users.noreply.github.com"
+          git add content/
+          if ! git diff --cached --quiet; then
+            git commit -m "content: otomatik içerik eklendi"
+            for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
+          fi
