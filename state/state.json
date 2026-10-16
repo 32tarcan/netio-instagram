@@ -1,1 +1,20 @@
-{"pointers": {"carousel": 0, "video": 0, "story": 0, "ad": 0}, "last_story": null, "posted": {}, "log": []}
+{
+  "pointers": {
+    "carousel": 1,
+    "video": 0,
+    "story": 0,
+    "ad": 0
+  },
+  "last_story": null,
+  "posted": {
+    "2026-10-16": {
+      "noon": {
+        "kind": "carousel",
+        "item": "c001",
+        "media_id": "17954196105277531",
+        "at": "2026-10-16T11:58:19+03:00"
+      }
+    }
+  },
+  "log": []
+}
