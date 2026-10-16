@@ -233,4 +233,14 @@ def main(argv=None):
         topup(days_left(load_state()))
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except SystemExit as e:
+        if e.code not in (0, None):
+            print(f"::error title=netio::{str(e.code)[:900]}")
+        raise
+    except Exception as e:  # surface the reason as a GitHub annotation
+        import traceback
+        tb = traceback.format_exc().strip().splitlines()[-6:]
+        print(f"::error title=netio::{type(e).__name__}: {str(e)[:700]} | " + " / ".join(tb)[:900])
+        raise
