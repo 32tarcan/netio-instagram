@@ -146,7 +146,7 @@ def publish(slot: str, date: dt.date, base_url: str, dry_run=False, wait_until=T
     if wait_until:
         target = slot_time(date, slot)
         secs = (target - now_local()).total_seconds()
-        if 0 < secs < 3600:
+        if 0 < secs < 3 * 3600:
             print(f"Paylaşım saatine {int(secs)} sn var, bekleniyor…"); time.sleep(secs)
     ig = Instagram(dry_run=dry_run)
     if m["kind"] == "carousel": mid = ig.post_carousel(urls, m["caption"])

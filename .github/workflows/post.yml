@@ -1,17 +1,18 @@
 name: Instagram paylaşımı
 
-# Cron'lar UTC'dir. Her iş, paylaşım saatinden ~20 dk önce başlar; medyayı üretir,
+# Cron'lar UTC'dir. Her iş, paylaşım saatinden ~75 dk önce başlar (GitHub zamanlayıcısı
+# yoğunlukta 1 saate kadar gecikebiliyor); medyayı üretir,
 # GitHub Pages'e yükler ve TR saatiyle tam zamanında Instagram'a gönderir.
 #   Hikâye 1 10:00 TR | Öğle 12:00 TR | Hikâye 2 14:00 TR
 #   İkindi 16:00 TR   | Hikâye 3 19:00 TR | Hikâye 4 21:30 TR
 on:
   schedule:
-    - cron: "40 6 * * *"    # story1
-    - cron: "40 8 * * *"    # noon
-    - cron: "40 10 * * *"   # story2
-    - cron: "40 12 * * *"   # afternoon
-    - cron: "40 15 * * *"   # story3
-    - cron: "10 18 * * *"   # story4
+    - cron: "45 5 * * *"    # story1
+    - cron: "45 7 * * *"    # noon
+    - cron: "45 9 * * *"   # story2
+    - cron: "45 11 * * *"   # afternoon
+    - cron: "45 14 * * *"   # story3
+    - cron: "15 17 * * *"   # story4
   workflow_dispatch:
     inputs:
       slot:
@@ -36,7 +37,7 @@ concurrency:
 jobs:
   post:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 170
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -47,12 +48,12 @@ jobs:
         id: slot
         run: |
           case "${{ github.event.schedule }}" in
-            "40 6 * * *")  S=story1 ;;
-            "40 8 * * *")  S=noon ;;
-            "40 10 * * *") S=story2 ;;
-            "40 12 * * *") S=afternoon ;;
-            "40 15 * * *") S=story3 ;;
-            "10 18 * * *") S=story4 ;;
+            "45 5 * * *")  S=story1 ;;
+            "45 7 * * *")  S=noon ;;
+            "45 9 * * *") S=story2 ;;
+            "45 11 * * *") S=afternoon ;;
+            "45 14 * * *") S=story3 ;;
+            "15 17 * * *") S=story4 ;;
             *) S="${{ inputs.slot }}" ;;
           esac
           echo "slot=$S" >> "$GITHUB_OUTPUT"
