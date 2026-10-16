@@ -82,7 +82,7 @@ def auto_slot(now=None):
     best = None
     for s in SLOTS:
         delta = (slot_time(now.date(), s) - now).total_seconds() / 60
-        if -90 <= delta <= 40 and (best is None or abs(delta) < abs(best[1])):
+        if -120 <= delta <= 120 and (best is None or abs(delta) < abs(best[1])):
             best = (s, delta)
     if not best:
         raise SystemExit(f"Şu an ({now:%H:%M}) için planlı bir slot yok.")

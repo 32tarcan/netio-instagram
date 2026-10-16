@@ -56,6 +56,7 @@ jobs:
             "15 17 * * *") S=story4 ;;
             *) S="${{ inputs.slot }}" ;;
           esac
+          [ -z "$S" ] && S=auto
           echo "slot=$S" >> "$GITHUB_OUTPUT"
           echo "Slot: $S"
 
