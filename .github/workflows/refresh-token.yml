@@ -25,3 +25,5 @@ jobs:
           python -m netio.main refresh-token
           gh secret set IG_ACCESS_TOKEN --repo "$GITHUB_REPOSITORY" < "$NEW_TOKEN_FILE"
           rm -f "$NEW_TOKEN_FILE"
+
+# zamanlayıcı yeniden kaydı: 2026-10-16T09:06:56Z
