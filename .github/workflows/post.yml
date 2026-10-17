@@ -1,29 +1,24 @@
 name: Instagram paylaşımı
 
-# Cron'lar UTC'dir. Her iş, paylaşım saatinden ~75 dk önce başlar (GitHub zamanlayıcısı
-# yoğunlukta 1 saate kadar gecikebiliyor); medyayı üretir,
-# GitHub Pages'e yükler ve TR saatiyle tam zamanında Instagram'a gönderir.
-#   Hikâye 1 10:00 TR | Öğle 12:00 TR | Hikâye 2 14:00 TR
-#   İkindi 16:00 TR   | Hikâye 3 19:00 TR | Hikâye 4 21:30 TR
+# GitHub'ın zamanlayıcısı bazen saatlerce gecikiyor ya da bazı çalışmaları atlıyor.
+# Bu yüzden iş her 10 dakikada bir uyanır ve sadece "şu an zamanı gelmiş ya da kaçmış
+# paylaşım var mı?" diye bakar (netio/due.py). Yoksa birkaç saniyede kapanır.
+# Varsa medyayı üretir, GitHub Pages'e yükler ve paylaşım saatini bekleyip gönderir.
+# Kaçan bir paylaşım 5 saate kadar geç de olsa gönderilir; aynı slot iki kez paylaşılmaz.
 on:
   schedule:
-    - cron: "45 5 * * *"    # story1
-    - cron: "45 7 * * *"    # noon
-    - cron: "45 9 * * *"   # story2
-    - cron: "45 11 * * *"   # afternoon
-    - cron: "45 14 * * *"   # story3
-    - cron: "15 17 * * *"   # story4
+    - cron: "*/10 * * * *"
   workflow_dispatch:
     inputs:
       slot:
-        description: "Slot"
+        description: "Slot (auto = zamanı gelen)"
         type: choice
-        options: [story1, noon, story2, afternoon, story3, story4]
-        default: noon
+        options: [auto, story1, noon, story2, afternoon, story3, story4]
+        default: auto
       dry_run:
         description: "Sadece dene (Instagram'a gönderme)"
         type: boolean
-        default: true
+        default: false
 
 permissions:
   contents: write
@@ -35,30 +30,33 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  post:
+  check:
     runs-on: ubuntu-latest
-    timeout-minutes: 170
+    timeout-minutes: 5
+    outputs:
+      slot: ${{ steps.due.outputs.slot }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Zamanı gelen paylaşım var mı?
+        id: due
+        run: |
+          S="${{ inputs.slot }}"
+          if [ -z "$S" ] || [ "$S" = "auto" ]; then S=$(python3 -m netio.due); fi
+          echo "slot=$S" >> "$GITHUB_OUTPUT"
+          if [ -n "$S" ]; then echo "Paylaşılacak: $S"; else echo "Şu an paylaşılacak bir şey yok."; fi
+
+  post:
+    needs: check
+    if: needs.check.outputs.slot != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      SLOT: ${{ needs.check.outputs.slot }}
     steps:
       - uses: actions/checkout@v4
-
-      - name: Slotu belirle
-        id: slot
-        run: |
-          case "${{ github.event.schedule }}" in
-            "45 5 * * *")  S=story1 ;;
-            "45 7 * * *")  S=noon ;;
-            "45 9 * * *") S=story2 ;;
-            "45 11 * * *") S=afternoon ;;
-            "45 14 * * *") S=story3 ;;
-            "15 17 * * *") S=story4 ;;
-            *) S="${{ inputs.slot }}" ;;
-          esac
-          [ -z "$S" ] && S=auto
-          echo "slot=$S" >> "$GITHUB_OUTPUT"
-          echo "Slot: $S"
 
       - uses: actions/setup-python@v5
         with:
@@ -69,13 +67,6 @@ jobs:
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
           pip install -r requirements.txt
-
-      - name: Slotu kesinleştir
-        run: |
-          S="${{ steps.slot.outputs.slot }}"
-          if [ "$S" = "auto" ]; then S=$(python -m netio.main slot); fi
-          echo "SLOT=$S" >> "$GITHUB_ENV"
-          echo "Slot: $S"
 
       - name: Medyayı üret
         run: python -m netio.main prepare --slot "$SLOT"
@@ -95,8 +86,7 @@ jobs:
           PAGES_URL: ${{ steps.deployment.outputs.page_url }}
         run: |
           DRY=""
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then DRY="--dry-run --no-wait"; fi
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -z "$DRY" ]; then DRY="--no-wait"; fi
+          if [ "${{ inputs.dry_run }}" = "true" ]; then DRY="--dry-run --no-wait"; fi
           python -m netio.main publish --slot "$SLOT" $DRY
 
       - name: Durumu kaydet
@@ -109,5 +99,3 @@ jobs:
             git commit -m "state: $SLOT $(date -u +%F)"
             for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
           fi
-
-# zamanlayıcı yeniden kaydı: 2026-10-16T09:06:56Z
