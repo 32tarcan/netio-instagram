@@ -2,23 +2,23 @@
   "pointers": {
     "carousel": 1,
     "video": 1,
-    "story": 2,
+    "story": 3,
     "ad": 0
   },
   "last_story": {
-    "id": "s002",
+    "id": "s003",
     "exam": "TYT",
-    "subject": "Biyoloji",
-    "q": "Kanda oksijen taşıyan protein hangisidir?",
+    "subject": "Türkçe",
+    "q": "Hangisi bir bağlaçtır?",
     "options": [
-      "İnsülin",
-      "Hemoglobin",
-      "Keratin",
-      "Pepsin",
-      "Kolajen"
+      "güzel",
+      "koşmak",
+      "ve",
+      "hızlıca",
+      "kitap"
     ],
-    "answer": 1,
-    "explain": "Hemoglobin alyuvarlarda oksijen taşır."
+    "answer": 2,
+    "explain": "\"ve\" sözcükleri ve cümleleri bağlar."
   },
   "posted": {
     "2026-10-16": {
@@ -45,6 +45,14 @@
         "item": "v001",
         "media_id": "17950190769318371",
         "at": "2026-10-16T15:57:13+03:00"
+      }
+    },
+    "2026-10-17": {
+      "story1": {
+        "kind": "story",
+        "item": "s003",
+        "media_id": "18098945363558959,18640239061021308",
+        "at": "2026-10-17T12:42:51+03:00"
       }
     }
   },
