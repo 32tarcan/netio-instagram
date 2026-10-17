@@ -2,23 +2,23 @@
   "pointers": {
     "carousel": 2,
     "video": 2,
-    "story": 5,
+    "story": 6,
     "ad": 0
   },
   "last_story": {
-    "id": "s005",
+    "id": "s006",
     "exam": "TYT",
-    "subject": "Fizik",
-    "q": "Hızın SI birimi hangisidir?",
+    "subject": "Kimya",
+    "q": "En elektronegatif element hangisidir?",
     "options": [
-      "m/s²",
-      "N",
-      "km/sa",
-      "m/s",
-      "J"
+      "Oksijen",
+      "Klor",
+      "Flor",
+      "Azot",
+      "Sodyum"
     ],
-    "answer": 3,
-    "explain": "Hız: metre bölü saniye (m/s)"
+    "answer": 2,
+    "explain": "Flor (F) en elektronegatif elementtir."
   },
   "posted": {
     "2026-10-16": {
@@ -77,6 +77,12 @@
         "item": "s005",
         "media_id": "17911704162519845,18113246444603482",
         "at": "2026-10-17T19:00:30+03:00"
+      },
+      "story4": {
+        "kind": "story",
+        "item": "s006",
+        "media_id": "18194078374399143,18103058690380611",
+        "at": "2026-10-17T21:30:32+03:00"
       }
     }
   },
