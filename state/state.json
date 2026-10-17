@@ -2,23 +2,23 @@
   "pointers": {
     "carousel": 2,
     "video": 2,
-    "story": 4,
+    "story": 5,
     "ad": 0
   },
   "last_story": {
-    "id": "s004",
+    "id": "s005",
     "exam": "TYT",
-    "subject": "Tarih",
-    "q": "Cumhuriyet hangi yıl ilan edildi?",
+    "subject": "Fizik",
+    "q": "Hızın SI birimi hangisidir?",
     "options": [
-      "1920",
-      "1922",
-      "1924",
-      "1923",
-      "1921"
+      "m/s²",
+      "N",
+      "km/sa",
+      "m/s",
+      "J"
     ],
     "answer": 3,
-    "explain": "29 Ekim 1923"
+    "explain": "Hız: metre bölü saniye (m/s)"
   },
   "posted": {
     "2026-10-16": {
@@ -71,6 +71,12 @@
         "item": "c002",
         "media_id": "18130827976768373",
         "at": "2026-10-17T16:00:44+03:00"
+      },
+      "story3": {
+        "kind": "story",
+        "item": "s005",
+        "media_id": "17911704162519845,18113246444603482",
+        "at": "2026-10-17T19:00:30+03:00"
       }
     }
   },
