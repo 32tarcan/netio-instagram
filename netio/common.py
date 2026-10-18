@@ -244,3 +244,14 @@ def prepared_options(item: dict, key_q: dict | None = None):
     return [opts[i] for i in order], order.index(ans)
 
 LETTERS = "ABCDE"
+
+def sticker_options(item: dict):
+    """4 options for an Instagram quiz sticker (max 4): the A–E set minus one distractor,
+    chosen deterministically, original order kept. Returns (options, answer_index)."""
+    opts, ans = prepared_options(item)
+    if len(opts) <= 4:
+        return opts, ans
+    wrong = [i for i in range(len(opts)) if i != ans]
+    drop = random.Random(item["id"] + "/sticker").choice(wrong)
+    keep = [i for i in range(len(opts)) if i != drop]
+    return [opts[i] for i in keep], keep.index(ans)

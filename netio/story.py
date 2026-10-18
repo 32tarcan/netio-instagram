@@ -9,7 +9,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw
 
 from .common import (GREEN, INK, LETTERS, NAVY, PINK, WHITE, YEL, check_mark, config, darker, draw_block, draw_text,
-                     fit_lines, icon, lighter, pill, prepared_options, subject_color, text_width, vgrad, grain)
+                     fit_lines, icon, lighter, pill, prepared_options, sticker_options, subject_color, text_width, vgrad, grain)
 
 W, H = 1080, 1920
 M = 80
@@ -35,8 +35,8 @@ def _question_card(c, d, item, y, size=62):
     draw_block(d, M + 40, y + 38, ql, "display", qs, INK, 1.2)
     return y + qh + 30
 
-def _options(c, item, col, y, reveal=False):
-    opts, ans = prepared_options(item)
+def _options(c, item, col, y, reveal=False, four=False):
+    opts, ans = sticker_options(item) if four else prepared_options(item)
     ov = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(ov)
     oh = 116
     for i, o in enumerate(opts):
@@ -82,12 +82,12 @@ def render_question(item: dict, out_path: Path, number: int, today: dt.date | No
     grain(c, 0.02, number).save(out_path, "JPEG", quality=92)
     return out_path
 
-def render_answer(item: dict, out_path: Path, number: int) -> Path:
+def render_answer(item: dict, out_path: Path, number: int, four: bool = False) -> Path:
     col = subject_color(item["subject"])
     c = _bg(col); d = ImageDraw.Draw(c)
     y = _header(c, item, number, col, 250, "CEVAP")
     y = _question_card(c, d, item, y, size=50)
-    y = _options(c, item, col, y, reveal=True)
+    y = _options(c, item, col, y, reveal=True, four=four)
     ov = Image.new("RGBA", (W, H), (0, 0, 0, 0)); od = ImageDraw.Draw(ov)
     el, es = fit_lines(item.get("explain", ""), "body", 42, W - 2 * M - 60, 3, 28)
     bh = len(el) * int(es * 1.3) + 50
@@ -101,4 +101,49 @@ def render_answer(item: dict, out_path: Path, number: int) -> Path:
     _footer_brand(c, d)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     grain(c, 0.02, number + 10).save(out_path, "JPEG", quality=92)
+    return out_path
+
+
+def _dashed_rect(d, box, col, dash=26, gap=16, width=6, r=48):
+    x0, y0, x1, y1 = box
+    def hline(y, a, b):
+        x = a
+        while x < b:
+            d.line([(x, y), (min(x + dash, b), y)], fill=col, width=width); x += dash + gap
+    def vline(x, a, b):
+        y = a
+        while y < b:
+            d.line([(x, y), (x, min(y + dash, b))], fill=col, width=width); y += dash + gap
+    hline(y0, x0 + r, x1 - r); hline(y1, x0 + r, x1 - r)
+    vline(x0, y0 + r, y1 - r); vline(x1, y0 + r, y1 - r)
+    for (cx, cy, a0) in ((x0, y0, 180), (x1 - 2 * r, y0, 270), (x1 - 2 * r, y1 - 2 * r, 0), (x0, y1 - 2 * r, 90)):
+        d.arc([cx, cy, cx + 2 * r, cy + 2 * r], a0, a0 + 90, fill=col, width=width)
+
+def render_interactive(item: dict, out_path: Path, number: int, today: dt.date | None = None) -> Path:
+    """Story image for a hand-posted story with Instagram's quiz sticker: the full question on top,
+    a dashed area where the sticker goes (the sticker carries the 4 options)."""
+    col = subject_color(item["subject"])
+    c = _bg(col); d = ImageDraw.Draw(c)
+    y = _header(c, item, number, col, 230, f"GÜNÜN SORUSU {number}/4")
+    ql, qs = fit_lines(item["q"], "display", 66, W - 2 * M - 80, 7, 38)
+    qh = len(ql) * int(qs * 1.2) + 84
+    d.rounded_rectangle([M, y, W - M, y + qh], 44, fill=WHITE)
+    draw_block(d, M + 40, y + 42, ql, "display", qs, INK, 1.2)
+    y += qh + 40
+    t = "Cevabını işaretle, doğru mu gör ↓"
+    ts = 44
+    while text_width(t, "bold", ts) > W - 2 * M and ts > 28: ts -= 2
+    draw_text(d, ((W - text_width(t, "bold", ts)) / 2, y), t, "bold", ts, YEL)
+    y += int(ts * 1.4) + 20
+    box_h = max(420, min(620, 1640 - y))
+    box = (M + 30, y, W - M - 30, y + box_h)
+    ov = Image.new("RGBA", (W, H), (0, 0, 0, 0)); od = ImageDraw.Draw(ov)
+    od.rounded_rectangle(box, 48, fill=(255, 255, 255, 18))
+    _dashed_rect(od, box, (255, 255, 255, 110))
+    lab = "TEST ÇIKARTMASI BURAYA"
+    draw_text(od, ((W - text_width(lab, "bold", 34)) / 2, box[1] + box_h / 2 - 22), lab, "bold", 34, (255, 255, 255, 90))
+    c.alpha_composite(ov); d = ImageDraw.Draw(c)
+    _footer_brand(c, d, y=max(1700, box[3] + 40) if box[3] + 40 < 1800 else 1790)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    grain(c, 0.02, number + 20).save(out_path, "JPEG", quality=92)
     return out_path

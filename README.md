@@ -110,3 +110,19 @@ state/state.json         ne paylaşıldı, sıradaki içerik
 Yerelde deneme: `pip install -r requirements.txt` (ffmpeg gerekir) → `python -m netio.main preview --date 2026-10-16`
 
 Fontlar: Poppins, Inter, Kalam, Patrick Hand, Caveat (SIL Open Font License), DejaVu Sans (serbest lisans).
+
+## Anketli (TEST çıkartmalı) hikâyeler
+
+Instagram'ın API'si hikâyeye anket/test çıkartması **ekleyemiyor** (Meta bunu hiçbir uygulamaya açmıyor).
+Bu yüzden hikâyeler yarı otomatik:
+
+1. Her çalışmada **Senin sıran** paneli güncellenir: `https://32tarcan.github.io/netio-instagram/panel/`
+   (telefonda aç, ana ekrana ekle). Bugünün ve yarının 4'er hikâyesi hazır bekler.
+2. Hikâye saatinde: **Görseli kaydet** → **Instagram'ı aç** → hikâye → görseli seç → çıkartma → **TEST** →
+   soruyu ve 4 şıkkı Kopyala düğmeleriyle yapıştır, doğru şıkkı işaretle → kesik çizgili kutuya koy → paylaş (~1 dk).
+3. Sistem hikâyeni API'den görür ve arkasından **cevap + açıklama** karesini kendisi atar.
+4. Saatinden sonraki 45 dk içinde atmazsan çıkartmasız sürüm (soru + "dokun" + cevap) otomatik gider; hiçbir gün boş kalmaz.
+
+Saatin geldiğini telefonuna bildirim olarak almak istersen: **ntfy** uygulamasını kur, tahmin edilmesi zor bir
+konu adı seç (örn. `netio-7f3k9q`), uygulamada o konuya abone ol ve aynı adı GitHub'da `NTFY_TOPIC` secret'ı olarak ekle.
+Kapatmak için `config.yaml` → `stories_interactive.enabled: false`.

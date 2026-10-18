@@ -30,6 +30,15 @@ schedule:
 # YKS tarihi açıklanınca doldur (YYYY-AA-GG). Doluysa hikâyelerde geri sayım çıkar.
 exam_date: null
 
+# Anketli (TEST çıkartmalı) hikâyeler. Instagram API'si çıkartma ekleyemiyor, bu yüzden
+# hikâye görseli + kopyalanacak soru/şıklar …/panel/ sayfasında hazır bekler; sen ~1 dk'da
+# elle atarsın. Sistem hikâyeni API'den görür ve arkasından cevap karesini kendisi atar.
+# grace_min dakika içinde atmazsan çıkartmasız sürüm otomatik gider. Kapatmak için enabled: false.
+stories_interactive:
+  enabled: true
+  grace_min: 45        # slot saatinden sonra kaç dk beklensin
+  lookback_min: 90     # slot saatinden kaç dk önce atılan hikâye de sayılsın
+
 hashtags:
   base: ["#yks", "#tyt", "#ayt", "#yks2027", "#netio", "#sınav", "#üniversite", "#dersçalış"]
   per_subject:

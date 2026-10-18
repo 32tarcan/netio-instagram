@@ -22,7 +22,7 @@ from zoneinfo import ZoneInfo
 
 import requests
 
-from . import captions, carousel, story, video
+from . import captions, carousel, panel, story, video
 from .common import CONTENT, OUT, ROOT, STATE_DIR, config, load_json, save_json
 
 SITE = ROOT / "site"
@@ -115,6 +115,9 @@ def prepare(slot: str, date: dt.date, out_root: Path, state=None) -> dict:
         q = story.render_question(it, folder / f"{it['id']}_1_soru.jpg", n, today=date)
         a = story.render_answer(it, folder / f"{it['id']}_2_cevap.jpg", n)
         m.update(item_id=it["id"], files=[q.name, a.name], story_item=it)
+        if panel.settings()["enabled"]:   # answer frame matching the 4-option quiz sticker
+            a4 = story.render_answer(it, folder / f"{it['id']}_3_cevap4.jpg", n, four=True)
+            m["answer4"] = a4.name
     save_json(folder / "manifest.json", m)
     return m
 
@@ -132,6 +135,27 @@ def wait_public(urls, timeout=600):
                 raise SystemExit(f"Medya herkese açık olmadı: {u}")
             time.sleep(10)
 
+def notify(title: str, msg: str, click: str | None = None):
+    """Optional phone push via ntfy.sh (free app). Set the NTFY_TOPIC secret to enable."""
+    topic = os.environ.get("NTFY_TOPIC", "").strip()
+    if not topic: return
+    h = {"Title": title.encode("utf-8"), "Tags": "bell"}
+    if click: h["Click"] = click
+    try: requests.post(f"https://ntfy.sh/{topic}", data=msg.encode("utf-8"), headers=h, timeout=20)
+    except requests.RequestException as e: print("ntfy:", e)
+
+def _parse_ts(s):
+    return dt.datetime.strptime(s, "%Y-%m-%dT%H:%M:%S%z")
+
+def find_manual_story(ig, since: dt.datetime, state) -> str | None:
+    """A live story posted since `since` that the pipeline did not post itself -> posted by hand."""
+    known = {x for day in state.get("posted", {}).values() for v in day.values()
+             for x in str(v.get("media_id", "")).split(",")} | set(state.get("manual_ids", []))
+    for s in ig.live_stories():
+        if s.get("id") in known or not s.get("timestamp"): continue
+        if _parse_ts(s["timestamp"]) >= since: return s["id"]
+    return None
+
 def publish(slot: str, date: dt.date, base_url: str, dry_run=False, wait_until=True):
     from .publisher import Instagram
     folder = SITE / date.isoformat() / slot
@@ -142,7 +166,12 @@ def publish(slot: str, date: dt.date, base_url: str, dry_run=False, wait_until=T
         print(f"{m['date']} {slot} zaten paylaşılmış, atlanıyor."); return
     base = base_url.rstrip("/")
     urls = [f"{base}/{m['date']}/{slot}/{f}" for f in m["files"]]
-    if not dry_run: wait_public(urls)
+    if not dry_run: wait_public(urls + ([f"{base}/{m['date']}/{slot}/{m['answer4']}"] if m.get("answer4") else []))
+    inter = m["kind"] == "story" and m.get("answer4") and panel.settings()["enabled"]
+    if inter:
+        wait_until = False                    # handled below: poll for the hand-posted story
+        notify(f"{slot_time(date, slot):%H:%M} anketli hikâye sırası sende",
+               "Görseli kaydet, TEST çıkartmasını ekle, paylaş (~1 dk).", f"{base}/panel/")
     if wait_until:
         target = slot_time(date, slot)
         secs = (target - now_local()).total_seconds()
@@ -151,6 +180,29 @@ def publish(slot: str, date: dt.date, base_url: str, dry_run=False, wait_until=T
     ig = Instagram(dry_run=dry_run)
     if m["kind"] == "carousel": mid = ig.post_carousel(urls, m["caption"])
     elif m["kind"] in ("video", "ad"): mid = ig.post_reel(urls[0], m["caption"], m.get("thumb_offset_ms", 9000))
+    elif inter and not dry_run:
+        cfgi = panel.settings(); t_slot = slot_time(date, slot)
+        since = t_slot - dt.timedelta(minutes=cfgi["lookback_min"])
+        deadline = t_slot + dt.timedelta(minutes=cfgi["grace_min"])
+        manual = None
+        while True:
+            manual = find_manual_story(ig, since, state)
+            left = (deadline - now_local()).total_seconds()
+            if manual or left <= 0 or left > 4 * 3600: break
+            print(f"Elle atılan hikâye bekleniyor ({int(left // 60)} dk kaldı)…"); time.sleep(min(180, left))
+        if manual:
+            print(f"Elle atılan anketli hikâye bulundu: {manual}. Cevap karesi gönderiliyor.")
+            time.sleep(5)
+            ids = [manual, ig.post_story_image(f"{base}/{m['date']}/{slot}/{m['answer4']}")]
+            m["mode"] = "manual"
+        else:
+            print("Süre doldu, elle atılan hikâye yok: çıkartmasız sürüm otomatik gönderiliyor.")
+            ids = []
+            for k, u in enumerate(urls):
+                ids.append(ig.post_story_image(u))
+                if k < len(urls) - 1: time.sleep(8)
+            m["mode"] = "auto"
+        mid = ",".join(ids)
     else:
         ids = []
         for k, u in enumerate(urls):          # question first, answer right after (tap to reveal)
@@ -165,6 +217,7 @@ def publish(slot: str, date: dt.date, base_url: str, dry_run=False, wait_until=T
     if m["kind"] == "story": state["last_story"] = m["story_item"]
     state["posted"].setdefault(m["date"], {})[slot] = {"kind": m["kind"], "item": m["item_id"], "media_id": mid,
                                                        "at": now_local().isoformat(timespec="seconds")}
+    if m.get("mode"): state["posted"][m["date"]][slot]["mode"] = m["mode"]
     cutoff = (date - dt.timedelta(days=40)).isoformat()
     state["posted"] = {d: v for d, v in state["posted"].items() if d >= cutoff}
     save_json(STATE, state)
@@ -192,7 +245,7 @@ def cmd_status():
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["prepare", "publish", "preview", "status", "whoami", "refresh-token", "topup", "slot", "stories"])
+    ap.add_argument("cmd", choices=["prepare", "publish", "preview", "status", "whoami", "refresh-token", "topup", "slot", "stories", "panel"])
     ap.add_argument("--slot", default="auto")
     ap.add_argument("--date", default=None)
     ap.add_argument("--base-url", default=os.environ.get("PAGES_URL") or config()["storage"].get("public_base_url"))
@@ -208,6 +261,8 @@ def main(argv=None):
         print(slot)
     elif a.cmd == "prepare":
         m = prepare(slot, date, SITE); print(json.dumps({k: v for k, v in m.items() if k != "story_item"}, ensure_ascii=False))
+        if panel.settings()["enabled"]:
+            panel.build(SITE, load_state(), now, slot_time, bank("story"))
     elif a.cmd == "publish":
         if not a.base_url and not a.dry_run: raise SystemExit("PAGES_URL / --base-url gerekli.")
         publish(slot, date, a.base_url or "https://example.invalid", dry_run=a.dry_run, wait_until=not a.no_wait)
@@ -222,6 +277,8 @@ def main(argv=None):
         if ig.user_id == "me" and me.get("user_id"): ig.user_id = str(me["user_id"])
         print("IG_USER_ID olarak bunu kaydet:", ig.user_id)
         print("Paylaşım kotası:", ig.publishing_limit())
+    elif a.cmd == "panel":
+        print(panel.build(SITE, load_state(), now, slot_time, bank("story")))
     elif a.cmd == "stories":
         from .publisher import Instagram
         try:
