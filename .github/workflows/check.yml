@@ -19,3 +19,4 @@ jobs:
         run: |
           python -m netio.main whoami
           python -m netio.main status
+          python -m netio.main stories

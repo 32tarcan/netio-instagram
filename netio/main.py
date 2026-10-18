@@ -192,7 +192,7 @@ def cmd_status():
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["prepare", "publish", "preview", "status", "whoami", "refresh-token", "topup", "slot"])
+    ap.add_argument("cmd", choices=["prepare", "publish", "preview", "status", "whoami", "refresh-token", "topup", "slot", "stories"])
     ap.add_argument("--slot", default="auto")
     ap.add_argument("--date", default=None)
     ap.add_argument("--base-url", default=os.environ.get("PAGES_URL") or config()["storage"].get("public_base_url"))
@@ -222,6 +222,13 @@ def main(argv=None):
         if ig.user_id == "me" and me.get("user_id"): ig.user_id = str(me["user_id"])
         print("IG_USER_ID olarak bunu kaydet:", ig.user_id)
         print("Paylaşım kotası:", ig.publishing_limit())
+    elif a.cmd == "stories":
+        from .publisher import Instagram
+        try:
+            st = Instagram().live_stories()
+            print(f"::notice title=stories::OK {len(st)} canli hikaye: " + "; ".join(f"{x.get('id')} {x.get('timestamp')}" for x in st)[:800])
+        except Exception as e:
+            print(f"::notice title=stories::HATA {type(e).__name__}: {str(e)[:700]}")
     elif a.cmd == "refresh-token":
         from .publisher import refresh_long_lived_token
         tok = refresh_long_lived_token(os.environ["IG_ACCESS_TOKEN"])

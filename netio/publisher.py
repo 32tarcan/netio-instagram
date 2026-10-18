@@ -100,6 +100,10 @@ class Instagram:
     def publishing_limit(self):
         return self._req("GET", f"{self.user_id}/content_publishing_limit", fields="quota_usage,config")
 
+    def live_stories(self):
+        """Stories currently live on the account (24 h). Used to detect stories posted by hand."""
+        return self._req("GET", f"{self.user_id}/stories", fields="id,timestamp,media_type").get("data", [])
+
     def whoami(self):
         return self._req("GET", "me", fields="user_id,username,account_type")
 
