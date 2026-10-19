@@ -57,7 +57,7 @@ hashtags:
 # mode: draft  -> video/fotoğraf TikTok'ta gelen kutuna taslak düşer; sen ses ekleyip "Paylaş"a basarsın.
 #       direct -> doğrudan profile gider (herkese açık olması için TikTok'un uygulamayı onaylaması gerekir).
 tiktok:
-  enabled: false
+  enabled: true
   mode: "draft"
   privacy: "PUBLIC_TO_EVERYONE"
   redirect_uri: "https://studio.netio-app.com/tiktok/callback/"

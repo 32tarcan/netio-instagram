@@ -11,9 +11,8 @@ on:
   workflow_dispatch:
     inputs:
       slot:
-        description: "Slot (auto = zamanı gelen)"
-        type: choice
-        options: [auto, story1, noon, story2, afternoon, story3, story4]
+        description: "Slot: auto (zamanı gelenler) ya da story1 noon story2 afternoon story3 story4 tt1 tt2 (boşlukla birden fazla)"
+        type: string
         default: auto
       dry_run:
         description: "Sadece dene (Instagram'a gönderme)"
