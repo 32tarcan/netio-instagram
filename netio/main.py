@@ -256,16 +256,30 @@ def main(argv=None):
     slot = date = None
     if a.cmd in ("prepare", "publish", "slot"):
         slot = auto_slot(now) if a.slot == "auto" else a.slot
+        slots = slot.split()
         date = dt.date.fromisoformat(a.date) if a.date else now.date()
     if a.cmd == "slot":
         print(slot)
     elif a.cmd == "prepare":
-        m = prepare(slot, date, SITE); print(json.dumps({k: v for k, v in m.items() if k != "story_item"}, ensure_ascii=False))
+        # several slots may be due in one run: simulate pointer advances so each gets its own item
+        sim = json.loads(json.dumps(load_state()))
+        for sl in slots:
+            m = prepare(sl, date, SITE, sim)
+            print(json.dumps({k: v for k, v in m.items() if k != "story_item"}, ensure_ascii=False))
+            sim["pointers"][m["kind"]] += 1
         if panel.settings()["enabled"]:
             panel.build(SITE, load_state(), now, slot_time, bank("story"))
     elif a.cmd == "publish":
         if not a.base_url and not a.dry_run: raise SystemExit("PAGES_URL / --base-url gerekli.")
-        publish(slot, date, a.base_url or "https://example.invalid", dry_run=a.dry_run, wait_until=not a.no_wait)
+        failed = []
+        for sl in slots:
+            try:
+                publish(sl, date, a.base_url or "https://example.invalid", dry_run=a.dry_run, wait_until=not a.no_wait)
+            except Exception as e:   # keep going: one failed slot must not block the next ones
+                import traceback; traceback.print_exc()
+                print(f"::error title=netio::{sl}: {type(e).__name__}: {str(e)[:700]}")
+                failed.append(sl)
+        if failed: raise SystemExit(f"Başarısız slotlar: {' '.join(failed)}")
     elif a.cmd == "preview":
         cmd_preview(dt.date.fromisoformat(a.date) if a.date else now.date())
     elif a.cmd == "status":

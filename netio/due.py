@@ -26,20 +26,27 @@ def _config():
     stories = re.findall(r'"(\d\d:\d\d)"', re.search(r'stories:\s*\[([^\]]*)\]', txt).group(1))
     return tz, {"noon": noon, "afternoon": aft, **{f"story{i + 1}": s for i, s in enumerate(stories)}}
 
-def due(now: dt.datetime | None = None) -> str:
+def due_all(now: dt.datetime | None = None) -> list[str]:
+    """Every unposted slot of today whose window is open, in time order. One run handles them all,
+    so a missed trigger is caught up by the next one."""
     tzname, times = _config()
     tz = ZoneInfo(tzname)
     now = now or dt.datetime.now(tz)
     state = json.loads((ROOT / "state" / "state.json").read_text(encoding="utf-8"))
     posted = state.get("posted", {}).get(now.date().isoformat(), {})
-    for slot in ORDER:
-        if slot in posted or slot not in times:
+    out = []
+    for slot in sorted(times, key=lambda s: times[s]):
+        if slot in posted:
             continue
         h, m = map(int, times[slot].split(":"))
         t = dt.datetime(now.year, now.month, now.day, h, m, tzinfo=tz)
         if t - dt.timedelta(minutes=EARLY_MIN) <= now <= t + dt.timedelta(hours=LATE_HOURS):
-            return slot
-    return ""
+            out.append(slot)
+    return out
+
+def due(now: dt.datetime | None = None) -> str:
+    d = due_all(now)
+    return d[0] if d else ""
 
 if __name__ == "__main__":
-    print(due())
+    print(" ".join(due_all()))
