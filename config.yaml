@@ -58,8 +58,8 @@ hashtags:
 #       direct -> doğrudan profile gider (herkese açık olması için TikTok'un uygulamayı onaylaması gerekir).
 tiktok:
   enabled: true
-  mode: "draft"
-  privacy: "PUBLIC_TO_EVERYONE"
+  mode: "direct"
+  privacy: "SELF_ONLY"     # TikTok onayı gelene kadar sadece "Yalnızca ben"; onaydan sonra PUBLIC_TO_EVERYONE
   redirect_uri: "https://studio.netio-app.com/tiktok/callback/"
   slots:
     tt1: "18:00"
