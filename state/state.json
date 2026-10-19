@@ -2,23 +2,23 @@
   "pointers": {
     "carousel": 4,
     "video": 3,
-    "story": 12,
+    "story": 13,
     "ad": 1
   },
   "last_story": {
-    "id": "s012",
+    "id": "s013",
     "exam": "TYT",
-    "subject": "Felsefe",
-    "q": "\"Tabula rasa\" hangi düşünürle özdeşleşir?",
+    "subject": "Fizik",
+    "q": "Dünya'da yerçekimi ivmesi yaklaşık kaç m/s²'dir?",
     "options": [
-      "Platon",
-      "John Locke",
-      "Kant",
-      "Descartes",
-      "Hegel"
+      "9,8",
+      "1,6",
+      "3,7",
+      "24,8",
+      "5,5"
     ],
-    "answer": 1,
-    "explain": "Locke: zihin doğuşta boş bir levhadır."
+    "answer": 0,
+    "explain": "Yaklaşık 9,8 m/s² (sorularda çoğu zaman 10 alınır)."
   },
   "posted": {
     "2026-10-16": {
@@ -152,6 +152,13 @@
         "item": "c004",
         "media_id": "18503749429096596",
         "at": "2026-10-19T17:05:59+03:00"
+      },
+      "story3": {
+        "kind": "story",
+        "item": "s013",
+        "media_id": "18091697564222099,18128672995883301",
+        "at": "2026-10-19T21:08:08+03:00",
+        "mode": "auto"
       }
     }
   },
