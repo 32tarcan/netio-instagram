@@ -2,23 +2,23 @@
   "pointers": {
     "carousel": 3,
     "video": 2,
-    "story": 10,
+    "story": 11,
     "ad": 1
   },
   "last_story": {
-    "id": "s010",
+    "id": "s011",
     "exam": "TYT",
-    "subject": "Geometri",
-    "q": "Bir kenarı 5 birim olan karenin alanı kaçtır?",
+    "subject": "Biyoloji",
+    "q": "Protein sentezi hangi organelde yapılır?",
     "options": [
-      "20",
-      "10",
-      "25",
-      "15",
-      "30"
+      "Ribozom",
+      "Lizozom",
+      "Golgi",
+      "Koful",
+      "Sentrozom"
     ],
-    "answer": 2,
-    "explain": "5 · 5 = 25 birimkare"
+    "answer": 0,
+    "explain": "Ribozomlar protein sentezler."
   },
   "posted": {
     "2026-10-16": {
@@ -123,6 +123,15 @@
         "item": "s010",
         "media_id": "18145466224585510,18095049710452450",
         "at": "2026-10-18T22:15:33+03:00",
+        "mode": "auto"
+      }
+    },
+    "2026-10-19": {
+      "story1": {
+        "kind": "story",
+        "item": "s011",
+        "media_id": "18118913936106383,18155634391517186",
+        "at": "2026-10-19T10:45:23+03:00",
         "mode": "auto"
       }
     }
