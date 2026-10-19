@@ -53,6 +53,19 @@ hashtags:
     Coğrafya: ["#coğrafya", "#tytcoğrafya"]
     Felsefe: ["#felsefe", "#tytfelsefe"]
 
+# TikTok: bağlantı studio.netio-app.com/tiktok/ üzerinden yapılır (TIKTOK_REFRESH_TOKEN secret'ı oluşur).
+# mode: draft  -> video/fotoğraf TikTok'ta gelen kutuna taslak düşer; sen ses ekleyip "Paylaş"a basarsın.
+#       direct -> doğrudan profile gider (herkese açık olması için TikTok'un uygulamayı onaylaması gerekir).
+tiktok:
+  enabled: false
+  mode: "draft"
+  privacy: "PUBLIC_TO_EVERYONE"
+  redirect_uri: "https://studio.netio-app.com/tiktok/callback/"
+  slots:
+    tt1: "18:00"
+    tt2: "21:00"
+  hashtags: ["#yks", "#tyt", "#ayt", "#yks2027", "#keşfet", "#öğrenci"]
+
 instagram:
   # "instagram"  -> Instagram Login (graph.instagram.com)  [önerilen, en basit kurulum]
   # "facebook"   -> Facebook Login for Business (graph.facebook.com)

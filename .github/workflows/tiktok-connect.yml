@@ -1,0 +1,34 @@
+name: TikTok'u bağla
+
+# studio.netio-app.com/tiktok/ → "TikTok'a bağlan" → izin ver → çıkan kodu buraya yapıştır.
+# Kod TikTok'tan kalıcı bir yenileme anahtarı almak için kullanılır ve TIKTOK_REFRESH_TOKEN secret'ına yazılır.
+on:
+  workflow_dispatch:
+    inputs:
+      code:
+        description: "TikTok'tan dönen kod (studio sayfasındaki)"
+        required: true
+
+jobs:
+  connect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Bağlan
+        env:
+          CODE: ${{ inputs.code }}
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_NEW_REFRESH_FILE: ${{ runner.temp }}/tt_refresh.txt
+        run: |
+          echo "::add-mask::$CODE"
+          python -m netio.tiktok connect "$CODE"
+      - name: Anahtarı kaydet
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: gh secret set TIKTOK_REFRESH_TOKEN --repo "$GITHUB_REPOSITORY" < "${{ runner.temp }}/tt_refresh.txt"

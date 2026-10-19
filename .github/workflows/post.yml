@@ -69,6 +69,8 @@ jobs:
           pip install -r requirements.txt
 
       - name: Medyayı üret
+        env:
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
         run: python -m netio.main prepare --slot "$SLOT"
 
       - uses: actions/configure-pages@v5
@@ -85,10 +87,22 @@ jobs:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           PAGES_URL: ${{ steps.deployment.outputs.page_url }}
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
+          TIKTOK_NEW_REFRESH_FILE: ${{ runner.temp }}/tt_refresh.txt
         run: |
           DRY=""
           if [ "${{ inputs.dry_run }}" = "true" ]; then DRY="--dry-run --no-wait"; fi
           python -m netio.main publish --slot "$SLOT" $DRY
+
+      - name: TikTok anahtarını güncelle
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+          F: ${{ runner.temp }}/tt_refresh.txt
+        run: |
+          if [ -s "$F" ]; then gh secret set TIKTOK_REFRESH_TOKEN --repo "$GITHUB_REPOSITORY" < "$F" && echo "TikTok refresh token güncellendi."; fi
 
       - name: Durumu kaydet
         if: always()

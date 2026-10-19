@@ -41,3 +41,27 @@ def ad(name: str) -> str:
     return (f"Sıkıcı test kitaplarını unut. TYT ve AYT'ye oyun gibi hazırlan! 🎮📚\n\n"
             f"{b['app_name']}: her konu bir ada, her ada bir zafer.\n\n{_cta()}\n.\n.\n"
             + " ".join(config()["hashtags"]["base"]))
+
+
+# ------------------------------------------------------------------ TikTok
+def _tt_tags(item, n=6) -> str:
+    c = config().get("tiktok") or {}
+    base = list(c.get("hashtags") or ["#yks", "#tyt", "#ayt", "#yks2027", "#keşfet", "#öğrenci"])
+    extra = list(config()["hashtags"]["per_subject"].get(item["subject"], []))[:2]
+    tags = list(dict.fromkeys(extra + base))
+    return " ".join(tags[: n + len(extra)])
+
+def tiktok_video(item: dict) -> str:
+    hooks = ["10 saniyen var, çözebilir misin? ⏱️", "Bu soruyu yanlış yapan çok 👀 Sen?",
+             "Süre başladı! Cevabını yorumlara yaz 👇", "YKS'de çıkabilecek tarzda bir soru, 10 saniye ⏱️"]
+    h = random.Random(item["id"] + "tt").choice(hooks)
+    b = config()["brand"]
+    return f"{h} ({item['exam']} {item['subject']}) Her gün yeni soru: {b['app_name']} 🎯 {_tt_tags(item)}"
+
+def tiktok_photos(item: dict) -> tuple[str, str]:
+    title = f"{item['title']} 📌"[:88]
+    b = config()["brand"]
+    desc = (f"{item.get('hook', '')}\n\nKaydır 👉 4. fotoğraftaki soruyu çöz, cevap son fotoğrafta. "
+            f"Cevabını yorumlara yaz, kaydetmeyi unutma! 🔖\n\n{b['app_name']} ile TYT-AYT'ye oyun gibi hazırlan. "
+            f"{_tt_tags(item)}")
+    return title, desc

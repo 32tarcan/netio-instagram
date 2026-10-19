@@ -22,7 +22,7 @@ from zoneinfo import ZoneInfo
 
 import requests
 
-from . import captions, carousel, panel, story, video
+from . import captions, carousel, panel, story, studio, tiktok, video
 from .common import CONTENT, OUT, ROOT, STATE_DIR, config, load_json, save_json
 
 SITE = ROOT / "site"
@@ -37,7 +37,10 @@ def now_local():
 
 def slot_time(date: dt.date, slot: str) -> dt.datetime:
     sc = config()["schedule"]
-    hhmm = sc["slots"][slot] if slot in ("noon", "afternoon") else sc["stories"][int(slot[-1]) - 1]
+    if slot.startswith("tt"):
+        hhmm = tiktok.cfg()["slots"][slot]
+    else:
+        hhmm = sc["slots"][slot] if slot in ("noon", "afternoon") else sc["stories"][int(slot[-1]) - 1]
     h, m = map(int, hhmm.split(":"))
     return dt.datetime(date.year, date.month, date.day, h, m, tzinfo=tz())
 
@@ -49,9 +52,9 @@ def load_state():
 def bank(kind):
     return load_json(CONTENT / {"carousel": "carousels.json", "video": "quiz_videos.json", "story": "stories.json"}[kind], [])
 
-def pick(kind, state, peek=0):
+def pick(kind, state, peek=0, ptr=None):
     items = bank(kind)
-    i = state["pointers"][kind] + peek
+    i = state["pointers"].setdefault(ptr or kind, 0) + peek
     if i >= len(items):
         if not config()["content"].get("recycle_when_empty", True):
             raise SystemExit(f"{kind} bankası bitti.")
@@ -69,6 +72,9 @@ def day_plan(date: dt.date) -> dict:
     if date.weekday() == sc.get("weekly_ad_weekday", 6) and ads():
         plan["noon" if noon == "video" else "afternoon"] = "ad"
     for k in range(1, 5): plan[f"story{k}"] = "story"
+    if tiktok.cfg()["enabled"]:          # TikTok: one video + one photo post a day, order alternates
+        a, b = ("tt_video", "tt_carousel") if idx % 2 == 0 else ("tt_carousel", "tt_video")
+        plan["tt1"], plan["tt2"] = a, b
     return plan
 
 def days_left(state) -> int:
@@ -105,6 +111,15 @@ def prepare(slot: str, date: dt.date, out_root: Path, state=None) -> dict:
         it = pick("video", state)
         p = video.render(it, folder / f"{it['id']}.mp4", work)
         m.update(item_id=it["id"], caption=captions.quiz_video(it), files=[p.name], thumb_offset_ms=9000)
+    elif kind == "tt_video":
+        it = pick("video", state, ptr="tt_video")
+        p = video.render(it, folder / f"{it['id']}.mp4", work)
+        m.update(item_id=it["id"], caption=captions.tiktok_video(it), files=[p.name], thumb_offset_ms=9000)
+    elif kind == "tt_carousel":
+        it = pick("carousel", state, ptr="tt_carousel")
+        paths = carousel.render(it, folder)
+        title, desc = captions.tiktok_photos(it)
+        m.update(item_id=it["id"], title=title, caption=desc, files=[p.name for p in paths])
     elif kind == "ad":
         lst = ads(); a = lst[state["pointers"]["ad"] % len(lst)]
         shutil.copy(a, folder / a.name)
@@ -177,8 +192,15 @@ def publish(slot: str, date: dt.date, base_url: str, dry_run=False, wait_until=T
         secs = (target - now_local()).total_seconds()
         if 0 < secs < 3 * 3600:
             print(f"Paylaşım saatine {int(secs)} sn var, bekleniyor…"); time.sleep(secs)
-    ig = Instagram(dry_run=dry_run)
-    if m["kind"] == "carousel": mid = ig.post_carousel(urls, m["caption"])
+    ig = Instagram(dry_run=dry_run) if not m["kind"].startswith("tt_") else None
+    if m["kind"] == "tt_video":
+        pid, st = tiktok.TikTok(dry_run=dry_run).post_video(folder / m["files"][0], m["caption"], m.get("thumb_offset_ms", 9000))
+        mid = f"{pid}:{st}"
+    elif m["kind"] == "tt_carousel":
+        tt_urls = [u.replace("http://", "https://", 1) for u in urls]     # TikTok pulls only over https
+        pid, st = tiktok.TikTok(dry_run=dry_run).post_photos(tt_urls, m["title"], m["caption"])
+        mid = f"{pid}:{st}"
+    elif m["kind"] == "carousel": mid = ig.post_carousel(urls, m["caption"])
     elif m["kind"] in ("video", "ad"): mid = ig.post_reel(urls[0], m["caption"], m.get("thumb_offset_ms", 9000))
     elif inter and not dry_run:
         cfgi = panel.settings(); t_slot = slot_time(date, slot)
@@ -212,8 +234,7 @@ def publish(slot: str, date: dt.date, base_url: str, dry_run=False, wait_until=T
     print(f"Paylaşıldı: {m['kind']} {m['item_id']} -> {mid}")
     if dry_run: return
     # advance state
-    k = {"carousel": "carousel", "video": "video", "ad": "ad", "story": "story"}[m["kind"]]
-    state["pointers"][k] += 1
+    state["pointers"][m["kind"]] = state["pointers"].get(m["kind"], 0) + 1
     if m["kind"] == "story": state["last_story"] = m["story_item"]
     state["posted"].setdefault(m["date"], {})[slot] = {"kind": m["kind"], "item": m["item_id"], "media_id": mid,
                                                        "at": now_local().isoformat(timespec="seconds")}
@@ -228,8 +249,7 @@ def cmd_preview(date: dt.date):
     out = OUT / "preview"
     for slot in SLOTS:
         m = prepare(slot, date, out, state)
-        k = {"carousel": "carousel", "video": "video", "ad": "ad", "story": "story"}[m["kind"]]
-        state["pointers"][k] += 1
+        state["pointers"][m["kind"]] = state["pointers"].get(m["kind"], 0) + 1
         if m["kind"] == "story": state["last_story"] = m["story_item"]
         print(f"{slot:10s} {slot_time(date, slot):%H:%M}  {m['kind']:8s} {m['item_id']}")
     print(f"Önizleme: {out / date.isoformat()}")
@@ -266,9 +286,10 @@ def main(argv=None):
         for sl in slots:
             m = prepare(sl, date, SITE, sim)
             print(json.dumps({k: v for k, v in m.items() if k != "story_item"}, ensure_ascii=False))
-            sim["pointers"][m["kind"]] += 1
+            sim["pointers"][m["kind"]] = sim["pointers"].get(m["kind"], 0) + 1
         if panel.settings()["enabled"]:
             panel.build(SITE, load_state(), now, slot_time, bank("story"))
+        studio.build(SITE)
     elif a.cmd == "publish":
         if not a.base_url and not a.dry_run: raise SystemExit("PAGES_URL / --base-url gerekli.")
         failed = []
@@ -293,6 +314,7 @@ def main(argv=None):
         print("Paylaşım kotası:", ig.publishing_limit())
     elif a.cmd == "panel":
         print(panel.build(SITE, load_state(), now, slot_time, bank("story")))
+        studio.build(SITE)
     elif a.cmd == "stories":
         from .publisher import Instagram
         try:

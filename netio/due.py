@@ -24,7 +24,11 @@ def _config():
     noon = re.search(r'noon:\s*"(\d\d:\d\d)"', txt).group(1)
     aft = re.search(r'afternoon:\s*"(\d\d:\d\d)"', txt).group(1)
     stories = re.findall(r'"(\d\d:\d\d)"', re.search(r'stories:\s*\[([^\]]*)\]', txt).group(1))
-    return tz, {"noon": noon, "afternoon": aft, **{f"story{i + 1}": s for i, s in enumerate(stories)}}
+    times = {"noon": noon, "afternoon": aft, **{f"story{i + 1}": s for i, s in enumerate(stories)}}
+    tt = re.search(r'^tiktok:\s*\n((?:[ #].*\n?)+)', txt, re.M)
+    if tt and re.search(r'^\s+enabled:\s*true', tt.group(1), re.M):
+        times.update(dict(re.findall(r'^\s+(tt\d):\s*"(\d\d:\d\d)"', tt.group(1), re.M)))
+    return tz, times
 
 def due_all(now: dt.datetime | None = None) -> list[str]:
     """Every unposted slot of today whose window is open, in time order. One run handles them all,
