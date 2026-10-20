@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 5,
     "video": 4,
-    "story": 17,
+    "story": 18,
     "ad": 1,
     "tt_video": 3,
-    "tt_carousel": 1
+    "tt_carousel": 2
   },
   "last_story": {
-    "id": "s017",
+    "id": "s018",
     "exam": "TYT",
-    "subject": "Matematik",
-    "q": "Hangisi asal sayı değildir?",
+    "subject": "Coğrafya",
+    "q": "Türkiye'nin en büyük gölü hangisidir?",
     "options": [
-      "2",
-      "13",
-      "21",
-      "17",
-      "11"
+      "Tuz Gölü",
+      "Van Gölü",
+      "Beyşehir Gölü",
+      "Eğirdir Gölü",
+      "İznik Gölü"
     ],
-    "answer": 2,
-    "explain": "21 = 3 · 7"
+    "answer": 1,
+    "explain": "Van Gölü Türkiye'nin en büyük gölüdür."
   },
   "posted": {
     "2026-10-16": {
@@ -220,6 +220,19 @@
         "item": "s017",
         "media_id": "18115372586014896,18023819228939140",
         "at": "2026-10-20T20:36:25+03:00",
+        "mode": "auto"
+      },
+      "tt2": {
+        "kind": "tt_carousel",
+        "item": "c002",
+        "media_id": "p_inbox_url~v2.7698855248177219592:SEND_TO_USER_INBOX",
+        "at": "2026-10-20T23:51:49+03:00"
+      },
+      "story4": {
+        "kind": "story",
+        "item": "s018",
+        "media_id": "18128494012867924,18108156308268440",
+        "at": "2026-10-20T23:52:24+03:00",
         "mode": "auto"
       }
     }
