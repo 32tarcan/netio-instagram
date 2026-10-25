@@ -25,7 +25,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: netio-post
+  group: netio-post-v2
   cancel-in-progress: false
 
 jobs:
@@ -35,7 +35,7 @@ jobs:
     outputs:
       slot: ${{ steps.due.outputs.slot }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Zamanı gelen paylaşım var mı?
         id: due
         run: |
@@ -55,9 +55,9 @@ jobs:
     env:
       SLOT: ${{ needs.check.outputs.slot }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip
@@ -72,13 +72,13 @@ jobs:
           TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
         run: python -m netio.main prepare --slot "$SLOT"
 
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: site
       - name: GitHub Pages'e yükle
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
       - name: Instagram'a paylaş
         env:
