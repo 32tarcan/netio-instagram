@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 8,
     "video": 6,
-    "story": 25,
+    "story": 26,
     "ad": 2,
     "tt_video": 6,
     "tt_carousel": 4
   },
   "last_story": {
-    "id": "s025",
+    "id": "s026",
     "exam": "TYT",
-    "subject": "Tarih",
-    "q": "TBMM hangi tarihte açıldı?",
+    "subject": "Geometri",
+    "q": "Bir üçgenin dış açıları toplamı kaç derecedir?",
     "options": [
-      "29 Ekim 1923",
-      "19 Mayıs 1919",
-      "23 Nisan 1920",
-      "30 Ağustos 1922",
-      "24 Temmuz 1923"
+      "360°",
+      "180°",
+      "270°",
+      "540°",
+      "720°"
     ],
-    "answer": 2,
-    "explain": "23 Nisan 1920"
+    "answer": 0,
+    "explain": "Her çokgende dış açılar toplamı 360°'dir."
   },
   "posted": {
     "2026-10-16": {
@@ -355,6 +355,13 @@
         "item": "v006",
         "media_id": "v_inbox_file~v2.7700666288158476309:SEND_TO_USER_INBOX",
         "at": "2026-10-25T21:00:28+03:00"
+      },
+      "story4": {
+        "kind": "story",
+        "item": "s026",
+        "media_id": "18129733975874164,18116793989021114",
+        "at": "2026-10-25T22:17:21+03:00",
+        "mode": "manual"
       }
     }
   },
