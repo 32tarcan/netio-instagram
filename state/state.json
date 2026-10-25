@@ -4,7 +4,7 @@
     "video": 6,
     "story": 25,
     "ad": 2,
-    "tt_video": 5,
+    "tt_video": 6,
     "tt_carousel": 4
   },
   "last_story": {
@@ -349,6 +349,12 @@
         "media_id": "18107070167360424,18072460391770060",
         "at": "2026-10-25T19:45:30+03:00",
         "mode": "auto"
+      },
+      "tt2": {
+        "kind": "tt_video",
+        "item": "v006",
+        "media_id": "v_inbox_file~v2.7700666288158476309:SEND_TO_USER_INBOX",
+        "at": "2026-10-25T21:00:28+03:00"
       }
     }
   },
