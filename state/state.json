@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 9,
     "video": 7,
-    "story": 30,
+    "story": 31,
     "ad": 2,
     "tt_video": 7,
     "tt_carousel": 5
   },
   "last_story": {
-    "id": "s030",
+    "id": "s031",
     "exam": "TYT",
-    "subject": "Coğrafya",
-    "q": "Maki bitki örtüsü hangi iklime aittir?",
+    "subject": "Fizik",
+    "q": "Işığın boşluktaki hızı yaklaşık kaçtır?",
     "options": [
-      "Karadeniz",
-      "Akdeniz",
-      "Karasal",
-      "Çöl",
-      "Muson"
+      "300.000 km/s",
+      "3.000 km/s",
+      "340 m/s",
+      "30.000 km/s",
+      "150.000 km/s"
     ],
-    "answer": 1,
-    "explain": "Maki, Akdeniz ikliminin bitki örtüsüdür."
+    "answer": 0,
+    "explain": "Yaklaşık 300.000 km/s"
   },
   "posted": {
     "2026-10-16": {
@@ -415,6 +415,15 @@
         "item": "s030",
         "media_id": "18045564755821161,18026878229921539",
         "at": "2026-10-26T22:15:30+03:00",
+        "mode": "auto"
+      }
+    },
+    "2026-10-27": {
+      "story1": {
+        "kind": "story",
+        "item": "s031",
+        "media_id": "18169877962474984,18143968480606795",
+        "at": "2026-10-27T10:45:24+03:00",
         "mode": "auto"
       }
     }
