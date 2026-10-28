@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 11,
     "video": 9,
-    "story": 37,
+    "story": 38,
     "ad": 2,
     "tt_video": 9,
     "tt_carousel": 7
   },
   "last_story": {
-    "id": "s037",
+    "id": "s038",
     "exam": "TYT",
-    "subject": "Türkçe",
-    "q": "Hangisi bir zamirdir?",
+    "subject": "Felsefe",
+    "q": "Kritisizm (eleştirel felsefe) akımının kurucusu kimdir?",
     "options": [
-      "güzel",
-      "koşu",
-      "biz",
-      "hızla",
-      "ve"
+      "Hume",
+      "Kant",
+      "Locke",
+      "Comte",
+      "Descartes"
     ],
-    "answer": 2,
-    "explain": "\"biz\" kişi zamiridir."
+    "answer": 1,
+    "explain": "Immanuel Kant"
   },
   "posted": {
     "2026-10-16": {
@@ -517,6 +517,13 @@
         "item": "c007",
         "media_id": "p_inbox_url~v2.7701779815343228949:SEND_TO_USER_INBOX",
         "at": "2026-10-28T21:00:13+03:00"
+      },
+      "story4": {
+        "kind": "story",
+        "item": "s038",
+        "media_id": "18169402420497221,18033990908677340",
+        "at": "2026-10-28T22:15:27+03:00",
+        "mode": "auto"
       }
     }
   },
