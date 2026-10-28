@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 11,
     "video": 8,
-    "story": 35,
+    "story": 36,
     "ad": 2,
     "tt_video": 8,
     "tt_carousel": 6
   },
   "last_story": {
-    "id": "s035",
+    "id": "s036",
     "exam": "TYT",
-    "subject": "Matematik",
-    "q": "Bir sayının 3 katının 4 fazlası 19'dur. Sayı kaçtır?",
+    "subject": "Biyoloji",
+    "q": "İnsanın vücut hücrelerinde kaç kromozom bulunur?",
     "options": [
-      "5",
-      "6",
-      "4",
-      "7",
-      "3"
+      "23",
+      "44",
+      "46",
+      "48",
+      "92"
     ],
-    "answer": 0,
-    "explain": "3x + 4 = 19 → x = 5"
+    "answer": 2,
+    "explain": "2n = 46"
   },
   "posted": {
     "2026-10-16": {
@@ -485,6 +485,13 @@
         "item": "c011",
         "media_id": "18207138745373953",
         "at": "2026-10-28T12:00:40+03:00"
+      },
+      "story2": {
+        "kind": "story",
+        "item": "s036",
+        "media_id": "17878418427636684,18180036151443283",
+        "at": "2026-10-28T14:45:28+03:00",
+        "mode": "auto"
       }
     }
   },
