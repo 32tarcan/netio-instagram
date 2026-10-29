@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 11,
     "video": 9,
-    "story": 38,
+    "story": 39,
     "ad": 2,
     "tt_video": 9,
     "tt_carousel": 7
   },
   "last_story": {
-    "id": "s038",
+    "id": "s039",
     "exam": "TYT",
-    "subject": "Felsefe",
-    "q": "Kritisizm (eleştirel felsefe) akımının kurucusu kimdir?",
+    "subject": "Geometri",
+    "q": "Eşkenar üçgenin bir iç açısı kaç derecedir?",
     "options": [
-      "Hume",
-      "Kant",
-      "Locke",
-      "Comte",
-      "Descartes"
+      "45°",
+      "90°",
+      "120°",
+      "60°",
+      "30°"
     ],
-    "answer": 1,
-    "explain": "Immanuel Kant"
+    "answer": 3,
+    "explain": "180 ÷ 3 = 60°"
   },
   "posted": {
     "2026-10-16": {
@@ -523,6 +523,15 @@
         "item": "s038",
         "media_id": "18169402420497221,18033990908677340",
         "at": "2026-10-28T22:15:27+03:00",
+        "mode": "auto"
+      }
+    },
+    "2026-10-29": {
+      "story1": {
+        "kind": "story",
+        "item": "s039",
+        "media_id": "18130976410831006,17944864815093996",
+        "at": "2026-10-29T10:45:32+03:00",
         "mode": "auto"
       }
     }
