@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 11,
     "video": 10,
-    "story": 39,
+    "story": 40,
     "ad": 2,
     "tt_video": 9,
     "tt_carousel": 7
   },
   "last_story": {
-    "id": "s039",
+    "id": "s040",
     "exam": "TYT",
-    "subject": "Geometri",
-    "q": "Eşkenar üçgenin bir iç açısı kaç derecedir?",
+    "subject": "Fizik",
+    "q": "Ses havada yaklaşık kaç m/s hızla yayılır?",
     "options": [
-      "45°",
-      "90°",
-      "120°",
-      "60°",
-      "30°"
+      "34",
+      "340",
+      "3400",
+      "34.000",
+      "1500"
     ],
-    "answer": 3,
-    "explain": "180 ÷ 3 = 60°"
+    "answer": 1,
+    "explain": "Yaklaşık 340 m/s"
   },
   "posted": {
     "2026-10-16": {
@@ -539,6 +539,13 @@
         "item": "v010",
         "media_id": "18108049043203956",
         "at": "2026-10-29T12:01:07+03:00"
+      },
+      "story2": {
+        "kind": "story",
+        "item": "s040",
+        "media_id": "18315889552304328,17970816305961850",
+        "at": "2026-10-29T14:45:30+03:00",
+        "mode": "auto"
       }
     }
   },
