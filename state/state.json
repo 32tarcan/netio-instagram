@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 12,
     "video": 10,
-    "story": 42,
+    "story": 43,
     "ad": 2,
     "tt_video": 10,
     "tt_carousel": 8
   },
   "last_story": {
-    "id": "s042",
+    "id": "s043",
     "exam": "TYT",
-    "subject": "Kimya",
-    "q": "Hangisi bir soygazdır?",
+    "subject": "Matematik",
+    "q": "0,25 sayısının kesir karşılığı hangisidir?",
     "options": [
-      "Azot",
-      "Neon",
-      "Oksijen",
-      "Klor",
-      "Hidrojen"
+      "1/5",
+      "1/2",
+      "2/5",
+      "1/4",
+      "3/4"
     ],
-    "answer": 1,
-    "explain": "Neon 8A grubundadır."
+    "answer": 3,
+    "explain": "25/100 = 1/4"
   },
   "posted": {
     "2026-10-16": {
@@ -577,6 +577,15 @@
         "item": "s042",
         "media_id": "18638873884048002,18023286680945218",
         "at": "2026-10-29T22:15:31+03:00",
+        "mode": "auto"
+      }
+    },
+    "2026-10-30": {
+      "story1": {
+        "kind": "story",
+        "item": "s043",
+        "media_id": "18131284541496984,18116304785043951",
+        "at": "2026-10-30T10:45:25+03:00",
         "mode": "auto"
       }
     }
