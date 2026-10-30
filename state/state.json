@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 13,
     "video": 11,
-    "story": 45,
+    "story": 46,
     "ad": 2,
     "tt_video": 11,
     "tt_carousel": 9
   },
   "last_story": {
-    "id": "s045",
-    "exam": "TYT",
-    "subject": "Biyoloji",
-    "q": "İnsan kalbinde kaç odacık vardır?",
+    "id": "s046",
+    "exam": "AYT",
+    "subject": "Edebiyat",
+    "q": "\"Sinekli Bakkal\" romanının yazarı kimdir?",
     "options": [
-      "4",
-      "2",
-      "3",
-      "5",
-      "6"
+      "Refik Halit Karay",
+      "Halide Edib Adıvar",
+      "Reşat Nuri Güntekin",
+      "Ahmet Hamdi Tanpınar",
+      "Peyami Safa"
     ],
-    "answer": 0,
-    "explain": "2 kulakçık + 2 karıncık"
+    "answer": 1,
+    "explain": "Halide Edib Adıvar"
   },
   "posted": {
     "2026-10-16": {
@@ -625,6 +625,13 @@
         "item": "c009",
         "media_id": "p_inbox_url~v2.7702521937457301511:SEND_TO_USER_INBOX",
         "at": "2026-10-30T21:00:11+03:00"
+      },
+      "story4": {
+        "kind": "story",
+        "item": "s046",
+        "media_id": "18133153966759018,17930209593182833",
+        "at": "2026-10-30T22:15:34+03:00",
+        "mode": "auto"
       }
     }
   },
