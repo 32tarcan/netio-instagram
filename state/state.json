@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 13,
     "video": 11,
-    "story": 44,
+    "story": 45,
     "ad": 2,
     "tt_video": 11,
     "tt_carousel": 8
   },
   "last_story": {
-    "id": "s044",
+    "id": "s045",
     "exam": "TYT",
-    "subject": "Tarih",
-    "q": "Lozan Antlaşması hangi yıl imzalandı?",
+    "subject": "Biyoloji",
+    "q": "İnsan kalbinde kaç odacık vardır?",
     "options": [
-      "1920",
-      "1921",
-      "1923",
-      "1919",
-      "1922"
+      "4",
+      "2",
+      "3",
+      "5",
+      "6"
     ],
-    "answer": 2,
-    "explain": "24 Temmuz 1923"
+    "answer": 0,
+    "explain": "2 kulakçık + 2 karıncık"
   },
   "posted": {
     "2026-10-16": {
@@ -612,6 +612,13 @@
         "item": "v011",
         "media_id": "v_inbox_file~v2.7702475443068340225:SEND_TO_USER_INBOX",
         "at": "2026-10-30T18:00:27+03:00"
+      },
+      "story3": {
+        "kind": "story",
+        "item": "s045",
+        "media_id": "17930013507180769,18013857716968081",
+        "at": "2026-10-30T19:45:29+03:00",
+        "mode": "auto"
       }
     }
   },
