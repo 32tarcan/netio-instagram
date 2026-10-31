@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 14,
     "video": 12,
-    "story": 48,
+    "story": 49,
     "ad": 2,
     "tt_video": 11,
     "tt_carousel": 10
   },
   "last_story": {
-    "id": "s048",
+    "id": "s049",
     "exam": "TYT",
-    "subject": "Türkçe",
-    "q": "Hangisi bir sıfat tamlamasıdır?",
+    "subject": "Matematik",
+    "q": "Saat tam 3:00'te akrep ile yelkovan arasındaki dar açı kaç derecedir?",
     "options": [
-      "okulun bahçesi",
-      "ev ödevi",
-      "kırmızı elma",
-      "hızlı koştu",
-      "kitabın kapağı"
+      "60°",
+      "90°",
+      "120°",
+      "45°",
+      "180°"
     ],
-    "answer": 2,
-    "explain": "\"kırmızı\" sıfat, \"elma\" isim"
+    "answer": 1,
+    "explain": "Her saat aralığı 30° → 3 · 30 = 90°"
   },
   "posted": {
     "2026-10-16": {
@@ -666,6 +666,13 @@
         "item": "c010",
         "media_id": "p_inbox_url~v2.7702846556907374612:SEND_TO_USER_INBOX",
         "at": "2026-10-31T18:00:12+03:00"
+      },
+      "story3": {
+        "kind": "story",
+        "item": "s049",
+        "media_id": "18025623542869612,18107266346201212",
+        "at": "2026-10-31T19:45:30+03:00",
+        "mode": "auto"
       }
     }
   },
