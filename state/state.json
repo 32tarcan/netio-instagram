@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 14,
     "video": 12,
-    "story": 49,
+    "story": 50,
     "ad": 2,
     "tt_video": 12,
     "tt_carousel": 10
   },
   "last_story": {
-    "id": "s049",
+    "id": "s050",
     "exam": "TYT",
-    "subject": "Matematik",
-    "q": "Saat tam 3:00'te akrep ile yelkovan arasındaki dar açı kaç derecedir?",
+    "subject": "Coğrafya",
+    "q": "Ekvatora yaklaştıkça ortalama sıcaklık genel olarak nasıl değişir?",
     "options": [
-      "60°",
-      "90°",
-      "120°",
-      "45°",
-      "180°"
+      "Azalır",
+      "Değişmez",
+      "Artar",
+      "Önce artar sonra azalır",
+      "Önce azalır sonra artar"
     ],
-    "answer": 1,
-    "explain": "Her saat aralığı 30° → 3 · 30 = 90°"
+    "answer": 2,
+    "explain": "Güneş ışınları daha dik açıyla gelir."
   },
   "posted": {
     "2026-10-16": {
@@ -679,6 +679,13 @@
         "item": "v012",
         "media_id": "v_inbox_file~v2.7702893130416195602:SEND_TO_USER_INBOX",
         "at": "2026-10-31T21:00:27+03:00"
+      },
+      "story4": {
+        "kind": "story",
+        "item": "s050",
+        "media_id": "18090981401256953,17980586762924790",
+        "at": "2026-10-31T22:15:31+03:00",
+        "mode": "auto"
       }
     }
   },
