@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 13,
     "video": 11,
-    "story": 46,
+    "story": 47,
     "ad": 2,
     "tt_video": 11,
     "tt_carousel": 9
   },
   "last_story": {
-    "id": "s046",
-    "exam": "AYT",
-    "subject": "Edebiyat",
-    "q": "\"Sinekli Bakkal\" romanının yazarı kimdir?",
+    "id": "s047",
+    "exam": "TYT",
+    "subject": "Fizik",
+    "q": "Kuvvetin birimi hangisidir?",
     "options": [
-      "Refik Halit Karay",
-      "Halide Edib Adıvar",
-      "Reşat Nuri Güntekin",
-      "Ahmet Hamdi Tanpınar",
-      "Peyami Safa"
+      "Joule",
+      "Watt",
+      "Newton",
+      "Pascal",
+      "Volt"
     ],
-    "answer": 1,
-    "explain": "Halide Edib Adıvar"
+    "answer": 2,
+    "explain": "Newton (N)"
   },
   "posted": {
     "2026-10-16": {
@@ -631,6 +631,15 @@
         "item": "s046",
         "media_id": "18133153966759018,17930209593182833",
         "at": "2026-10-30T22:15:34+03:00",
+        "mode": "auto"
+      }
+    },
+    "2026-10-31": {
+      "story1": {
+        "kind": "story",
+        "item": "s047",
+        "media_id": "18113512133166231,18157611601522040",
+        "at": "2026-10-31T10:45:28+03:00",
         "mode": "auto"
       }
     }
