@@ -58,12 +58,19 @@ class QuizReel:
         draw_block(d, 34, 30, el, "body", es, lighter(YEL, .3), 1.3)
         self.explain = ex
         cfg = config()["brand"]
-        self.cta1 = self._txt("Böyle sorular", 88, INK)
-        self.cta2 = self._txt(f"{cfg['app_name']}'da oyun gibi!", 88, PINK)
-        self.cta_pill = shadowed(pill(cfg["cta"], 40, NAVY, WHITE, padx=40, pady=24), 14, (0, 10), 80)
+        app = cfg["app_name"]
+        # download-focused end card (app is live on the App Store)
+        self.cta1 = self._txt("Daha fazla TYT-AYT sorusu", 70, INK)
+        self.cta2 = self._txt(f"{app}'da seni bekliyor", 70, PINK)
+        self.badge = shadowed(store_badge(), 14, (0, 10), 90)
+        self.link = shadowed(link_pill(), 12, (0, 8), 70)
         self.handle = self._txt("@" + cfg["instagram_handle"], 46, self.col, kind="bold")
-        self.phone = phone_image("screen_map.png", width=400, rot=-4)
+        self.appname = self._txt(app, 64, INK)
+        self.phone = phone_image("screen_home.png", width=400, rot=-4)
         self.icon = icon(120)
+        # small persistent strip while the question is on screen
+        self.strip = pill(f"{app} · App Store'da", 34, (255, 255, 255, 46), WHITE, padx=28, pady=12, kind="bold")
+        self.correct = pill("DOĞRU CEVAP", 46, GREEN, WHITE, padx=30, pady=16)
         self.layout()
 
     def _txt(self, s, size, col, kind="display"):
@@ -126,6 +133,7 @@ class QuizReel:
                 else:
                     im, sc = self.rows[i], 1
                 paste_center(c, im, cx + (1 - pi) * 120, ry + 59, scale=sc, opacity=pi * fade)
+            paste_center(c, self.strip, W / 2, 170, opacity=p * fade)
             # countdown ring
             if T_C0 - .3 < t < T_C1 + .4:
                 self._ring(c, t)
@@ -134,22 +142,26 @@ class QuizReel:
                 paste_center(c, self.explain, cx, self.explain_y + self.explain.height / 2 + (1 - pe) * 60, opacity=pe * fade)
                 xp = prog(t, T_C1 + .2, 1.0)
                 if 0 < xp < 1:
-                    chip = pill("+10 XP", 54, (255, 150, 60), WHITE, padx=30, pady=16)
+                    chip = self.correct
                     e = eo(xp)
                     paste_center(c, chip, 830, self.rows_y[self.ans] - e * 200, scale=.6 + .4 * eo(clamp(xp * 3)), opacity=1 - clamp((xp - .7) / .3), rot=-7)
         if t >= T_CTA:
             u = t - T_CTA
             p = eo(prog(u, 0, .6))
-            c.alpha_composite(self.phone, (int(W - self.phone.width + 90), int(600 + (1 - p) * 1200)))
-            for im, t0, y in ((self.cta1, .2, 380), (self.cta2, .4, 490)):
+            c.alpha_composite(self.phone, (int(W - self.phone.width + 110), int(640 + (1 - p) * 1200)))
+            for im, t0, y in ((self.cta1, .15, 300), (self.cta2, .35, 400)):
                 pp = eo(prog(u, t0, .45))
                 paste_center(c, im, W / 2, y + (1 - pp) * 40, opacity=pp)
             ip = back(clamp((u - .3) / .5))
-            paste_center(c, self.icon, 250, 900, scale=max(.01, ip), rot=-6)
-            bp_ = back(clamp((u - .8) / .45))
-            pulse = 1 + .04 * math.sin(max(0, u - 1.3) * 7) * (u > 1.3)
-            paste_center(c, self.cta_pill, W / 2, 1600, scale=max(.01, (.4 + .6 * bp_) * pulse), opacity=clamp(bp_))
-            paste_center(c, self.handle, W / 2, 1730, opacity=eo(prog(u, 1.1, .4)))
+            paste_center(c, self.icon, 250, 760, scale=max(.01, ip), rot=-6)
+            paste_center(c, self.appname, 250, 880, opacity=eo(prog(u, .5, .4)))
+            bp_ = back(clamp((u - .7) / .45))
+            pulse = 1 + .04 * math.sin(max(0, u - 1.2) * 7) * (u > 1.2)
+            paste_center(c, self.badge, W / 2, 1420, scale=max(.01, (.4 + .6 * bp_) * pulse), opacity=clamp(bp_))
+            lp = eo(prog(u, 1.0, .4))
+            bob = 8 * math.sin(max(0, u - 1.4) * 6) * (u > 1.4)
+            paste_center(c, self.link, W / 2, 1610 + (1 - lp) * 40 + bob, opacity=lp)
+            paste_center(c, self.handle, W / 2, 1740, opacity=eo(prog(u, 1.2, .4)))
         k = min(clamp(t / .15), clamp((DUR - t) / .4))
         if k < 1:
             c.alpha_composite(Image.new("RGBA", (W, H), (0, 0, 0, int(255 * (1 - k)))))
@@ -171,6 +183,33 @@ class QuizReel:
         beat = 1 + .08 * math.exp(-((t - T_C0) % 1) * 8) if T_C0 <= t < T_C1 else 1
         a = eo(prog(t, T_C0 - .3, .3)) * (1 - eo(prog(t, T_C1 + .1, .3)))
         paste_center(c, ov, cx, cy, scale=beat, opacity=a)
+
+def store_badge() -> Image.Image:
+    """Generic black store button (no Apple logo): 'App Store'dan İndir'."""
+    w, h = 760, 190
+    im = Image.new("RGBA", (w, h), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    d.rounded_rectangle([0, 0, w - 1, h - 1], 46, fill=(12, 12, 16), outline=(70, 70, 80), width=4)
+    # download arrow
+    ax, ay = 108, 95
+    d.ellipse([ax - 58, ay - 58, ax + 58, ay + 58], fill=WHITE)
+    d.line([(ax, ay - 32), (ax, ay + 18)], fill=(12, 12, 16), width=12)
+    d.polygon([(ax - 26, ay + 2), (ax + 26, ay + 2), (ax, ay + 32)], fill=(12, 12, 16))
+    draw_text(d, (196, 30), "ÜCRETSİZ İNDİR", "bold", 36, (200, 200, 210))
+    draw_text(d, (194, 70), "App Store", "display", 82, WHITE)
+    return im
+
+def link_pill() -> Image.Image:
+    """'Link profilde' with an up arrow pointing to the profile."""
+    txt, size = "Link profilde", 54
+    tw = int(text_width(txt, "black", size))
+    w, h = tw + 170, 120
+    im = Image.new("RGBA", (w, h), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    d.rounded_rectangle([0, 0, w - 1, h - 1], h // 2, fill=PINK)
+    ax, ay = 62, h // 2
+    d.line([(ax, ay + 26), (ax, ay - 14)], fill=WHITE, width=11)
+    d.polygon([(ax - 22, ay - 6), (ax + 22, ay - 6), (ax, ay - 34)], fill=WHITE)
+    draw_text(d, (110, (h - size * 1.25) / 2), txt, "black", size, WHITE)
+    return im
 
 def render(item: dict, out_path: Path, workdir: Path) -> Path:
     workdir.mkdir(parents=True, exist_ok=True)

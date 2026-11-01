@@ -35,7 +35,7 @@ def build(site: Path) -> None:
     (site / "tiktok" / "callback").mkdir(parents=True, exist_ok=True)
     (site / "index.html").write_text(_page("Netio Studio", """
 <h1>Netio Studio</h1><p class="sub">Netio'nun kendi sosyal medya hesapları için içerik aracı.</p>
-<div class="card"><p>Netio, TYT-AYT'ye oyun gibi hazırlatan bir soru çözme uygulaması. Bu araç, Netio'nun eğitim
+<div class="card"><p>Netio, TYT-AYT için konu konu soru çözme uygulaması. Bu araç, Netio'nun eğitim
 içeriklerini (soru videoları ve konu özetleri) yalnızca Netio'nun kendi Instagram ve TikTok hesaplarında paylaşmak için kullanılır.</p>
 <a class="btn sec" href="panel/">Hikâye paneli</a><br><a class="btn pri" href="tiktok/">TikTok bağlantısı</a></div>"""), encoding="utf-8")
     if key:

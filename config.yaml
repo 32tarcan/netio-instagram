@@ -9,10 +9,9 @@ brand:
   app_name: "Netio"
   # Instagram kullanıcı adın (başında @ olmadan). Kurulumda doldurulacak.
   instagram_handle: "netio.app"
-  # Gönderilerdeki çağrı cümlesi. Uygulama yayınlanınca değiştir:
-  #   ör. "Netio şimdi App Store'da! Linki profilde."
-  cta: "Erken erişim için takip et!"
-  cta_short: "Takip et"
+  # Gönderilerdeki çağrı cümlesi (uygulama App Store'da yayında; bio'da mağaza linki olmalı).
+  cta: "App Store'dan ücretsiz indir, link profilde!"
+  cta_short: "Link profilde"
 
 # Gün aşırı düzen (gün sırasına göre):
 #   Çift günler: 12:00 kaydırmalı post, 16:00 video
@@ -23,8 +22,9 @@ schedule:
     noon: "12:00"
     afternoon: "16:00"
   stories: ["10:00", "14:00", "19:00", "21:30"]
-  # Her pazar 16:00'daki video yerine marka reklamı (assets/ads) paylaşılır.
-  weekly_ad_weekday: 6        # 0=Pazartesi ... 6=Pazar
+  # Haftalık marka reklamı (assets/ads). null = kapalı, pazar da soru videosu gider.
+  # Açmak için gün numarası yaz: 0=Pazartesi ... 6=Pazar
+  weekly_ad_weekday: null
   start_date: "2026-10-16"    # içerik bankasının 1. günü
 
 # YKS tarihi açıklanınca doldur (YYYY-AA-GG). Doluysa hikâyelerde geri sayım çıkar.
