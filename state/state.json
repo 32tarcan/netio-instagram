@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 15,
     "video": 12,
-    "story": 51,
+    "story": 52,
     "ad": 2,
     "tt_video": 12,
     "tt_carousel": 10
   },
   "last_story": {
-    "id": "s051",
+    "id": "s052",
     "exam": "TYT",
-    "subject": "Kimya",
-    "q": "Bir su molekülünde toplam kaç atom vardır?",
+    "subject": "Felsefe",
+    "q": "\"En yüksek iyi mutluluktur\" diyen ahlak görüşü hangisidir?",
     "options": [
-      "2",
-      "3",
-      "4",
-      "1",
-      "5"
+      "Hedonizm",
+      "Faydacılık",
+      "Egoizm",
+      "Eudaimonizm",
+      "Pozitivizm"
     ],
-    "answer": 1,
-    "explain": "2 hidrojen + 1 oksijen"
+    "answer": 3,
+    "explain": "Eudaimonizm (mutluluk ahlakı), Aristoteles"
   },
   "posted": {
     "2026-10-16": {
@@ -701,6 +701,13 @@
         "item": "c001",
         "media_id": "18416448760083809",
         "at": "2026-11-01T12:00:32+03:00"
+      },
+      "story2": {
+        "kind": "story",
+        "item": "s052",
+        "media_id": "18154956346528717,18133794247702873",
+        "at": "2026-11-01T14:34:20+03:00",
+        "mode": "manual"
       }
     }
   },
