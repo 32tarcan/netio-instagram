@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 14,
     "video": 12,
-    "story": 50,
+    "story": 51,
     "ad": 2,
     "tt_video": 12,
     "tt_carousel": 10
   },
   "last_story": {
-    "id": "s050",
+    "id": "s051",
     "exam": "TYT",
-    "subject": "Coğrafya",
-    "q": "Ekvatora yaklaştıkça ortalama sıcaklık genel olarak nasıl değişir?",
+    "subject": "Kimya",
+    "q": "Bir su molekülünde toplam kaç atom vardır?",
     "options": [
-      "Azalır",
-      "Değişmez",
-      "Artar",
-      "Önce artar sonra azalır",
-      "Önce azalır sonra artar"
+      "2",
+      "3",
+      "4",
+      "1",
+      "5"
     ],
-    "answer": 2,
-    "explain": "Güneş ışınları daha dik açıyla gelir."
+    "answer": 1,
+    "explain": "2 hidrojen + 1 oksijen"
   },
   "posted": {
     "2026-10-16": {
@@ -685,6 +685,15 @@
         "item": "s050",
         "media_id": "18090981401256953,17980586762924790",
         "at": "2026-10-31T22:15:31+03:00",
+        "mode": "auto"
+      }
+    },
+    "2026-11-01": {
+      "story1": {
+        "kind": "story",
+        "item": "s051",
+        "media_id": "18136468699656330,18011386010775862",
+        "at": "2026-11-01T10:45:29+03:00",
         "mode": "auto"
       }
     }
