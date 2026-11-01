@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 15,
     "video": 12,
-    "story": 52,
+    "story": 53,
     "ad": 3,
     "tt_video": 13,
     "tt_carousel": 10
   },
   "last_story": {
-    "id": "s052",
+    "id": "s053",
     "exam": "TYT",
-    "subject": "Felsefe",
-    "q": "\"En yüksek iyi mutluluktur\" diyen ahlak görüşü hangisidir?",
+    "subject": "Tarih",
+    "q": "Saltanat hangi yıl kaldırıldı?",
     "options": [
-      "Hedonizm",
-      "Faydacılık",
-      "Egoizm",
-      "Eudaimonizm",
-      "Pozitivizm"
+      "1920",
+      "1922",
+      "1923",
+      "1924",
+      "1921"
     ],
-    "answer": 3,
-    "explain": "Eudaimonizm (mutluluk ahlakı), Aristoteles"
+    "answer": 1,
+    "explain": "1 Kasım 1922"
   },
   "posted": {
     "2026-10-16": {
@@ -720,6 +720,13 @@
         "item": "v013",
         "media_id": "v_inbox_file~v2.7703217755870595080:SEND_TO_USER_INBOX",
         "at": "2026-11-01T18:00:28+03:00"
+      },
+      "story3": {
+        "kind": "story",
+        "item": "s053",
+        "media_id": "18014303522988134,18117619511623469",
+        "at": "2026-11-01T19:45:29+03:00",
+        "mode": "auto"
       }
     }
   },
