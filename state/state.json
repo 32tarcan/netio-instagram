@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 16,
     "video": 13,
-    "story": 57,
+    "story": 58,
     "ad": 3,
     "tt_video": 14,
     "tt_carousel": 12
   },
   "last_story": {
-    "id": "s001",
+    "id": "s002",
     "exam": "TYT",
-    "subject": "Matematik",
-    "q": "2³ + 2³ işleminin sonucu kaçtır?",
+    "subject": "Biyoloji",
+    "q": "Kanda oksijen taşıyan protein hangisidir?",
     "options": [
-      "12",
-      "64",
-      "16",
-      "8",
-      "32"
+      "İnsülin",
+      "Hemoglobin",
+      "Keratin",
+      "Pepsin",
+      "Kolajen"
     ],
-    "answer": 2,
-    "explain": "8 + 8 = 16"
+    "answer": 1,
+    "explain": "Hemoglobin alyuvarlarda oksijen taşır."
   },
   "posted": {
     "2026-10-16": {
@@ -787,6 +787,13 @@
         "item": "v014",
         "media_id": "v_inbox_file~v2.7703635330208925717:SEND_TO_USER_INBOX",
         "at": "2026-11-02T21:00:28+03:00"
+      },
+      "story4": {
+        "kind": "story",
+        "item": "s002",
+        "media_id": "17893310262621383,18206468710342010",
+        "at": "2026-11-02T22:15:32+03:00",
+        "mode": "auto"
       }
     }
   },
