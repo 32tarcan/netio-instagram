@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 15,
     "video": 12,
-    "story": 54,
+    "story": 55,
     "ad": 3,
     "tt_video": 13,
     "tt_carousel": 11
   },
   "last_story": {
-    "id": "s054",
+    "id": "s055",
     "exam": "TYT",
-    "subject": "Biyoloji",
-    "q": "Kanın pıhtılaşmasında görev alan kan hücresi hangisidir?",
+    "subject": "Matematik",
+    "q": "5! kaçtır?",
     "options": [
-      "Alyuvar",
-      "Akyuvar",
-      "Trombosit",
-      "Plazma",
-      "Lenf"
+      "120",
+      "24",
+      "60",
+      "720",
+      "100"
     ],
-    "answer": 2,
-    "explain": "Trombositler (kan pulcukları)"
+    "answer": 0,
+    "explain": "5 · 4 · 3 · 2 · 1 = 120"
   },
   "posted": {
     "2026-10-16": {
@@ -739,6 +739,15 @@
         "item": "s054",
         "media_id": "18484484728118177,17963879091225154",
         "at": "2026-11-01T22:15:30+03:00",
+        "mode": "auto"
+      }
+    },
+    "2026-11-02": {
+      "story1": {
+        "kind": "story",
+        "item": "s055",
+        "media_id": "18023715035947686,18014686106764920",
+        "at": "2026-11-02T10:45:26+03:00",
         "mode": "auto"
       }
     }
