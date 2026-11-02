@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 16,
     "video": 13,
-    "story": 56,
+    "story": 57,
     "ad": 3,
     "tt_video": 13,
     "tt_carousel": 12
   },
   "last_story": {
-    "id": "s056",
+    "id": "s001",
     "exam": "TYT",
-    "subject": "Geometri",
-    "q": "Yarıçapı 3 birim olan çemberin çevresi kaçtır? (π = 3)",
+    "subject": "Matematik",
+    "q": "2³ + 2³ işleminin sonucu kaçtır?",
     "options": [
-      "9",
-      "18",
-      "27",
       "12",
-      "6"
+      "64",
+      "16",
+      "8",
+      "32"
     ],
-    "answer": 1,
-    "explain": "2 · π · r = 2 · 3 · 3 = 18"
+    "answer": 2,
+    "explain": "8 + 8 = 16"
   },
   "posted": {
     "2026-10-16": {
@@ -774,6 +774,13 @@
         "item": "c012",
         "media_id": "p_inbox_url~v2.7703590694414059541:SEND_TO_USER_INBOX",
         "at": "2026-11-02T18:06:51+03:00"
+      },
+      "story3": {
+        "kind": "story",
+        "item": "s001",
+        "media_id": "18163618297501109,17924651055448230",
+        "at": "2026-11-02T19:45:28+03:00",
+        "mode": "auto"
       }
     }
   },
