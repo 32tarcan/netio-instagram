@@ -1,26 +1,26 @@
 {
   "pointers": {
     "carousel": 17,
-    "video": 13,
-    "story": 59,
+    "video": 14,
+    "story": 60,
     "ad": 3,
     "tt_video": 14,
     "tt_carousel": 12
   },
   "last_story": {
-    "id": "s003",
+    "id": "s004",
     "exam": "TYT",
-    "subject": "Türkçe",
-    "q": "Hangisi bir bağlaçtır?",
+    "subject": "Tarih",
+    "q": "Cumhuriyet hangi yıl ilan edildi?",
     "options": [
-      "güzel",
-      "koşmak",
-      "ve",
-      "hızlıca",
-      "kitap"
+      "1920",
+      "1922",
+      "1924",
+      "1923",
+      "1921"
     ],
-    "answer": 2,
-    "explain": "\"ve\" sözcükleri ve cümleleri bağlar."
+    "answer": 3,
+    "explain": "29 Ekim 1923"
   },
   "posted": {
     "2026-10-16": {
@@ -809,6 +809,19 @@
         "item": "c003",
         "media_id": "18132570370695495",
         "at": "2026-11-03T12:00:45+03:00"
+      },
+      "story2": {
+        "kind": "story",
+        "item": "s004",
+        "media_id": "18177826483449466,18046436681832101",
+        "at": "2026-11-03T15:37:59+03:00",
+        "mode": "manual"
+      },
+      "afternoon": {
+        "kind": "video",
+        "item": "v014",
+        "media_id": "18131539429695208",
+        "at": "2026-11-03T16:00:23+03:00"
       }
     }
   },
