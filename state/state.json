@@ -5,7 +5,7 @@
     "story": 64,
     "ad": 3,
     "tt_video": 15,
-    "tt_carousel": 13
+    "tt_carousel": 14
   },
   "last_story": {
     "id": "s008",
@@ -876,6 +876,12 @@
         "item": "c004",
         "media_id": "17980666637922022",
         "at": "2026-11-04T16:00:43+03:00"
+      },
+      "tt1": {
+        "kind": "tt_carousel",
+        "item": "c014",
+        "media_id": "p_inbox_url~v2.7704331064629708806:SEND_TO_USER_INBOX",
+        "at": "2026-11-04T18:00:13+03:00"
       }
     }
   },
