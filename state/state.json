@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 18,
     "video": 15,
-    "story": 65,
+    "story": 66,
     "ad": 3,
     "tt_video": 16,
     "tt_carousel": 14
   },
   "last_story": {
-    "id": "s009",
+    "id": "s010",
     "exam": "TYT",
-    "subject": "Matematik",
-    "q": "%20'si 30 olan sayı kaçtır?",
+    "subject": "Geometri",
+    "q": "Bir kenarı 5 birim olan karenin alanı kaçtır?",
     "options": [
-      "120",
-      "150",
-      "60",
-      "180",
-      "200"
+      "20",
+      "10",
+      "25",
+      "15",
+      "30"
     ],
-    "answer": 1,
-    "explain": "30 ÷ 0,2 = 150"
+    "answer": 2,
+    "explain": "5 · 5 = 25 birimkare"
   },
   "posted": {
     "2026-10-16": {
@@ -895,6 +895,13 @@
         "item": "v002",
         "media_id": "v_inbox_file~v2.7704377314557233170:SEND_TO_USER_INBOX",
         "at": "2026-11-04T21:00:27+03:00"
+      },
+      "story4": {
+        "kind": "story",
+        "item": "s010",
+        "media_id": "18135512327495040,18645548608006835",
+        "at": "2026-11-04T22:15:28+03:00",
+        "mode": "auto"
       }
     }
   },
