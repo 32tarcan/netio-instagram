@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 19,
     "video": 17,
-    "story": 70,
+    "story": 71,
     "ad": 3,
     "tt_video": 17,
     "tt_carousel": 15
   },
   "last_story": {
-    "id": "s014",
+    "id": "s015",
     "exam": "TYT",
-    "subject": "Kimya",
-    "q": "NaCl'nin günlük hayattaki adı nedir?",
+    "subject": "Tarih",
+    "q": "Malazgirt Savaşı hangi yıl yapıldı?",
     "options": [
-      "Kireç",
-      "Sofra tuzu",
-      "Çamaşır sodası",
-      "Karbonat",
-      "Çamaşır suyu"
+      "1071",
+      "1176",
+      "1243",
+      "1453",
+      "1040"
     ],
-    "answer": 1,
-    "explain": "NaCl: sodyum klorür, yani sofra tuzu."
+    "answer": 0,
+    "explain": "1071, Anadolu'nun kapıları Türklere açıldı."
   },
   "posted": {
     "2026-10-16": {
@@ -964,6 +964,13 @@
         "item": "v003",
         "media_id": "18110940833225039",
         "at": "2026-11-06T12:00:39+03:00"
+      },
+      "story2": {
+        "kind": "story",
+        "item": "s015",
+        "media_id": "18121850825082962,18129740204491900",
+        "at": "2026-11-06T14:46:29+03:00",
+        "mode": "auto"
       }
     }
   },
