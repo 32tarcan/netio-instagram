@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 20,
     "video": 17,
-    "story": 72,
+    "story": 73,
     "ad": 3,
     "tt_video": 18,
     "tt_carousel": 16
   },
   "last_story": {
-    "id": "s016",
+    "id": "s017",
     "exam": "TYT",
-    "subject": "Türkçe",
-    "q": "Hangisinde yazım yanlışı vardır?",
+    "subject": "Matematik",
+    "q": "Hangisi asal sayı değildir?",
     "options": [
-      "Herkes geldi.",
-      "Birşey söyle.",
-      "Hiçbir şey olmadı.",
-      "Her şey yolunda.",
-      "Hiç kimse aramadı."
+      "2",
+      "13",
+      "21",
+      "17",
+      "11"
     ],
-    "answer": 1,
-    "explain": "Doğrusu ayrı yazılır: \"bir şey\""
+    "answer": 2,
+    "explain": "21 = 3 · 7"
   },
   "posted": {
     "2026-10-16": {
@@ -996,6 +996,13 @@
         "item": "v004",
         "media_id": "v_inbox_file~v2.7705116994881980423:SEND_TO_USER_INBOX",
         "at": "2026-11-06T21:00:27+03:00"
+      },
+      "story4": {
+        "kind": "story",
+        "item": "s017",
+        "media_id": "18030764150692104,18118516799012934",
+        "at": "2026-11-06T21:57:02+03:00",
+        "mode": "manual"
       }
     }
   },
