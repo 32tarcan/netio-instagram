@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 21,
     "video": 18,
-    "story": 75,
+    "story": 76,
     "ad": 3,
     "tt_video": 19,
     "tt_carousel": 16
   },
   "last_story": {
-    "id": "s019",
-    "exam": "TYT",
-    "subject": "Biyoloji",
-    "q": "Hangi baz DNA'da bulunmaz?",
+    "id": "s020",
+    "exam": "AYT",
+    "subject": "Edebiyat",
+    "q": "İlk yerli tiyatro eseri hangisidir?",
     "options": [
-      "Adenin",
-      "Guanin",
-      "Urasil",
-      "Timin",
-      "Sitozin"
+      "Vatan yahut Silistre",
+      "Şair Evlenmek",
+      "Zavallı Çocuk",
+      "Akif Bey",
+      "Zoraki Tabip"
     ],
-    "answer": 2,
-    "explain": "Urasil RNA'da bulunur, DNA'da bulunmaz."
+    "answer": 1,
+    "explain": "Şinasi'nin Şair Evlenmek'i (1860)."
   },
   "posted": {
     "2026-10-16": {
@@ -1037,6 +1037,13 @@
         "item": "v005",
         "media_id": "v_inbox_file~v2.7705444305654794258:SEND_TO_USER_INBOX",
         "at": "2026-11-07T18:00:28+03:00"
+      },
+      "story3": {
+        "kind": "story",
+        "item": "s020",
+        "media_id": "18128480767846728,18137749927684635",
+        "at": "2026-11-07T19:45:30+03:00",
+        "mode": "auto"
       }
     }
   },
