@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 21,
     "video": 18,
-    "story": 76,
+    "story": 77,
     "ad": 3,
     "tt_video": 19,
     "tt_carousel": 17
   },
   "last_story": {
-    "id": "s020",
-    "exam": "AYT",
-    "subject": "Edebiyat",
-    "q": "İlk yerli tiyatro eseri hangisidir?",
+    "id": "s021",
+    "exam": "TYT",
+    "subject": "Fizik",
+    "q": "\"kWh\" hangi büyüklüğün birimidir?",
     "options": [
-      "Vatan yahut Silistre",
-      "Şair Evlenmek",
-      "Zavallı Çocuk",
-      "Akif Bey",
-      "Zoraki Tabip"
+      "Güç",
+      "Kuvvet",
+      "Akım",
+      "Enerji",
+      "Gerilim"
     ],
-    "answer": 1,
-    "explain": "Şinasi'nin Şair Evlenmek'i (1860)."
+    "answer": 3,
+    "explain": "kWh, güç × zaman yani enerji birimidir."
   },
   "posted": {
     "2026-10-16": {
@@ -1050,6 +1050,13 @@
         "item": "c003",
         "media_id": "p_inbox_url~v2.7705490616584538119:SEND_TO_USER_INBOX",
         "at": "2026-11-07T21:00:12+03:00"
+      },
+      "story4": {
+        "kind": "story",
+        "item": "s021",
+        "media_id": "18079497191426232,18120840748777357",
+        "at": "2026-11-07T22:15:31+03:00",
+        "mode": "auto"
       }
     }
   },
