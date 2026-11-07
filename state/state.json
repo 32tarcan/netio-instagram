@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 21,
     "video": 17,
-    "story": 74,
+    "story": 75,
     "ad": 3,
     "tt_video": 18,
     "tt_carousel": 16
   },
   "last_story": {
-    "id": "s018",
+    "id": "s019",
     "exam": "TYT",
-    "subject": "Coğrafya",
-    "q": "Türkiye'nin en büyük gölü hangisidir?",
+    "subject": "Biyoloji",
+    "q": "Hangi baz DNA'da bulunmaz?",
     "options": [
-      "Tuz Gölü",
-      "Van Gölü",
-      "Beyşehir Gölü",
-      "Eğirdir Gölü",
-      "İznik Gölü"
+      "Adenin",
+      "Guanin",
+      "Urasil",
+      "Timin",
+      "Sitozin"
     ],
-    "answer": 1,
-    "explain": "Van Gölü Türkiye'nin en büyük gölüdür."
+    "answer": 2,
+    "explain": "Urasil RNA'da bulunur, DNA'da bulunmaz."
   },
   "posted": {
     "2026-10-16": {
@@ -1018,6 +1018,13 @@
         "item": "c007",
         "media_id": "17877687135637761",
         "at": "2026-11-07T12:00:43+03:00"
+      },
+      "story2": {
+        "kind": "story",
+        "item": "s019",
+        "media_id": "18093360062226154,17900162373405241",
+        "at": "2026-11-07T14:45:29+03:00",
+        "mode": "auto"
       }
     }
   },
