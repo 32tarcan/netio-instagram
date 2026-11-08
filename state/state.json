@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 22,
     "video": 19,
-    "story": 80,
+    "story": 81,
     "ad": 3,
     "tt_video": 20,
     "tt_carousel": 18
   },
   "last_story": {
-    "id": "s024",
+    "id": "s025",
     "exam": "TYT",
-    "subject": "Felsefe",
-    "q": "\"Bildiğim tek şey, hiçbir şey bilmediğimdir.\" sözü kime atfedilir?",
+    "subject": "Tarih",
+    "q": "TBMM hangi tarihte açıldı?",
     "options": [
-      "Sokrates",
-      "Aristoteles",
-      "Thales",
-      "Herakleitos",
-      "Pisagor"
+      "29 Ekim 1923",
+      "19 Mayıs 1919",
+      "23 Nisan 1920",
+      "30 Ağustos 1922",
+      "24 Temmuz 1923"
     ],
-    "answer": 0,
-    "explain": "Sokrates'e atfedilir."
+    "answer": 2,
+    "explain": "23 Nisan 1920"
   },
   "posted": {
     "2026-10-16": {
@@ -1104,6 +1104,13 @@
         "item": "v006",
         "media_id": "v_inbox_file~v2.7705861724691269640:SEND_TO_USER_INBOX",
         "at": "2026-11-08T21:00:25+03:00"
+      },
+      "story4": {
+        "kind": "story",
+        "item": "s025",
+        "media_id": "17915127741552028,18080411207406361",
+        "at": "2026-11-08T22:15:31+03:00",
+        "mode": "auto"
       }
     }
   },
