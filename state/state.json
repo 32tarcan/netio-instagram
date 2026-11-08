@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 21,
     "video": 18,
-    "story": 77,
+    "story": 78,
     "ad": 3,
     "tt_video": 19,
     "tt_carousel": 17
   },
   "last_story": {
-    "id": "s021",
+    "id": "s022",
     "exam": "TYT",
-    "subject": "Fizik",
-    "q": "\"kWh\" hangi büyüklüğün birimidir?",
+    "subject": "Matematik",
+    "q": "x + 3 = 2x − 5 ise x kaçtır?",
     "options": [
-      "Güç",
-      "Kuvvet",
-      "Akım",
-      "Enerji",
-      "Gerilim"
+      "8",
+      "2",
+      "−2",
+      "5",
+      "−8"
     ],
-    "answer": 3,
-    "explain": "kWh, güç × zaman yani enerji birimidir."
+    "answer": 0,
+    "explain": "3 + 5 = 2x − x → x = 8"
   },
   "posted": {
     "2026-10-16": {
@@ -1056,6 +1056,15 @@
         "item": "s021",
         "media_id": "18079497191426232,18120840748777357",
         "at": "2026-11-07T22:15:31+03:00",
+        "mode": "auto"
+      }
+    },
+    "2026-11-08": {
+      "story1": {
+        "kind": "story",
+        "item": "s022",
+        "media_id": "18399436231203365,18000697647032535",
+        "at": "2026-11-08T10:45:31+03:00",
         "mode": "auto"
       }
     }
