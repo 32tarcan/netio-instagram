@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 23,
     "video": 19,
-    "story": 82,
+    "story": 83,
     "ad": 3,
     "tt_video": 20,
     "tt_carousel": 18
   },
   "last_story": {
-    "id": "s026",
+    "id": "s027",
     "exam": "TYT",
-    "subject": "Geometri",
-    "q": "Bir üçgenin dış açıları toplamı kaç derecedir?",
+    "subject": "Biyoloji",
+    "q": "Fotosentez hangi organelde gerçekleşir?",
     "options": [
-      "360°",
-      "180°",
-      "270°",
-      "540°",
-      "720°"
+      "Mitokondri",
+      "Kloroplast",
+      "Ribozom",
+      "Sentrozom",
+      "Golgi"
     ],
-    "answer": 0,
-    "explain": "Her çokgende dış açılar toplamı 360°'dir."
+    "answer": 1,
+    "explain": "Kloroplast"
   },
   "posted": {
     "2026-10-16": {
@@ -1126,6 +1126,13 @@
         "item": "c009",
         "media_id": "18116507681030590",
         "at": "2026-11-09T12:00:40+03:00"
+      },
+      "story2": {
+        "kind": "story",
+        "item": "s027",
+        "media_id": "18099920024675586,17993984307077594",
+        "at": "2026-11-09T14:45:27+03:00",
+        "mode": "auto"
       }
     }
   },
