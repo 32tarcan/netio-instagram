@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 23,
     "video": 20,
-    "story": 83,
+    "story": 84,
     "ad": 3,
     "tt_video": 21,
     "tt_carousel": 18
   },
   "last_story": {
-    "id": "s027",
+    "id": "s028",
     "exam": "TYT",
-    "subject": "Biyoloji",
-    "q": "Fotosentez hangi organelde gerçekleşir?",
+    "subject": "Türkçe",
+    "q": "\"Kitaplık\" sözcüğündeki \"-lık\" ne tür bir ektir?",
     "options": [
-      "Mitokondri",
-      "Kloroplast",
-      "Ribozom",
-      "Sentrozom",
-      "Golgi"
+      "Çekim eki",
+      "Yapım eki",
+      "Hâl eki",
+      "İyelik eki",
+      "Bağlaç"
     ],
     "answer": 1,
-    "explain": "Kloroplast"
+    "explain": "Yeni bir sözcük türettiği için yapım ekidir."
   },
   "posted": {
     "2026-10-16": {
@@ -1145,6 +1145,13 @@
         "item": "v007",
         "media_id": "v_inbox_file~v2.7706186454657091591:SEND_TO_USER_INBOX",
         "at": "2026-11-09T18:00:18+03:00"
+      },
+      "story3": {
+        "kind": "story",
+        "item": "s028",
+        "media_id": "18341825740273013,18001003227010111",
+        "at": "2026-11-09T19:45:30+03:00",
+        "mode": "auto"
       }
     }
   },
