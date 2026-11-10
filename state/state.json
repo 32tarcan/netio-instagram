@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 24,
     "video": 21,
-    "story": 87,
+    "story": 88,
     "ad": 3,
     "tt_video": 22,
     "tt_carousel": 20
   },
   "last_story": {
-    "id": "s031",
-    "exam": "TYT",
-    "subject": "Fizik",
-    "q": "Işığın boşluktaki hızı yaklaşık kaçtır?",
+    "id": "s032",
+    "exam": "AYT",
+    "subject": "Edebiyat",
+    "q": "\"Kuyucaklı Yusuf\" romanının yazarı kimdir?",
     "options": [
-      "300.000 km/s",
-      "3.000 km/s",
-      "340 m/s",
-      "30.000 km/s",
-      "150.000 km/s"
+      "Orhan Kemal",
+      "Sabahattin Ali",
+      "Yaşar Kemal",
+      "Peyami Safa",
+      "Ahmet Hamdi Tanpınar"
     ],
-    "answer": 0,
-    "explain": "Yaklaşık 300.000 km/s"
+    "answer": 1,
+    "explain": "Sabahattin Ali"
   },
   "posted": {
     "2026-10-16": {
@@ -1205,6 +1205,13 @@
         "item": "v008",
         "media_id": "v_inbox_file~v2.7706603562436921345:SEND_TO_USER_INBOX",
         "at": "2026-11-10T21:00:27+03:00"
+      },
+      "story4": {
+        "kind": "story",
+        "item": "s032",
+        "media_id": "18140791984658340,18074641556782839",
+        "at": "2026-11-10T22:15:25+03:00",
+        "mode": "auto"
       }
     }
   },
