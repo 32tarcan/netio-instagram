@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 23,
     "video": 20,
-    "story": 84,
+    "story": 85,
     "ad": 3,
     "tt_video": 21,
     "tt_carousel": 19
   },
   "last_story": {
-    "id": "s028",
+    "id": "s029",
     "exam": "TYT",
-    "subject": "Türkçe",
-    "q": "\"Kitaplık\" sözcüğündeki \"-lık\" ne tür bir ektir?",
+    "subject": "Matematik",
+    "q": "|−7| + |3| kaçtır?",
     "options": [
-      "Çekim eki",
-      "Yapım eki",
-      "Hâl eki",
-      "İyelik eki",
-      "Bağlaç"
+      "−4",
+      "4",
+      "10",
+      "−10",
+      "21"
     ],
-    "answer": 1,
-    "explain": "Yeni bir sözcük türettiği için yapım ekidir."
+    "answer": 2,
+    "explain": "7 + 3 = 10"
   },
   "posted": {
     "2026-10-16": {
@@ -1158,6 +1158,15 @@
         "item": "c005",
         "media_id": "p_inbox_url~v2.7706231523041724437:SEND_TO_USER_INBOX",
         "at": "2026-11-09T21:00:12+03:00"
+      }
+    },
+    "2026-11-10": {
+      "story1": {
+        "kind": "story",
+        "item": "s029",
+        "media_id": "17914191864475151,18113278481608811",
+        "at": "2026-11-10T10:45:30+03:00",
+        "mode": "auto"
       }
     }
   },
