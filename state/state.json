@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 23,
     "video": 21,
-    "story": 85,
+    "story": 86,
     "ad": 3,
     "tt_video": 21,
     "tt_carousel": 19
   },
   "last_story": {
-    "id": "s029",
+    "id": "s030",
     "exam": "TYT",
-    "subject": "Matematik",
-    "q": "|−7| + |3| kaçtır?",
+    "subject": "Coğrafya",
+    "q": "Maki bitki örtüsü hangi iklime aittir?",
     "options": [
-      "−4",
-      "4",
-      "10",
-      "−10",
-      "21"
+      "Karadeniz",
+      "Akdeniz",
+      "Karasal",
+      "Çöl",
+      "Muson"
     ],
-    "answer": 2,
-    "explain": "7 + 3 = 10"
+    "answer": 1,
+    "explain": "Maki, Akdeniz ikliminin bitki örtüsüdür."
   },
   "posted": {
     "2026-10-16": {
@@ -1173,6 +1173,13 @@
         "item": "v007",
         "media_id": "18009761798787110",
         "at": "2026-11-10T12:00:38+03:00"
+      },
+      "story2": {
+        "kind": "story",
+        "item": "s030",
+        "media_id": "18110006558193497,18099936107658654",
+        "at": "2026-11-10T14:45:25+03:00",
+        "mode": "auto"
       }
     }
   },
