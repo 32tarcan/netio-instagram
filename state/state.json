@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 24,
     "video": 21,
-    "story": 88,
+    "story": 89,
     "ad": 3,
     "tt_video": 22,
     "tt_carousel": 20
   },
   "last_story": {
-    "id": "s032",
-    "exam": "AYT",
-    "subject": "Edebiyat",
-    "q": "\"Kuyucaklı Yusuf\" romanının yazarı kimdir?",
+    "id": "s033",
+    "exam": "TYT",
+    "subject": "Kimya",
+    "q": "Atom numarası neyi gösterir?",
     "options": [
-      "Orhan Kemal",
-      "Sabahattin Ali",
-      "Yaşar Kemal",
-      "Peyami Safa",
-      "Ahmet Hamdi Tanpınar"
+      "Kütle numarasını",
+      "Nötron sayısını",
+      "Katman sayısını",
+      "Proton sayısını",
+      "Elektron ilgisini"
     ],
-    "answer": 1,
-    "explain": "Sabahattin Ali"
+    "answer": 3,
+    "explain": "Atom numarası = proton sayısı"
   },
   "posted": {
     "2026-10-16": {
@@ -1211,6 +1211,15 @@
         "item": "s032",
         "media_id": "18140791984658340,18074641556782839",
         "at": "2026-11-10T22:15:25+03:00",
+        "mode": "auto"
+      }
+    },
+    "2026-11-11": {
+      "story1": {
+        "kind": "story",
+        "item": "s033",
+        "media_id": "18472480810143096,17917725318543050",
+        "at": "2026-11-11T10:45:30+03:00",
         "mode": "auto"
       }
     }
