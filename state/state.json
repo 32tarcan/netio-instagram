@@ -1,26 +1,26 @@
 {
   "pointers": {
     "carousel": 25,
-    "video": 21,
-    "story": 89,
+    "video": 22,
+    "story": 90,
     "ad": 3,
     "tt_video": 22,
     "tt_carousel": 20
   },
   "last_story": {
-    "id": "s033",
+    "id": "s034",
     "exam": "TYT",
-    "subject": "Kimya",
-    "q": "Atom numarası neyi gösterir?",
+    "subject": "Tarih",
+    "q": "İstanbul hangi yıl fethedildi?",
     "options": [
-      "Kütle numarasını",
-      "Nötron sayısını",
-      "Katman sayısını",
-      "Proton sayısını",
-      "Elektron ilgisini"
+      "1071",
+      "1299",
+      "1453",
+      "1517",
+      "1402"
     ],
-    "answer": 3,
-    "explain": "Atom numarası = proton sayısı"
+    "answer": 2,
+    "explain": "1453, Fatih Sultan Mehmet"
   },
   "posted": {
     "2026-10-16": {
@@ -1227,6 +1227,19 @@
         "item": "c011",
         "media_id": "18109834484461476",
         "at": "2026-11-11T12:00:44+03:00"
+      },
+      "story2": {
+        "kind": "story",
+        "item": "s034",
+        "media_id": "18105772487022367,17911419585580404",
+        "at": "2026-11-11T15:37:56+03:00",
+        "mode": "manual"
+      },
+      "afternoon": {
+        "kind": "video",
+        "item": "v008",
+        "media_id": "18117596240590465",
+        "at": "2026-11-11T16:00:38+03:00"
       }
     }
   },
