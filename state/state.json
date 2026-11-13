@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 27,
     "video": 23,
-    "story": 97,
+    "story": 98,
     "ad": 3,
     "tt_video": 24,
     "tt_carousel": 22
   },
   "last_story": {
-    "id": "s041",
+    "id": "s042",
     "exam": "TYT",
-    "subject": "Coğrafya",
-    "q": "Türkiye'de en çok yağış alan bölge hangisidir?",
+    "subject": "Kimya",
+    "q": "Hangisi bir soygazdır?",
     "options": [
-      "İç Anadolu",
-      "Güneydoğu Anadolu",
-      "Karadeniz",
-      "Ege",
-      "Akdeniz"
+      "Azot",
+      "Neon",
+      "Oksijen",
+      "Klor",
+      "Hidrojen"
     ],
-    "answer": 2,
-    "explain": "Karadeniz Bölgesi"
+    "answer": 1,
+    "explain": "Neon 8A grubundadır."
   },
   "posted": {
     "2026-10-16": {
@@ -1335,6 +1335,13 @@
         "item": "c013",
         "media_id": "18131627182859112",
         "at": "2026-11-13T12:00:49+03:00"
+      },
+      "story2": {
+        "kind": "story",
+        "item": "s042",
+        "media_id": "18379325206212869,18111200546191185",
+        "at": "2026-11-13T14:45:32+03:00",
+        "mode": "auto"
       }
     }
   },
