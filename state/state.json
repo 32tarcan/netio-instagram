@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 27,
     "video": 24,
-    "story": 99,
+    "story": 100,
     "ad": 3,
     "tt_video": 25,
     "tt_carousel": 23
   },
   "last_story": {
-    "id": "s043",
+    "id": "s044",
     "exam": "TYT",
-    "subject": "Matematik",
-    "q": "0,25 sayısının kesir karşılığı hangisidir?",
+    "subject": "Tarih",
+    "q": "Lozan Antlaşması hangi yıl imzalandı?",
     "options": [
-      "1/5",
-      "1/2",
-      "2/5",
-      "1/4",
-      "3/4"
+      "1920",
+      "1921",
+      "1923",
+      "1919",
+      "1922"
     ],
-    "answer": 3,
-    "explain": "25/100 = 1/4"
+    "answer": 2,
+    "explain": "24 Temmuz 1923"
   },
   "posted": {
     "2026-10-16": {
@@ -1367,6 +1367,13 @@
         "item": "c009",
         "media_id": "p_inbox_url~v2.7707717243534084117:SEND_TO_USER_INBOX",
         "at": "2026-11-13T21:00:12+03:00"
+      },
+      "story4": {
+        "kind": "story",
+        "item": "s044",
+        "media_id": "18100908314397813,17964643683257346",
+        "at": "2026-11-13T22:15:28+03:00",
+        "mode": "auto"
       }
     }
   },
