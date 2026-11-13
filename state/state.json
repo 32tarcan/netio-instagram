@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 26,
     "video": 23,
-    "story": 96,
+    "story": 97,
     "ad": 3,
     "tt_video": 24,
     "tt_carousel": 22
   },
   "last_story": {
-    "id": "s040",
+    "id": "s041",
     "exam": "TYT",
-    "subject": "Fizik",
-    "q": "Ses havada yaklaşık kaç m/s hızla yayılır?",
+    "subject": "Coğrafya",
+    "q": "Türkiye'de en çok yağış alan bölge hangisidir?",
     "options": [
-      "34",
-      "340",
-      "3400",
-      "34.000",
-      "1500"
+      "İç Anadolu",
+      "Güneydoğu Anadolu",
+      "Karadeniz",
+      "Ege",
+      "Akdeniz"
     ],
-    "answer": 1,
-    "explain": "Yaklaşık 340 m/s"
+    "answer": 2,
+    "explain": "Karadeniz Bölgesi"
   },
   "posted": {
     "2026-10-16": {
@@ -1319,6 +1319,15 @@
         "item": "s040",
         "media_id": "18454863826123757,18130347481870548",
         "at": "2026-11-12T22:15:30+03:00",
+        "mode": "auto"
+      }
+    },
+    "2026-11-13": {
+      "story1": {
+        "kind": "story",
+        "item": "s041",
+        "media_id": "18130122239493234,18656292154049302",
+        "at": "2026-11-13T10:45:28+03:00",
         "mode": "auto"
       }
     }
