@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 28,
     "video": 25,
-    "story": 103,
+    "story": 104,
     "ad": 3,
     "tt_video": 26,
     "tt_carousel": 24
   },
   "last_story": {
-    "id": "s047",
+    "id": "s048",
     "exam": "TYT",
-    "subject": "Fizik",
-    "q": "Kuvvetin birimi hangisidir?",
+    "subject": "Türkçe",
+    "q": "Hangisi bir sıfat tamlamasıdır?",
     "options": [
-      "Joule",
-      "Watt",
-      "Newton",
-      "Pascal",
-      "Volt"
+      "okulun bahçesi",
+      "ev ödevi",
+      "kırmızı elma",
+      "hızlı koştu",
+      "kitabın kapağı"
     ],
     "answer": 2,
-    "explain": "Newton (N)"
+    "explain": "\"kırmızı\" sıfat, \"elma\" isim"
   },
   "posted": {
     "2026-10-16": {
@@ -1421,6 +1421,13 @@
         "item": "v012",
         "media_id": "v_inbox_file~v2.7708088224048072710:SEND_TO_USER_INBOX",
         "at": "2026-11-14T21:00:27+03:00"
+      },
+      "story4": {
+        "kind": "story",
+        "item": "s048",
+        "media_id": "18130448131917706,17906740050601765",
+        "at": "2026-11-14T22:15:34+03:00",
+        "mode": "auto"
       }
     }
   },
