@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 29,
     "video": 27,
-    "story": 109,
+    "story": 110,
     "ad": 3,
     "tt_video": 27,
     "tt_carousel": 25
   },
   "last_story": {
-    "id": "s053",
+    "id": "s054",
     "exam": "TYT",
-    "subject": "Tarih",
-    "q": "Saltanat hangi yıl kaldırıldı?",
+    "subject": "Biyoloji",
+    "q": "Kanın pıhtılaşmasında görev alan kan hücresi hangisidir?",
     "options": [
-      "1920",
-      "1922",
-      "1923",
-      "1924",
-      "1921"
+      "Alyuvar",
+      "Akyuvar",
+      "Trombosit",
+      "Plazma",
+      "Lenf"
     ],
-    "answer": 1,
-    "explain": "1 Kasım 1922"
+    "answer": 2,
+    "explain": "Trombositler (kan pulcukları)"
   },
   "posted": {
     "2026-10-16": {
@@ -1497,6 +1497,13 @@
         "item": "v013",
         "media_id": "17989720706885701",
         "at": "2026-11-16T12:01:22+03:00"
+      },
+      "story2": {
+        "kind": "story",
+        "item": "s054",
+        "media_id": "18131104669858195,18203062717391824",
+        "at": "2026-11-16T14:45:25+03:00",
+        "mode": "auto"
       }
     }
   },
