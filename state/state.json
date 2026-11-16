@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 30,
     "video": 27,
-    "story": 111,
+    "story": 112,
     "ad": 3,
     "tt_video": 28,
     "tt_carousel": 26
   },
   "last_story": {
-    "id": "s055",
+    "id": "s056",
     "exam": "TYT",
-    "subject": "Matematik",
-    "q": "5! kaçtır?",
+    "subject": "Geometri",
+    "q": "Yarıçapı 3 birim olan çemberin çevresi kaçtır? (π = 3)",
     "options": [
-      "120",
-      "24",
-      "60",
-      "720",
-      "100"
+      "9",
+      "18",
+      "27",
+      "12",
+      "6"
     ],
-    "answer": 0,
-    "explain": "5 · 4 · 3 · 2 · 1 = 120"
+    "answer": 1,
+    "explain": "2 · π · r = 2 · 3 · 3 = 18"
   },
   "posted": {
     "2026-10-16": {
@@ -1529,6 +1529,13 @@
         "item": "v014",
         "media_id": "v_inbox_file~v2.7708830424361322514:SEND_TO_USER_INBOX",
         "at": "2026-11-16T21:00:27+03:00"
+      },
+      "story4": {
+        "kind": "story",
+        "item": "s056",
+        "media_id": "18647114749012592,18485628937119986",
+        "at": "2026-11-16T22:15:25+03:00",
+        "mode": "auto"
       }
     }
   },
