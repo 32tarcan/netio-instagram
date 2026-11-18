@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 32,
     "video": 29,
-    "story": 118,
+    "story": 119,
     "ad": 3,
-    "tt_video": 29,
+    "tt_video": 30,
     "tt_carousel": 28
   },
   "last_story": {
-    "id": "s006",
+    "id": "s007",
     "exam": "TYT",
-    "subject": "Kimya",
-    "q": "En elektronegatif element hangisidir?",
+    "subject": "Coğrafya",
+    "q": "Tamamı Türkiye'de olan en uzun akarsu hangisidir?",
     "options": [
-      "Oksijen",
-      "Klor",
-      "Flor",
-      "Azot",
-      "Sodyum"
+      "Fırat",
+      "Sakarya",
+      "Kızılırmak",
+      "Dicle",
+      "Yeşilırmak"
     ],
     "answer": 2,
-    "explain": "Flor (F) en elektronegatif elementtir."
+    "explain": "Kızılırmak Türkiye'de doğup Türkiye'de denize dökülür."
   },
   "posted": {
     "2026-10-16": {
@@ -1624,6 +1624,19 @@
         "item": "c014",
         "media_id": "p_inbox_url~v2.7709526283078027265:SEND_TO_USER_INBOX",
         "at": "2026-11-18T18:00:13+03:00"
+      },
+      "story3": {
+        "kind": "story",
+        "item": "s007",
+        "media_id": "17909073834601303,17995163382113284",
+        "at": "2026-11-18T20:38:20+03:00",
+        "mode": "manual"
+      },
+      "tt2": {
+        "kind": "tt_video",
+        "item": "v002",
+        "media_id": "v_inbox_file~v2.7709572589445777415:SEND_TO_USER_INBOX",
+        "at": "2026-11-18T21:00:27+03:00"
       }
     }
   },
