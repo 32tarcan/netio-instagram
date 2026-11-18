@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 32,
     "video": 29,
-    "story": 119,
+    "story": 120,
     "ad": 3,
     "tt_video": 30,
     "tt_carousel": 28
   },
   "last_story": {
-    "id": "s007",
-    "exam": "TYT",
-    "subject": "Coğrafya",
-    "q": "Tamamı Türkiye'de olan en uzun akarsu hangisidir?",
+    "id": "s008",
+    "exam": "AYT",
+    "subject": "Edebiyat",
+    "q": "\"Safahat\" kimin eseridir?",
     "options": [
-      "Fırat",
-      "Sakarya",
-      "Kızılırmak",
-      "Dicle",
-      "Yeşilırmak"
+      "Mehmet Âkif Ersoy",
+      "Tevfik Fikret",
+      "Yahya Kemal",
+      "Namık Kemal",
+      "Ziya Paşa"
     ],
-    "answer": 2,
-    "explain": "Kızılırmak Türkiye'de doğup Türkiye'de denize dökülür."
+    "answer": 0,
+    "explain": "Safahat, Mehmet Âkif Ersoy'un şiirlerini topladığı eserdir."
   },
   "posted": {
     "2026-10-16": {
@@ -1637,6 +1637,13 @@
         "item": "v002",
         "media_id": "v_inbox_file~v2.7709572589445777415:SEND_TO_USER_INBOX",
         "at": "2026-11-18T21:00:27+03:00"
+      },
+      "story4": {
+        "kind": "story",
+        "item": "s008",
+        "media_id": "17943382791389985,17957979921281540",
+        "at": "2026-11-18T22:15:28+03:00",
+        "mode": "auto"
       }
     }
   },
