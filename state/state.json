@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 33,
     "video": 30,
-    "story": 123,
+    "story": 124,
     "ad": 3,
     "tt_video": 31,
     "tt_carousel": 29
   },
   "last_story": {
-    "id": "s011",
+    "id": "s012",
     "exam": "TYT",
-    "subject": "Biyoloji",
-    "q": "Protein sentezi hangi organelde yapılır?",
+    "subject": "Felsefe",
+    "q": "\"Tabula rasa\" hangi düşünürle özdeşleşir?",
     "options": [
-      "Ribozom",
-      "Lizozom",
-      "Golgi",
-      "Koful",
-      "Sentrozom"
+      "Platon",
+      "John Locke",
+      "Kant",
+      "Descartes",
+      "Hegel"
     ],
-    "answer": 0,
-    "explain": "Ribozomlar protein sentezler."
+    "answer": 1,
+    "explain": "Locke: zihin doğuşta boş bir levhadır."
   },
   "posted": {
     "2026-10-16": {
@@ -1691,6 +1691,13 @@
         "item": "c001",
         "media_id": "p_inbox_url~v2.7709943798646835220:SEND_TO_USER_INBOX",
         "at": "2026-11-19T21:00:12+03:00"
+      },
+      "story4": {
+        "kind": "story",
+        "item": "s012",
+        "media_id": "18235360348335656,17907837249356538",
+        "at": "2026-11-19T22:15:30+03:00",
+        "mode": "auto"
       }
     }
   },
