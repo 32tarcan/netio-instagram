@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 32,
     "video": 29,
-    "story": 120,
+    "story": 121,
     "ad": 3,
     "tt_video": 30,
     "tt_carousel": 28
   },
   "last_story": {
-    "id": "s008",
-    "exam": "AYT",
-    "subject": "Edebiyat",
-    "q": "\"Safahat\" kimin eseridir?",
+    "id": "s009",
+    "exam": "TYT",
+    "subject": "Matematik",
+    "q": "%20'si 30 olan sayı kaçtır?",
     "options": [
-      "Mehmet Âkif Ersoy",
-      "Tevfik Fikret",
-      "Yahya Kemal",
-      "Namık Kemal",
-      "Ziya Paşa"
+      "120",
+      "150",
+      "60",
+      "180",
+      "200"
     ],
-    "answer": 0,
-    "explain": "Safahat, Mehmet Âkif Ersoy'un şiirlerini topladığı eserdir."
+    "answer": 1,
+    "explain": "30 ÷ 0,2 = 150"
   },
   "posted": {
     "2026-10-16": {
@@ -1643,6 +1643,15 @@
         "item": "s008",
         "media_id": "17943382791389985,17957979921281540",
         "at": "2026-11-18T22:15:28+03:00",
+        "mode": "auto"
+      }
+    },
+    "2026-11-19": {
+      "story1": {
+        "kind": "story",
+        "item": "s009",
+        "media_id": "17868815373679903,17998053152843955",
+        "at": "2026-11-19T10:45:31+03:00",
         "mode": "auto"
       }
     }
