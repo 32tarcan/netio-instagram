@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 34,
     "video": 31,
-    "story": 127,
+    "story": 128,
     "ad": 3,
     "tt_video": 32,
     "tt_carousel": 30
   },
   "last_story": {
-    "id": "s015",
+    "id": "s016",
     "exam": "TYT",
-    "subject": "Tarih",
-    "q": "Malazgirt Savaşı hangi yıl yapıldı?",
+    "subject": "Türkçe",
+    "q": "Hangisinde yazım yanlışı vardır?",
     "options": [
-      "1071",
-      "1176",
-      "1243",
-      "1453",
-      "1040"
+      "Herkes geldi.",
+      "Birşey söyle.",
+      "Hiçbir şey olmadı.",
+      "Her şey yolunda.",
+      "Hiç kimse aramadı."
     ],
-    "answer": 0,
-    "explain": "1071, Anadolu'nun kapıları Türklere açıldı."
+    "answer": 1,
+    "explain": "Doğrusu ayrı yazılır: \"bir şey\""
   },
   "posted": {
     "2026-10-16": {
@@ -1745,6 +1745,13 @@
         "item": "v004",
         "media_id": "v_inbox_file~v2.7710314595718006805:SEND_TO_USER_INBOX",
         "at": "2026-11-20T21:00:38+03:00"
+      },
+      "story4": {
+        "kind": "story",
+        "item": "s016",
+        "media_id": "17954126427343079,18027046628867636",
+        "at": "2026-11-20T22:15:30+03:00",
+        "mode": "auto"
       }
     }
   },
