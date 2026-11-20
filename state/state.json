@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 33,
     "video": 31,
-    "story": 125,
+    "story": 126,
     "ad": 3,
     "tt_video": 31,
     "tt_carousel": 29
   },
   "last_story": {
-    "id": "s013",
+    "id": "s014",
     "exam": "TYT",
-    "subject": "Fizik",
-    "q": "Dünya'da yerçekimi ivmesi yaklaşık kaç m/s²'dir?",
+    "subject": "Kimya",
+    "q": "NaCl'nin günlük hayattaki adı nedir?",
     "options": [
-      "9,8",
-      "1,6",
-      "3,7",
-      "24,8",
-      "5,5"
+      "Kireç",
+      "Sofra tuzu",
+      "Çamaşır sodası",
+      "Karbonat",
+      "Çamaşır suyu"
     ],
-    "answer": 0,
-    "explain": "Yaklaşık 9,8 m/s² (sorularda çoğu zaman 10 alınır)."
+    "answer": 1,
+    "explain": "NaCl: sodyum klorür, yani sofra tuzu."
   },
   "posted": {
     "2026-10-16": {
@@ -1713,6 +1713,13 @@
         "item": "v003",
         "media_id": "18102289889443959",
         "at": "2026-11-20T12:00:37+03:00"
+      },
+      "story2": {
+        "kind": "story",
+        "item": "s014",
+        "media_id": "17943873429390539,18170801350468617",
+        "at": "2026-11-20T14:45:32+03:00",
+        "mode": "auto"
       }
     }
   },
