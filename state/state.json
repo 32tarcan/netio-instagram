@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 36,
     "video": 33,
-    "story": 134,
+    "story": 135,
     "ad": 3,
-    "tt_video": 33,
+    "tt_video": 34,
     "tt_carousel": 32
   },
   "last_story": {
-    "id": "s022",
+    "id": "s023",
     "exam": "TYT",
-    "subject": "Matematik",
-    "q": "x + 3 = 2x − 5 ise x kaçtır?",
+    "subject": "Kimya",
+    "q": "25 °C'de pH değeri 7'den büyük olan çözelti nasıldır?",
     "options": [
-      "8",
-      "2",
-      "−2",
-      "5",
-      "−8"
+      "Asidik",
+      "Nötr",
+      "Bazik",
+      "Tuzlu",
+      "Kuvvetli asidik"
     ],
-    "answer": 0,
-    "explain": "3 + 5 = 2x − x → x = 8"
+    "answer": 2,
+    "explain": "pH > 7 → bazik"
   },
   "posted": {
     "2026-10-16": {
@@ -1840,6 +1840,19 @@
         "item": "c004",
         "media_id": "p_inbox_url~v2.7711010520623335444:SEND_TO_USER_INBOX",
         "at": "2026-11-22T18:00:11+03:00"
+      },
+      "story3": {
+        "kind": "story",
+        "item": "s023",
+        "media_id": "18101263214453958,17926262547221076",
+        "at": "2026-11-22T20:37:10+03:00",
+        "mode": "manual"
+      },
+      "tt2": {
+        "kind": "tt_video",
+        "item": "v006",
+        "media_id": "v_inbox_file~v2.7711056809584101396:SEND_TO_USER_INBOX",
+        "at": "2026-11-22T21:00:25+03:00"
       }
     }
   },
