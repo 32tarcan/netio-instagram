@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 36,
     "video": 33,
-    "story": 135,
+    "story": 136,
     "ad": 3,
     "tt_video": 34,
     "tt_carousel": 32
   },
   "last_story": {
-    "id": "s023",
+    "id": "s024",
     "exam": "TYT",
-    "subject": "Kimya",
-    "q": "25 °C'de pH değeri 7'den büyük olan çözelti nasıldır?",
+    "subject": "Felsefe",
+    "q": "\"Bildiğim tek şey, hiçbir şey bilmediğimdir.\" sözü kime atfedilir?",
     "options": [
-      "Asidik",
-      "Nötr",
-      "Bazik",
-      "Tuzlu",
-      "Kuvvetli asidik"
+      "Sokrates",
+      "Aristoteles",
+      "Thales",
+      "Herakleitos",
+      "Pisagor"
     ],
-    "answer": 2,
-    "explain": "pH > 7 → bazik"
+    "answer": 0,
+    "explain": "Sokrates'e atfedilir."
   },
   "posted": {
     "2026-10-16": {
@@ -1853,6 +1853,13 @@
         "item": "v006",
         "media_id": "v_inbox_file~v2.7711056809584101396:SEND_TO_USER_INBOX",
         "at": "2026-11-22T21:00:25+03:00"
+      },
+      "story4": {
+        "kind": "story",
+        "item": "s024",
+        "media_id": "17938040286413397,18400759891204181",
+        "at": "2026-11-22T22:15:27+03:00",
+        "mode": "auto"
       }
     }
   },
