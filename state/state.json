@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 39,
     "video": 36,
-    "story": 146,
+    "story": 147,
     "ad": 3,
-    "tt_video": 36,
+    "tt_video": 37,
     "tt_carousel": 34
   },
   "last_story": {
-    "id": "s034",
+    "id": "s035",
     "exam": "TYT",
-    "subject": "Tarih",
-    "q": "İstanbul hangi yıl fethedildi?",
+    "subject": "Matematik",
+    "q": "Bir sayının 3 katının 4 fazlası 19'dur. Sayı kaçtır?",
     "options": [
-      "1071",
-      "1299",
-      "1453",
-      "1517",
-      "1402"
+      "5",
+      "6",
+      "4",
+      "7",
+      "3"
     ],
-    "answer": 2,
-    "explain": "1453, Fatih Sultan Mehmet"
+    "answer": 0,
+    "explain": "3x + 4 = 19 → x = 5"
   },
   "posted": {
     "2026-10-16": {
@@ -1996,6 +1996,19 @@
         "item": "v008",
         "media_id": "17998019859025421",
         "at": "2026-11-25T16:00:37+03:00"
+      },
+      "tt1": {
+        "kind": "tt_video",
+        "item": "v009",
+        "media_id": "v_inbox_file~v2.7712133247068784646:SEND_TO_USER_INBOX",
+        "at": "2026-11-25T18:37:29+03:00"
+      },
+      "story3": {
+        "kind": "story",
+        "item": "s035",
+        "media_id": "18113505610908410,17877583554638220",
+        "at": "2026-11-25T19:45:29+03:00",
+        "mode": "auto"
       }
     }
   },
