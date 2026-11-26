@@ -2,25 +2,25 @@
   "pointers": {
     "carousel": 39,
     "video": 37,
-    "story": 148,
+    "story": 149,
     "ad": 3,
     "tt_video": 37,
     "tt_carousel": 35
   },
   "last_story": {
-    "id": "s036",
+    "id": "s037",
     "exam": "TYT",
-    "subject": "Biyoloji",
-    "q": "İnsanın vücut hücrelerinde kaç kromozom bulunur?",
+    "subject": "Türkçe",
+    "q": "Hangisi bir zamirdir?",
     "options": [
-      "23",
-      "44",
-      "46",
-      "48",
-      "92"
+      "güzel",
+      "koşu",
+      "biz",
+      "hızla",
+      "ve"
     ],
     "answer": 2,
-    "explain": "2n = 46"
+    "explain": "\"biz\" kişi zamiridir."
   },
   "posted": {
     "2026-10-17": {
@@ -2004,6 +2004,13 @@
         "item": "v009",
         "media_id": "18136076071667171",
         "at": "2026-11-26T12:00:38+03:00"
+      },
+      "story2": {
+        "kind": "story",
+        "item": "s037",
+        "media_id": "18639978355060480,17917333752508520",
+        "at": "2026-11-26T14:45:28+03:00",
+        "mode": "auto"
       }
     }
   },
