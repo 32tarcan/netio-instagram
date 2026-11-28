@@ -2,68 +2,27 @@
   "pointers": {
     "carousel": 41,
     "video": 38,
-    "story": 155,
+    "story": 156,
     "ad": 3,
     "tt_video": 39,
     "tt_carousel": 37
   },
   "last_story": {
-    "id": "s043",
+    "id": "s044",
     "exam": "TYT",
-    "subject": "Matematik",
-    "q": "0,25 sayısının kesir karşılığı hangisidir?",
+    "subject": "Tarih",
+    "q": "Lozan Antlaşması hangi yıl imzalandı?",
     "options": [
-      "1/5",
-      "1/2",
-      "2/5",
-      "1/4",
-      "3/4"
+      "1920",
+      "1921",
+      "1923",
+      "1919",
+      "1922"
     ],
-    "answer": 3,
-    "explain": "25/100 = 1/4"
+    "answer": 2,
+    "explain": "24 Temmuz 1923"
   },
   "posted": {
-    "2026-10-18": {
-      "story1": {
-        "kind": "story",
-        "item": "s007",
-        "media_id": "18180227749441958,18067478549685511",
-        "at": "2026-10-18T10:05:38+03:00"
-      },
-      "noon": {
-        "kind": "carousel",
-        "item": "c003",
-        "media_id": "17969821368189535",
-        "at": "2026-10-18T12:50:07+03:00"
-      },
-      "story2": {
-        "kind": "story",
-        "item": "s008",
-        "media_id": "18094979318161048,18128111785879146",
-        "at": "2026-10-18T13:43:29+03:00",
-        "mode": "manual"
-      },
-      "afternoon": {
-        "kind": "ad",
-        "item": "netio_iddiali",
-        "media_id": "17994374903844854",
-        "at": "2026-10-18T16:00:36+03:00"
-      },
-      "story3": {
-        "kind": "story",
-        "item": "s009",
-        "media_id": "18091398344231670,18023792852867345",
-        "at": "2026-10-18T19:45:29+03:00",
-        "mode": "auto"
-      },
-      "story4": {
-        "kind": "story",
-        "item": "s010",
-        "media_id": "18145466224585510,18095049710452450",
-        "at": "2026-10-18T22:15:33+03:00",
-        "mode": "auto"
-      }
-    },
     "2026-10-19": {
       "story1": {
         "kind": "story",
@@ -2058,6 +2017,15 @@
         "item": "s043",
         "media_id": "18112429631253242,18122484175994656",
         "at": "2026-11-27T22:15:31+03:00",
+        "mode": "auto"
+      }
+    },
+    "2026-11-28": {
+      "story1": {
+        "kind": "story",
+        "item": "s044",
+        "media_id": "18156963079493872,18118814852589029",
+        "at": "2026-11-28T10:45:30+03:00",
         "mode": "auto"
       }
     }
